@@ -25,8 +25,20 @@
       "visualizations": {
         "Chord": [{"name":"Device Flows","config":"Default","file":"ChordData.csv","info":"Trips"}]
       }
+    },
+	"Pre-Expansion": {
+      "title":"- Pre-Expansion",
+      "visualizations": {
+        "Chord": [{"name":"Device Flows","config":"Default","file":"ChordData.csv","info":"Trips"}]
+      }
+    },
+	"Post-Expansion": {
+      "title":"- Post-Expansion",
+      "visualizations": {
+        "Chord": [{"name":"Device Flows","config":"Default","file":"ChordData.csv","info":"Trips"}]
+      }
     }
-  },
+  }
 
   "RadarCharts":{
     "Default": {
