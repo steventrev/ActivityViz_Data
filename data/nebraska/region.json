@@ -38,7 +38,7 @@
         "Chord": [{"name":"Device Flows","config":"Default","file":"ChordData.csv","info":"Trips"}]
       }
     }
-  }
+  },
 
   "RadarCharts":{
     "Default": {
