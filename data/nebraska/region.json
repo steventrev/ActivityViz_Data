@@ -27,13 +27,13 @@
       }
     },
 	"Pre-Expansion": {
-      "title":"- Pre-Expansion",
+      "title":"- Scaled Data",
       "visualizations": {
         "Chord": [{"name":"Device Flows","config":"Default","file":"ChordData.csv","info":"Trips"}]
       }
     },
 	"Post-Expansion": {
-      "title":"- Post-Expansion",
+      "title":"- Expansion Results",
       "visualizations": {
         "Chord": [{"name":"Device Flows","config":"Default","file":"ChordData.csv","info":"Trips"}]
       }
