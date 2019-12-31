@@ -18,10 +18,8 @@
     "PassiveData": {
       "title": "- LBS Data Processing",
       "visualizations": {
-        "Chord1": [
-          {"name": "Truck OD Flows","file":"ExpandedATRI.csv","config":"Default", "info":"Truck OD flows by district"}
-        ],
-        "Chord2": [
+        "Chord": [
+          {"name": "Truck OD Flows","file":"ExpandedATRI.csv","config":"Default", "info":"Truck OD flows by district"},
           {"name": "LBS OD Flows","file":"ExpandedSafeGraph.csv","config":"Default", "info":"LBS OD flows by district"}
         ]
       }
