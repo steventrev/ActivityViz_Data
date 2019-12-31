@@ -20,9 +20,10 @@
       "visualizations": {
         "Chord": [
           {"name": "Truck OD Flows","file":"ExpandedATRI.csv","config":"Default", "info":"Truck OD flows by district"},
+          {"name": "Truck OD Flows by Time-of-Day","file":"ExpandedATRI_SBS.csv","config":"SBS", "info":"Truck OD flows by Time-of-Day"},
           {"name": "LBS OD Flows","file":"ExpandedSafeGraph.csv","config":"Default", "info":"LBS OD flows by district"},
-          {"name": "Truck OD Flows Side-By-Side","file":"ExpandedATRI.csv","config":"SBS", "info":"Truck OD flows by district"},
-          {"name": "LBS OD Flows Side-By-Side","file":"ExpandedSafeGraph.csv","config":"SBS", "info":"LBS OD flows by district"}
+          {"name": "LBS Resident OD Flows by Time-of-Day","file":"ExpandedSafeGraph_SBS_Res.csv","config":"SBS", "info":"LBS Resident OD flows by Time-of-Day"},
+          {"name": "LBS Visitor OD Flows by Time-of-Day","file":"ExpandedSafeGraph_SBS_Vis.csv","config":"SBS", "info":"LBS Visitor OD flows by Time-of-Day"},
         ]
       }
     }
@@ -44,7 +45,7 @@
       "ZoneFile": "Districts.json",
       "ExcludeSameOD": false,
       "SideBySide": true,
-      "ChartPerRow": 3
+      "ChartPerRow": 4
     }
   }
 }
