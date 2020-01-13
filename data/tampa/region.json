@@ -1,0 +1,41 @@
+{
+  "Title":"Tampa Bay Regional Travel Surveys",
+  "CountyFile":"counties.json",
+  "Icon":"RSG.ico",
+  "Logo":"fdot_white.png",
+  "NavbarTitle":"ActivityViz",
+  "LinkURL":"https://www.fdot.gov/",
+  "CenterMap": [27.947896, -82.457335],
+  "FrontPageTitle": "Tampa Bay Regional Travel Surveys",
+  "FrontPageGraphic": "fdot_white.png",
+  "SideBarTextLeft": "<b>ActivityViz</b> was initially funded by the <a href='https://atlantaregional.org/'>Atlanta Regional Commission</a> with additional support from <a href='https://www.oregonmetro.gov/'>Oregon Metro</a> and others.",
+  "SideBarTextRight": "<b>ActivityViz</b> is an interactive travel and activity data visualization tool.  It is built with JavaScript technologies and works with various types of travel and activity data - household travel surveys, trip-based model outputs, activity-based model outputs, disaggregate passive data, freight models, on-board surveys, etc.  The dashboard features several interactive and customizable visualizations for exploring data, such as 3D maps of trips in time and space, time use by person type and activity, radar charts for performance measure analysis, sunburst diagrams for visualizing mode shares, animated bubble maps, chord diagrams for OD data, point-of-interest maps for transit stop data, truck flow data, etc.  </b>ActivityViz</b> is published using <a href='https://pages.github.com/'>GitHub pages</a> which eliminates most of the administrative backend in traditional systems.",
+  "SideBarImage":"example.png",
+  "scenarios":{
+    "Surveys": {
+      "title": "- Household Travel Survey",
+      "visualizations": {
+        "3DMap": [
+            {"name":"Bike Trips","config":"Default","file":"trips_zone_period_BIKE.csv","info":"Bike trip by destination and time-of-day"},
+            {"name":"Bike Share Trips","config":"Default","file":"trips_zone_period_BIKE_SHARE.csv","info":"Bike share trip by destination and time-of-day"},
+            {"name":"Car Trips","config":"Default","file":"trips_zone_period_CAR.csv","info":"Car trip by destination and time-of-day"},
+            {"name":"Car Share Trips","config":"Default","file":"trips_zone_period_CAR_SHARE.csv","info":"Car share trip by destination and time-of-day"},
+            {"name":"Long Distance Passenger Trips","config":"Default","file":"trips_zone_period_LONG_DIST_PASS.csv","info":"Long distance passenger trip by destination and time-of-day"},
+            {"name":"School Bus Trips","config":"Default","file":"trips_zone_period_SCHOOL_BUS.csv","info":"School bus trip by destination and time-of-day"},
+            {"name":"Shuttle Vanpool Trips","config":"Default","file":"trips_zone_period_SHUTTLE_VANPOOL.csv","info":"Shuttle vanpool trip by destination and time-of-day"},
+            {"name":"Taxi Not Tnc Trips","config":"Default","file":"trips_zone_period_TAXI_NOT_TNC.csv","info":"Taxi not TNC trip by destination and time-of-day"},
+            {"name":"TNC Trips","config":"Default","file":"trips_zone_period_TNC.csv","info":"TNC trip by destination and time-of-day"},
+            {"name":"Transit Trips","config":"Default","file":"trips_zone_period_TRANSIT.csv","info":"Transit trip by destination and time-of-day"},
+            {"name":"Walk Trips","config":"Default","file":"trips_zone_period_WALK.csv","info":"Walk trip by destination and time-of-day"}
+            ]
+      }
+    }
+  },
+  "3DMap":{
+    "Default": {
+      "ShowPeriodsAsDropdown": false,
+      "DataHasPeriods": true,
+      "ZoneFile":"tampa2015.json"
+    }
+  }
+}
