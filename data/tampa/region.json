@@ -16,23 +16,29 @@
       "title": "- Household Travel Survey",
       "visualizations": {
         "3DMap": [
-            {"name":"Bike Trips","config":"Default","file":"trips_zone_period_BIKE.csv","info":"Bike trip by destination and time-of-day"},
-            {"name":"Bike Share Trips","config":"Default","file":"trips_zone_period_BIKE_SHARE.csv","info":"Bike share trip by destination and time-of-day"},
-            {"name":"Car Trips","config":"Default","file":"trips_zone_period_CAR.csv","info":"Car trip by destination and time-of-day"},
-            {"name":"Car Share Trips","config":"Default","file":"trips_zone_period_CAR_SHARE.csv","info":"Car share trip by destination and time-of-day"},
-            {"name":"Long Distance Passenger Trips","config":"Default","file":"trips_zone_period_LONG_DIST_PASS.csv","info":"Long distance passenger trip by destination and time-of-day"},
-            {"name":"School Bus Trips","config":"Default","file":"trips_zone_period_SCHOOL_BUS.csv","info":"School bus trip by destination and time-of-day"},
-            {"name":"Shuttle Vanpool Trips","config":"Default","file":"trips_zone_period_SHUTTLE_VANPOOL.csv","info":"Shuttle vanpool trip by destination and time-of-day"},
-            {"name":"Taxi Not Tnc Trips","config":"Default","file":"trips_zone_period_TAXI_NOT_TNC.csv","info":"Taxi not TNC trip by destination and time-of-day"},
-            {"name":"TNC Trips","config":"Default","file":"trips_zone_period_TNC.csv","info":"TNC trip by destination and time-of-day"},
-            {"name":"Transit Trips","config":"Default","file":"trips_zone_period_TRANSIT.csv","info":"Transit trip by destination and time-of-day"},
-            {"name":"Walk Trips","config":"Default","file":"trips_zone_period_WALK.csv","info":"Walk trip by destination and time-of-day"}
+            {"name":"Trips","config":"Default","file":"trips_zone.csv","info":"Trips by Mode"},
+            {"name":"Bike Trips","config":"Animate","file":"trips_zone_period_BIKE.csv","info":"Bike trip by destination and time-of-day"},
+            {"name":"Bike Share Trips","config":"Animate","file":"trips_zone_period_BIKE_SHARE.csv","info":"Bike share trip by destination and time-of-day"},
+            {"name":"Car Trips","config":"Animate","file":"trips_zone_period_CAR.csv","info":"Car trip by destination and time-of-day"},
+            {"name":"Car Share Trips","config":"Animate","file":"trips_zone_period_CAR_SHARE.csv","info":"Car share trip by destination and time-of-day"},
+            {"name":"Long Distance Passenger Trips","config":"Animate","file":"trips_zone_period_LONG_DIST_PASS.csv","info":"Long distance passenger trip by destination and time-of-day"},
+            {"name":"School Bus Trips","config":"Animate","file":"trips_zone_period_SCHOOL_BUS.csv","info":"School bus trip by destination and time-of-day"},
+            {"name":"Shuttle Vanpool Trips","config":"Animate","file":"trips_zone_period_SHUTTLE_VANPOOL.csv","info":"Shuttle vanpool trip by destination and time-of-day"},
+            {"name":"Taxi Not Tnc Trips","config":"Animate","file":"trips_zone_period_TAXI_NOT_TNC.csv","info":"Taxi not TNC trip by destination and time-of-day"},
+            {"name":"TNC Trips","config":"Animate","file":"trips_zone_period_TNC.csv","info":"TNC trip by destination and time-of-day"},
+            {"name":"Transit Trips","config":"Animate","file":"trips_zone_period_TRANSIT.csv","info":"Transit trip by destination and time-of-day"},
+            {"name":"Walk Trips","config":"Animate","file":"trips_zone_period_WALK.csv","info":"Walk trip by destination and time-of-day"}
             ]
       }
     }
   },
   "3DMap":{
     "Default": {
+      "ShowPeriodsAsDropdown": true,
+      "DataHasPeriods": false,
+      "ZoneFile":"tampa2015.json"
+    },
+    "Animate": {
       "ShowPeriodsAsDropdown": false,
       "DataHasPeriods": true,
       "ZoneFile":"tampa2015.json"
