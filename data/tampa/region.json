@@ -18,15 +18,17 @@
         "3DMap": [
             {"name":"Trips","config":"Default","file":"trips_zone.csv","info":"Trips by Mode"}
             ]
-      },
-      "Travel_Survey": {
+      }
+    },
+    "Travel_Survey": {
       "title": "- Household Travel Survey",
       "visualizations": {
         "3DMap": [
             {"name":"Trips","config":"Default","file":"trips_zone.csv","info":"Trips by Mode"}
             ]
-      },
-      "Passive_Data": {
+      }
+    },
+    "Passive_Data": {
       "title": "- 2019 Processing",
       "visualizations": {
         "3DMap": [
