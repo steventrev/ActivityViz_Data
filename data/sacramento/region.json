@@ -16,7 +16,7 @@
       "title": "- Model Run",
       "visualizations": {
         "BarMap": [{"name":"Trip Mode","config":"Default", "file":"BarChartAndMapData.csv", "info":"Trips by mode by county"}],
-        "Sunburst": [{"name":"Nested Mode Share","config":"Default","file":"TreeMapData.csv","info":"Nested Trip Mode Share.  Click a ring area to drill-down into the nest.  Click the center to go back up the nest."}],
+        "Sunburst": [{"name":"Mode Share","config":"Default","file":"TreeMapData.csv","info":"Trip Mode Share"}],
         "3DMap": [{"name":"Daytime Population","config":"Default","file":"3DAnimatedMapData.csv","info":"People that are not in their home zone by time-of-day"}],
         "GroupedCharts": [{"name":"Day Pattern","config":"Default", "file":"BarChartData.csv","info":"Person day pattern by person type"}],
         "TimeUse": [{"name":"Time Use","config":"Default","file":"TimeUseData.csv","info":"Displays person out-of-home travel purpose by time of day. The vertical axis displays the sum or percent of activity and the horizontal axis displays the period of the day."}],
@@ -28,7 +28,7 @@
       "title": "- Survey Data",
       "visualizations": {
         "BarMap": [{"name":"Trip Mode","config":"Default", "file":"BarChartAndMapData.csv", "info":"Trips by mode by county"}],
-        "Sunburst": [{"name":"Nested Mode Share","config":"Default","file":"TreeMapData.csv","info":"Nested Trip Mode Share.  Click a ring area to drill-down into the nest.  Click the center to go back up the nest."}],
+        "Sunburst": [{"name":"Mode Share","config":"Default","file":"TreeMapData.csv","info":"Trip Mode Share"}],
         "3DMap": [{"name":"Daytime Population","config":"Default","file":"3DAnimatedMapData.csv","info":"People that are not in their home zone by time-of-day"}],
         "GroupedCharts": [{"name":"Day Pattern","config":"Default", "file":"BarChartData.csv","info":"Person day pattern by person type"}],
         "TimeUse": [{"name":"Time Use","config":"Default","file":"TimeUseData.csv","info":"Displays person out-of-home travel purpose by time of day. The vertical axis displays the sum or percent of activity and the horizontal axis displays the period of the day."}],
@@ -49,6 +49,11 @@
       "visualizations": {
         "Chord": [{"name":"Trip ODs","config":"SideBySide","file":"ChordData.csv","info":"Daily Trip ODs by Data Source"}]
       }
+    }
+  },
+  "Sunburst":{
+    "Default": {
+      "ChartType": 3
     }
   },
   "RadarCharts":{
