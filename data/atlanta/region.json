@@ -327,6 +327,11 @@
         "LegendTitle": "Rail Stations",
         "BubbleDefault": true
     }
-}
+  },
+  "Sunburst": {
+    "Default":{
+
+    }
+  }
 }
 
