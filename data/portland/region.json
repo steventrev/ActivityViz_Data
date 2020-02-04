@@ -136,7 +136,7 @@
             "ZoneFile": "termini.json",
             "LabelSize": "14",
             "LegendRows": 4,
-            "LegendText": "TRIPS"
+            "LegendText": "Benefits"
         }
     }, 
     "3DMap": {
