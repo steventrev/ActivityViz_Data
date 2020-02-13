@@ -15,48 +15,79 @@
 # 10	Car share
 # 11	Bike share
 # 13	Long distance passenger mode
+library(data.table)
 
-#The PERIOD entries for TimeUse and 3DAnimatedMap are 1 to 48 and represent 30 minute periods from 3am to 3am the next day.  
+#The PERIOD entries for TimeUse and 3DAnimatedMap are 1 to 48 and represent 30 minute periods from 3am to 3am the next day.
 
-trips = "C:/projects/tampa/tampa_survey_deliverable_20191218/HTS Data files (CSV)/TBRTS-HTS_Trip_Table_20191218.csv"
-trips = read.csv(trips)
-trips = trips[,c("mode_type","arrival_time","d_taz_2020","trip_weight_household")]
+if(!fil.exists("trips.rds")){
+  trips = "Q:/Projects/FL/FDOT/R1705_Tampa Bay Surveys/7.Documentation/2.Main/deliverable_20191218/HTS Data files (CSV)/TBRTS-HTS_Trip_Table_20191218.csv"
+  trips = fread(trips)
+  trips = trips[,c("mode_type","arrival_time","d_taz_2020","trip_weight_household"), with = FALSE]
+  saveRDS(trips, file = "trips.rds")
+} else {
+  trips = readRDS("trips.rds")
+}
+
 
 #recode mode
 
 library(stringr)
 
-modes = c("Missing"=-9998, "Walk"=1, "Bike"=2, "Car"=3, "Taxi_Not_TNC"=4, "Transit"=5, "School_Bus"=6, "Other"=7, "Shuttle_VanPool"=8, "TNC"=9, "Car_Share"=10, "Bike_Share"=11, "Long_Dist_Pass"=13)
-trips$mode = names(modes)[match(trips$mode_type,modes)]
-trips$mode = str_to_upper(trips$mode)
+modes = c("Missing"         = -9998, 
+          "Walk"            = 1, 
+          "Bike"            = 2, 
+          "Car"             = 3, 
+          "Taxi_Not_TNC"    = 4, 
+          "Transit"         = 5, 
+          "School_Bus"      = 6, 
+          "Other"           = 7, 
+          "Shuttle_VanPool" = 8, 
+          "TNC"             = 9, 
+          "Car_Share"       = 10, 
+          "Bike_Share"      = 11, 
+          "Long_Dist_Pass"  = 13
+          )
+trips[, mode := names(modes)[match(mode_type,modes)]]
+trips[, mode := str_to_upper(mode)]
 
 #recode arrival time
 
-trips$time = sapply(as.character(trips$arrival_time), function(x) strsplit(x, " ")[[1]][2])
-trips$hour = sapply(as.character(trips$time), function(x) strsplit(x, ":")[[1]][1])
-trips$min = sapply(as.character(trips$time), function(x) strsplit(x, ":")[[1]][2])
-trips$mpm = as.integer(trips$hour) * 60 + as.integer(trips$min)
-trips$mpm_period = as.integer(trips$mpm / 30)
-trips$mpm_period_shift = trips$mpm_period - 5
-trips$mpm_period_shift[trips$mpm_period_shift < 1] = trips$mpm_period_shift[trips$mpm_period_shift < 1] + 48
-trips$mpm_period_shift = paste0("PER", ifelse(trips$mpm_period_shift<10, "0", ""), trips$mpm_period_shift)
+trips[, time := sapply(as.character(arrival_time), function(x) strsplit(x, " ")[[1]][2])]
+trips[, hour := sapply(as.character(time), function(x) strsplit(x, ":")[[1]][1])]
+trips[, min  := sapply(as.character(time), function(x) strsplit(x, ":")[[1]][2])]
+trips[, mpm  := as.integer(hour) * 60 + as.integer(min)]
+trips[, mpm_period := as.integer(mpm / 30)]
+trips[, mpm_period_shift := mpm_period - 5]
+trips[mpm_period_shift < 1, mpm_period_shift := mpm_period_shift + 48]
+trips[, mpm_period_shift := paste0("PER", ifelse(mpm_period_shift<10, "0", ""), mpm_period_shift)]
 
 table(trips$mpm_period_shift)
 
 # create summary of all combinations
-trips_period_mode = aggregate(trips$trip_weight_household, list(trips$d_taz_2020,trips$mpm_period_shift,trips$mode), sum, drop=FALSE)
-colnames(trips_period_mode) = c("ZONE","PER","MODE","TRIPS")
-
-#for(mname in unique(trips_period_mode$MODE)) {
-#  out_table = trips_period_mode[trips_period_mode$MODE=="MISSING",c("ZONE","PER")]
-#  out_table[paste0(mname,"_TRIPS")] = as.integer(trips_period_mode$TRIPS[trips_period_mode$MODE==mname])
-#  out_file_name = paste0("C:/projects/tampa/survey-viz/trips_zone_period_", mname, ".csv")
-#  out_table = out_table[order(out_table$ZONE,out_table$PER),]
-#  write.csv(out_table, out_file_name, row.names=F, quote=F)
-#}
+setkey(trips, d_taz_2020, mpm_period_shift, mode)
+trips_period_mode = trips[
+  !(is.na(d_taz_2020) | is.na(mpm_period_shift) | is.na(mode))
+  ][CJ(d_taz_2020,
+       mpm_period_shift,
+       mode,
+       unique = TRUE)][, .(TRIPS = sum(trip_weight_household)),
+                       by = .(ZONE = d_taz_2020,
+                              PER  = mpm_period_shift,
+                              MODE = mode)][order(ZONE, PER, MODE)]
 
 # all day
-trips_mode = aggregate(trips$trip_weight_household, list(trips$d_taz_2020,trips$mode), sum, drop=FALSE)
-colnames(trips_mode) = c("ZONE","PER","TRIPS")
-trips_mode_fname = "C:/projects/tampa/survey-viz/trips_zone.csv"
-write.csv(trips_mode, trips_mode_fname, row.names=F, quote=F)
+setkey(trips, d_taz_2020, mode)
+trips_mode = trips[
+  !(is.na(d_taz_2020) | is.na(mode))
+  ][CJ(d_taz_2020,
+       mode,
+       unique = TRUE)][, .(TRIPS = sum(trip_weight_household)),
+                       by = .(ZONE = d_taz_2020,
+                              MODE = mode)][order(ZONE, MODE)]
+
+# Output trips by mode
+trips_mode_fname = file.path(getwd(), c("Executive_Summary",
+                                        "Passive_Data",
+                                        "Travel_Survey"),
+                             "trips_mode_zone.csv")
+fwrite(trips_mode, file = trips_mode_fname, row.names=F, quote=F)

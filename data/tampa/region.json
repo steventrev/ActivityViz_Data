@@ -17,7 +17,18 @@
       "visualizations": {
         "3DMap": [
             {"name":"Trips","config":"Default","file":"trips_zone.csv","info":"Trips by Mode"}
-            ]
+            ],
+        "GroupedCharts": [
+          {"name":"Typical Travel", "config":"Travel", "file":"trips_period.csv", "info":"When people make trips in the region"},
+          {"name":"Trip Destination", "config":"Destination", "file":"trips_destination.csv", "info":"Destinations for daily trips made"},
+          {"name":"Telecommute Frequency", "config":"Frequency", "file":"telecommute_freq_age.csv", "info":"Telecommute frequency by age"},
+          {"name":"Bike Use Frequency", "config":"Frequency", "file":"bike_freq_age.csv", "info":"Bike use frequency by age"},
+          {"name":"Participant Age", "config":"Destination", "file":"age_distribution.csv", "info":"Age of participants"}
+           ],
+        "Sunburst": [
+            {"name":"Work Mode", "config":"Default", "file":"work_mode.csv", "info":"Usual way commutes to work"},
+          {"name":"Participant Gender", "config":"Pie", "file":"gender_distribution.csv", "info":"Gender of participants"}
+            ] 
       }
     },
     "Travel_Survey": {
@@ -25,6 +36,20 @@
       "visualizations": {
         "3DMap": [
             {"name":"Trips","config":"Default","file":"trips_zone.csv","info":"Trips by Mode"}
+            ],
+        "BarMap": [
+          {"name":"Trip Mode","config":"Default", "file":"trip_mode_zone.csv", "info":"Trips by mode by county"},
+          {"name":"Trip Mode (Seasonal Households)", "config":"Default", "file":"seasonal_trip_mode_zone.csv", "info":"Trips by mode by county for seasonal households"},
+          {"name":"Trip Mode (University Students)","config":"Default", "file":"uni_trip_mode_zone.csv", "info":"Trips by mode by county for university students"}
+          ],
+        "GroupedCharts": [
+            {"name":"Day Pattern","config":"Frequency","file":"day_pattern.csv","info":"Person day pattern by person type"}
+            ],
+        "TimeUse": [
+            {"name":"Time Use","config":"Default","file":"time_use.csv","info":"Displays person out-of-home travel purpose by time of day. The vertical axis displays the sum or percent of activity and the horizontal axis displays the period of the day"}
+            ],
+        "Chord": [
+            {"name":"Trips OD","config":"Default","file":"trip_od.csv","info":"Daily trips OD"}
             ]
       }
     },
@@ -33,6 +58,9 @@
       "visualizations": {
         "3DMap": [
             {"name":"Trips","config":"Default","file":"trips_zone.csv","info":"Trips by Mode"}
+            ],
+        "Chord": [
+            {"name":"Trips OD","config":"Default","file":"trip_od.csv","info":"Daily trips OD"}
             ]
       }
     }
@@ -42,6 +70,61 @@
       "ShowPeriodsAsDropdown": true,
       "DataHasPeriods": false,
       "ZoneFile":"tampa2020.json"
+    }
+  },
+  "GroupedCharts":{
+    "Travel": {
+      "NumberColsGrouped": 1,
+      "SwapLegendByDefault": true,
+      "ShowAsPercentByDefault": false,
+      "ShowAsVerticalByDefault": true,
+      "StackAllChartsByDefault": false,
+      "ChartWidthOverride": []
+    },
+    "Destination": {
+      "NumberColsGrouped": 0,
+      "SwapLegendByDefault": false,
+      "ShowAsPercentByDefault": true,
+      "ShowAsVerticalByDefault": false,
+      "StackAllChartsByDefault": false,
+      "ChartWidthOverride": []
+    },
+    "Frequency": {
+      "NumberColsGrouped": 1,
+      "SwapLegendByDefault": false,
+      "ShowAsPercentByDefault": true,
+      "ShowAsVerticalByDefault": false,
+      "StackAllChartsByDefault": true,
+      "ChartWidthOverride": []
+    }
+  },
+  "Sunburst":{
+    "Default": {
+      "ChartType": 3
+    },
+    "Pie": {
+      "ChartType": 1
+    }
+  },
+  "Chord": {
+    "Default": {
+      "ZoneFile":"counties.json",
+      "LabelSize": "14",
+      "LegendText": "TRIPS"
+    },
+    "SideBySide": {
+      "ZoneFile":"counties.json",
+      "LabelSize": "14",
+      "LegendText": "TRIPS",
+      "ExcludeSameOD": false,
+      "SideBySide": true,
+      "ChartPerRow": 3
+    }
+  },
+  "BarMap":{
+    "Default":{
+      "ZoneFile":"tampa2020.json",
+      "CycleMapTools": false 
     }
   }
 }
