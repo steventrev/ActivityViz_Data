@@ -9,16 +9,15 @@
 library(data.table)
 library(jsonlite)
 library(stringr)
+library(sf)
+library(geojsonsf)
 
 
 ### Define Constants #############################################################
 ##################################################################################
 
 # Input files
-data_dir   = normalizePath(paste0("Q:/Projects/FL/FDOT/R1705_Tampa Bay Surveys/",
-                                  "7.Documentation/2.Main/deliverable_20191218/",
-                                  "HTS Data files (CSV)"),
-                           winslash = "/")
+data_dir   = getwd()
 
 household_file = file.path(data_dir, "TBRTS-HTS_Household_Table_20191218.csv")
 person_file    = file.path(data_dir, "TBRTS-HTS_Person_Table_20191218.csv") 
@@ -29,6 +28,7 @@ trip_file      = file.path(data_dir, "TBRTS-HTS_Trip_Table_20191218.csv")
 # Geography input files
 taz_file       = file.path(getwd(), "tampa2020.json")
 county_file    = file.path(getwd(), "counties.json")
+agg_file       = file.path(getwd(), "tampa.csv")
 
 # Output files
 es_output_dir = file.path(getwd(), "Executive_Summary")
@@ -37,28 +37,41 @@ ts_output_dir = file.path(getwd(), "Travel_Survey")
 
 # Executive_Summary
 snapshot_file = file.path(es_output_dir, "snapshot.csv")
-trip_zone_file1  = file.path(es_output_dir, "trips_zone.csv")
-trips_period_file = file.path(es_output_dir, "trips_period.csv")
-destination_file = file.path(es_output_dir, "trips_destination.csv")
-work_mode_file   = file.path(es_output_dir, "work_mode.csv")
-telecommute_file = file.path(es_output_dir, "telecommute_freq_age.csv")
-bike_file        = file.path(es_output_dir, "bike_freq_age.csv")
-commute_freq_file= file.path(es_output_dir, "commute_freq_age.csv")
-age_file         = file.path(es_output_dir, "age_distribution.csv")
-gender_file      = file.path(es_output_dir, "gender_distribution.csv")
+trips_period_file = file.path(es_output_dir, "trips_period.csv")         # Typical Travel
+destination_file = file.path(es_output_dir, "trips_destination.csv")     # Trip Destination
+work_mode_file   = file.path(es_output_dir, "work_mode.csv")             # Usual Ways to commute to Work 
+telecommute_file = file.path(es_output_dir, "telecommute_freq_age.csv")  # Telecommute freq by age
+bike_file        = file.path(es_output_dir, "bike_freq_age.csv")         # Bike use freq by age
+commute_freq_file= file.path(es_output_dir, "commute_freq_age.csv")      # Commute freq by age
+age_file         = file.path(es_output_dir, "age_distribution.csv")      # Age of participants
+gender_file      = file.path(es_output_dir, "gender_distribution.csv")   # Gender of participants
 
 # Passive_Data
-trip_zone_file2  = file.path(pd_output_dir, "trips_zone.csv")
-trip_od_file1    = file.path(pd_output_dir, "trip_od.csv")
+trip_od_overall_file         = file.path(pd_output_dir, "trip_od_overall.csv")
+trip_od_hillsborough_file    = file.path(pd_output_dir, "trip_od_hillsborough.csv")
+trip_od_pinellas_file        = file.path(pd_output_dir, "trip_od_pinellas.csv")
+trip_od_pasco_file           = file.path(pd_output_dir, "trip_od_pasco.csv")
+trip_od_hernando_citrus_file = file.path(pd_output_dir, "trip_od_hernando_citrus.csv")
 
 # Travel_Survey
-trip_zone_file3           = file.path(ts_output_dir, "trips_zone.csv")
-trip_mode_file            = file.path(ts_output_dir, "trip_mode_zone.csv")
-seasonal_trip_mode_file   = file.path(ts_output_dir, "seasonal_trip_mode_zone.csv")
-uni_trip_mode_file        = file.path(ts_output_dir, "uni_trip_mode_zone.csv")
-day_pattern_file          = file.path(ts_output_dir, "day_pattern.csv")
-time_use_file             = file.path(ts_output_dir, "time_use.csv")
-trip_od_file2             = file.path(ts_output_dir, "trip_od.csv")
+trip_zone_file                = file.path(ts_output_dir, "trips_zone.csv")
+trip_mode_file                = file.path(ts_output_dir, "trip_mode_zone.csv")
+seasonal_trip_mode_file       = file.path(ts_output_dir, "seasonal_trip_mode_zone.csv")
+uni_trip_mode_file            = file.path(ts_output_dir, "uni_trip_mode_zone.csv")
+day_pattern_file              = file.path(ts_output_dir, "day_pattern.csv")
+time_use_file                 = file.path(ts_output_dir, "time_use.csv")
+trip_od_overall_file2         = file.path(ts_output_dir, "trip_od_overall.csv")
+trip_od_hillsborough_file2    = file.path(ts_output_dir, "trip_od_hillsborough.csv")
+trip_od_pinellas_file2        = file.path(ts_output_dir, "trip_od_pinellas.csv")
+trip_od_pasco_file2           = file.path(ts_output_dir, "trip_od_pasco.csv")
+trip_od_hernando_citrus_file2 = file.path(ts_output_dir, "trip_od_hernando_citrus.csv")
+
+# Geography for chord chart (OD)
+overall_geo_file            = file.path(getwd(), "overall.json")
+hillsborough_geo_file       = file.path(getwd(), "hillsborough.json")
+pinellas_geo_file           = file.path(getwd(), "pinellas.json")
+pasco_geo_file              = file.path(getwd(), "pasco.json")
+hernando_citrus_geo_file    = file.path(getwd(), "hernandocitrus.json")
 
 ### Load required datasets #######################################################
 ##################################################################################
@@ -76,9 +89,38 @@ if(!file.exists("../hts_data.RData")){
 
 taz_ls = fromJSON(taz_file)
 county_ls = fromJSON(county_file)
+taz_sf = geojson_sf(taz_file)
+taz_dt = data.table(taz_sf)
+agg_dt = fread(agg_file)
+agg_sf = st_as_sf(merge(as.data.frame(agg_dt), taz_sf, by.x="TAZ", by.y="id",all.x = TRUE))
+
 
 
 ### Create output data ###########################################################
+##################################################################################
+
+# Create districts.json file for OD chord chart
+# Overall
+overall_sf = dplyr::summarise(dplyr::group_by(agg_sf, D7_ALL_LBL))
+names(overall_sf) = c("NAME", "geometry")
+
+# Hillsborough
+hillsborough_sf = dplyr::summarise(dplyr::group_by(agg_sf, HILLSBOROUGH_LBL_3))
+names(hillsborough_sf) = c("NAME", "geometry")
+
+# Pinellas
+pinellas_sf = dplyr::summarise(dplyr::group_by(agg_sf, PINELLAS_LBL))
+names(pinellas_sf) = c("NAME", "geometry")
+
+# Pasco
+pasco_sf = dplyr::summarise(dplyr::group_by(agg_sf, PASCO_LBL))
+names(pasco_sf) = c("NAME", "geometry")
+
+# Hernando/Citrus
+hernando_citrus_sf = dplyr::summarise(dplyr::group_by(agg_sf, HERNANDO_CITRUS_LBL_2))
+names(hernando_citrus_sf) = c("NAME", "geometry")
+
+### Executive Summary ############################################################
 ##################################################################################
 
 # Snapshot Data
@@ -89,40 +131,27 @@ snapshot_dt = data.table(Value = c(household_dt[,.N],
                                          "total people took part",
                                          "trips recorded as part of the survey"))
 
-# Trip mode by zone
+
+# Typical Travel
 
 # Trips start by period
-# 3 a.m. - 3 a.m <--> 1 - 48 on the chart
 trip_dt[, dep_time:=as.POSIXct(departure_time, format = "%Y-%m-%d %H:%M:%S", tz = "EST")]
 trip_dt[, hour := hour(dep_time)]
-# trip_dt[, min  := minute(dep_time)]
-# trip_dt[, mpm  := hour * 60]# + min]
-# trip_dt[, mpm_period := as.integer(mpm / 60)]
-# trip_dt[, mpm_period_shift := mpm_period - 5]
-# trip_dt[mpm_period_shift < 1, mpm_period_shift := mpm_period_shift + 48]
-# trip_dt[, mpm_period_shift := paste0("PER", ifelse(mpm_period_shift<10, "0", ""), mpm_period_shift)]
-# 
+
 trip_start_dt = trip_dt[,.(TYPE = "TRIP START",
                            TRIPS = round(sum(trip_weight_household), 2)),
                         by = .(HOUR = hour)]
-# # Trips end by period
 trip_dt[, arr_time:=as.POSIXct(arrival_time, format = "%Y-%m-%d %H:%M:%S", tz = "EST")]
 trip_dt[, hour := hour(arr_time)]
-# trip_dt[, min  := minute(arr_time)]
-# trip_dt[, mpm  := hour * 60 + min]
-# trip_dt[, mpm_period := as.integer(mpm / 30)]
-# trip_dt[, mpm_period_shift := mpm_period - 5]
-# trip_dt[mpm_period_shift < 1, mpm_period_shift := mpm_period_shift + 48]
-# trip_dt[, mpm_period_shift := paste0("PER", ifelse(mpm_period_shift<10, "0", ""), mpm_period_shift)]
-# 
+
+# Trips end by period 
 trip_end_dt = trip_dt[,.(TYPE = "TRIP END",
                          TRIPS = round(sum(trip_weight_household), 2)),
                       by = .(HOUR = hour)]
 
 trip_period_dt = rbindlist(list(trip_start_dt, trip_end_dt), use.names = TRUE)
-# trip_period_dt[,PER:=as.integer(gsub("\\D","",PER))]
-# trip_period_dt[,GROUP:="ALL"]
 rm(trip_start_dt, trip_end_dt)
+
 trip_period_dt[,PER:=ifelse(HOUR > 12, paste0(HOUR - 12," PM"),
                             ifelse(HOUR == 12, "12 PM",
                                    ifelse(HOUR == 0, "12 AM", paste0(HOUR, " AM"))))]
@@ -130,15 +159,6 @@ setorder(trip_period_dt, TYPE, HOUR)
 trip_period_dt[,HOUR:=NULL]
 setcolorder(trip_period_dt, c("TYPE", "PER"))
 trip_period_dt[,CHART:="TYPICAL TRAVEL"]
-
-# setkey(trip_dt, d_taz_2020, mpm_period_shift)
-# trip_start_dt = trip_dt[
-#   !(is.na(d_taz_2020) | is.na(mpm_period_shift))
-#   ][CJ(d_taz_2020,
-#        mpm_period_shift,
-#        unique = TRUE)][, .(TRIPS = sum(trip_weight_household)),
-#                        by = .(ZONE = d_taz_2020,
-#                               PER = mpm_period_shift)][order(ZONE, PER)]
 
 
 # Daily trip destination data
@@ -157,22 +177,6 @@ destination_labels_ar = c(
   "Other (Unknown)"                            = 11,
   "Other/Missing"                              = 12
 )
-
-# destination_label_order = c(
-#   "Activity at Home",
-#   "Shopping/errands/appointments",
-#   "Work/Work-related",
-#   "Social/Recreation/Entertainment",
-#   "Drop-off/pick-up/accompany another person",
-#   "Dine out/get coffee or take-out",
-#   "Attending schoool/class",
-#   "Change travel mode",
-#   "Missing: Non-response",
-#   "Shopping/errands/appointments",
-#   "Other (Unknown)",
-#   "Other/Missing"
-# )
-
 
 trip_dt[,destination_labels:=names(destination_labels_ar)[match(d_purpose_category_imputed,
                                                                 destination_labels_ar)]]
@@ -212,8 +216,6 @@ work_mode_dt = person_dt[!work_mode %in% c(-9998, 995),.(PERSON = round(sum(weig
                          by = .(MODE = work_mode_labels)]
 
 setorder(work_mode_dt, -PERSON)
-# work_mode_dt[,ACTIVITY:="WORK"]
-# setcolorder(work_mode_dt, c("ACTIVITY"))
 # work_mode_dt[,.(MODE, PERSON, PERCENT = scales::percent(prop.table(PERSON)))]
 
 # Telecommute frequency by age
@@ -355,28 +357,48 @@ setorder(gender_dt, GENDER)
 # setcolorder(gender_dt, c("TYPE"))
 # gender_dt[,.(GENDER, PERSON, PERCENT = scales::percent(prop.table(PERSON)))]
 
+### Passive Data Scenario ########################################################
+##################################################################################
 
-# County to county trips
-taz_dt = data.table(taz_ls$features$properties)
-county_dt = data.table(county_ls$features$properties)
+# Chord Diagram
+trip_est_dt = trip_dt[,.(TRIPS = sum(trip_weight_household)),
+                      by = .(OTAZ = o_taz_2020,
+                             DTAZ = d_taz_2020)]
+trip_est_dt =  merge(trip_est_dt, agg_dt[,.(TAZ, HILLSBOROUGH_LBL_3, PINELLAS_LBL, PASCO_LBL,
+                                            HERNANDO_CITRUS_LBL_2, D7_ALL_LBL)],
+                     by.x = "OTAZ", by.y="TAZ", all.x = TRUE)
+trip_est_dt =  merge(trip_est_dt, agg_dt[,.(TAZ, HILLSBOROUGH_LBL_3, PINELLAS_LBL, PASCO_LBL,
+                                            HERNANDO_CITRUS_LBL_2, D7_ALL_LBL)],
+                     by.x = "DTAZ", by.y="TAZ", all.x = TRUE,
+                     suffixes = c("_O", "_D"))
+# Overall
+overall_trip_dt         = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = D7_ALL_LBL_O,
+                                                               TO = D7_ALL_LBL_D)]
+overall_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
+                      TO   = ifelse(is.na(TO), "External", TO))]
+# Hillsborough
+hillsborough_trip_dt    = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = HILLSBOROUGH_LBL_3_O,
+                                                               TO = HILLSBOROUGH_LBL_3_D)]
+hillsborough_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
+                           TO   = ifelse(is.na(TO), "External", TO))]
+# Pinellas
+pinellas_trip_dt        = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = PINELLAS_LBL_O,
+                                                               TO = PINELLAS_LBL_D)]
+pinellas_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
+                       TO   = ifelse(is.na(TO), "External", TO))]
+# Pasco
+pasco_trip_dt           = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = PASCO_LBL_O,
+                                                               TO = PASCO_LBL_D)]
+pasco_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
+                    TO   = ifelse(is.na(TO), "External", TO))]
+# Hernando/Citrus
+hernando_citrus_trip_dt = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = HERNANDO_CITRUS_LBL_2_O,
+                                                               TO = HERNANDO_CITRUS_LBL_2_D)]
+hernando_citrus_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
+                              TO   = ifelse(is.na(TO), "External", TO))]
 
-county_trips = merge(trip_dt[,.(o_taz=o_taz_2020,d_taz = d_taz_2020, trip_weight_household)],
-                     taz_dt,by.x = "o_taz", by.y="id", all.x = TRUE)
-county_trips = merge(county_trips,
-                     taz_dt,by.x = "d_taz", by.y="id", all.x = TRUE, suffixes = c("_o","_d"))
-setkey(county_trips, Cnty_Nm_o, Cnty_Nm_d)
-county_trips = county_trips[CJ(Cnty_Nm_o, Cnty_Nm_d, unique = TRUE)][,
-                                                                     .(TRIPS = 
-                                                                         sum(
-                                                                           trip_weight_household)),
-                                                                     by = .(Cnty_Nm_o, Cnty_Nm_d)]
-
-stopifnot(all.equal(county_trips[,sum(TRIPS,na.rm = TRUE)],
-                    trip_dt[,sum(trip_weight_household)]))
-county_trips[,":="(Cnty_Nm_o=ifelse(is.na(Cnty_Nm_o),"External",Cnty_Nm_o),
-                   Cnty_Nm_d=ifelse(is.na(Cnty_Nm_d),"External",Cnty_Nm_d),
-                   TRIPS=ifelse(is.na(TRIPS),0,TRIPS))]
-setnames(county_trips,c("Cnty_Nm_o", "Cnty_Nm_d"), c("FROM", "TO"))
+### Travel Survey Scenario #######################################################
+##################################################################################
 
 # Trips by mode by county
 #recode mode
@@ -408,6 +430,8 @@ trips_mode[is.na(TRIPS), TRIPS:=0]
 setkey(taz_dt, id)
 trips_mode[,COUNTY:=taz_dt[.(ZONE),Cnty_Nm]]
 setcolorder(trips_mode, c("ZONE", "COUNTY"))
+
+# trip_total = trips_mode[,.(TRIPS=sum(TRIPS), MODE = "TOTAL"),.()]
 
 # Trip mode by zone
 trip_zone = trip_dt[
@@ -491,6 +515,7 @@ day_pattern_dt = day_pattern_dt[CJ(person_group, day_pattern, unique = TRUE)][!(
                       `DAY PATTERN` =day_pattern)]
 
 # Time Use
+
 trip_dt[, arr_time:=as.POSIXct(arrival_time, format = "%Y-%m-%d %H:%M:%S", tz = "EST")]
 trip_dt[, hour := hour(arr_time)]
 trip_dt[, min  := minute(arr_time)]
@@ -498,9 +523,29 @@ trip_dt[, mpm  := hour * 60 + min]
 trip_dt[, mpm_period := as.integer(mpm / 30)]
 trip_dt[, mpm_period_shift := mpm_period - 5]
 trip_dt[mpm_period_shift < 1, mpm_period_shift := mpm_period_shift + 48]
-# trip_dt[, mpm_period_shift := paste0("PER", ifelse(mpm_period_shift<10, "0", ""), mpm_period_shift)]
+trip_dt[,end_time:=mpm_period_shift]
 
-time_use_dt = person_dt[,.(personid, age, employment, university_student)][trip_dt,on=.(personid)]
+trip_dt[, dep_time:=as.POSIXct(departure_time, format = "%Y-%m-%d %H:%M:%S", tz = "EST")]
+trip_dt[, hour := hour(dep_time)]
+trip_dt[, min  := minute(dep_time)]
+trip_dt[, mpm  := hour * 60 + min]
+trip_dt[, mpm_period := as.integer(mpm / 30)]
+trip_dt[, mpm_period_shift := mpm_period - 5]
+trip_dt[mpm_period_shift < 1, mpm_period_shift := mpm_period_shift + 48]
+trip_dt[,start_time:=mpm_period_shift]
+
+code_time = function(start_time, end_time){
+  if(end_time >= start_time){
+    return(seq(start_time, end_time, 1L))
+  } else if(start_time > end_time){
+    return(c(seq(start_time, 48, 1L), seq(1, end_time, 1L)))
+  }
+}
+
+
+
+time_use_dt = day_dt[,.(PER=1:48),.(personid, day_num, day_weight_person=day_weight_person/48)]
+time_use_dt = person_dt[,.(personid, age, employment, university_student)][time_use_dt,on=.(personid)]
 time_use_dt[,person_type:=ifelse(age==1,"CHILD AGE 16 PLUS",
                                      ifelse(age==3, "CHILD AGE 0 TO 4",
                                             ifelse(age==4, "CHILD AGE 5 TO 15",
@@ -508,31 +553,51 @@ time_use_dt[,person_type:=ifelse(age==1,"CHILD AGE 16 PLUS",
                                                           ifelse(employment==2, "PART TIME WORKER",
                                                                  ifelse(age >= 10 & employment > 2, "NON WORKER AGE 65 PLUS", "OTHER NON WORKING ADULT"))))))]
 time_use_dt[university_student==1,person_type:="UNIVERSITY STUDENT"]
-setkey(time_use_dt, person_type, mpm_period_shift, destination_labels)
-time_use_dt = time_use_dt[!d_purpose_category_imputed %in% c(-9998, 11, 12)][CJ(person_type, mpm_period_shift, destination_labels, unique = TRUE)][,.(QUANTITY = sum(trip_weight_household)),
-            by = .(PERSON_TYPE = person_type,
-                   PER = mpm_period_shift,
-                   ORIG_PURPOSE = destination_labels)]
-time_use_dt[is.na(QUANTITY), QUANTITY:=0]
-purpose_labels = c(
-  "Activity at Home" = "HOME",
-  "Work/Work-related" = "WORK",
-  "Attending schoool/class" = "SCHOOL",
-  "Drop-off/pick-up/accompany another person" = "ESCORT",
-  "Shopping/errands/appointments" = "SHOP",
-  "Dine out/get coffee or take-out" = "MEAL",
-  "Social/Recreation" = "SOC AND REC",
-  "Change travel mode" = "CHANGE MODE"
-)
-time_use_dt[,ORIG_PURPOSE:=purpose_labels[ORIG_PURPOSE]]
-time_use_all_dt = time_use_dt[,.(QUANTITY=sum(QUANTITY)),
-                              by = .(PER, ORIG_PURPOSE)]
-time_use_all_dt[,PERSON_TYPE:="ALL"]
-time_use_dt = rbindlist(list(time_use_dt, time_use_all_dt), use.names = TRUE)
+time_use_dt[,personid:=as.numeric(personid)]
+
+time_trip_dt = trip_dt[,.(PER=code_time(start_time, end_time)), by=.(trip_id)]
+time_trip_dt = trip_dt[,.(trip_id, personid, day_num, destination_labels, trip_weight_household)][time_trip_dt,on=.(trip_id)]
+time_trip_dt[,trip_id:=NULL]
+time_trip_dt = time_trip_dt[,.(TIME_USE = sum(trip_weight_household)),.(personid, day_num, PER, destination_labels)]
+
+tmp = merge(time_use_dt, time_trip_dt, by = c("personid", "day_num", "PER"), all = TRUE)
+tmp[is.na(destination_labels), destination_labels:="Activity at Home"]
+tmp[is.na(TIME_USE), TIME_USE:= day_weight_person]
+tmp2 = tmp[,.(TIME_USE=sum(TIME_USE)),.(PERSON_TYPE = person_type, PER, ORIG_PURPOSE = destination_labels)]
+tmp2 = tmp2[!is.na(PERSON_TYPE)]
+tmp2[,ORIG_PURPOSE:=purpose_labels[ORIG_PURPOSE]]
+tmp2[is.na(ORIG_PURPOSE), ORIG_PURPOSE:="OTHER"]
+time_use_dt = tmp2[,.(TIME_USE=sum(TIME_USE)),.(PERSON_TYPE, PER, ORIG_PURPOSE)]
+setkey(time_use_dt, PERSON_TYPE, PER, ORIG_PURPOSE)
+# fwrite(time_use_dt, "time_use.csv")
+
+
+# setkey(time_use_dt, person_type, mpm_period_shift, destination_labels)
+# time_use_dt = time_use_dt[!d_purpose_category_imputed %in% c(-9998, 11, 12)][CJ(person_type, mpm_period_shift, destination_labels, unique = TRUE)][,.(QUANTITY = sum(trip_weight_household)),
+#             by = .(PERSON_TYPE = person_type,
+#                    PER = mpm_period_shift,
+#                    ORIG_PURPOSE = destination_labels)]
+# time_use_dt[is.na(QUANTITY), QUANTITY:=0]
+# purpose_labels = c(
+#   "Activity at Home" = "HOME",
+#   "Work/Work-related" = "WORK",
+#   "Attending schoool/class" = "SCHOOL",
+#   "Drop-off/pick-up/accompany another person" = "ESCORT",
+#   "Shopping/errands/appointments" = "SHOP",
+#   "Dine out/get coffee or take-out" = "MEAL",
+#   "Social/Recreation" = "SOC AND REC",
+#   "Change travel mode" = "CHANGE MODE"
+# )
+# time_use_dt[,ORIG_PURPOSE:=purpose_labels[ORIG_PURPOSE]]
+# time_use_all_dt = time_use_dt[,.(QUANTITY=sum(QUANTITY)),
+#                               by = .(PER, ORIG_PURPOSE)]
+# time_use_all_dt[,PERSON_TYPE:="ALL"]
+# time_use_dt = rbindlist(list(time_use_dt, time_use_all_dt), use.names = TRUE)
 
 ### Write output data ############################################################
 ##################################################################################
 
+## Executive Summary
 # Snapshot
 fwrite(snapshot_dt, file = snapshot_file)
 # Trips period
@@ -546,24 +611,45 @@ fwrite(telecommute_freq_dt, file = telecommute_file)
 # Bicycle frequency by age
 fwrite(bike_freq_dt, file = bike_file)
 # Commute frequency by age
-fwrite(commute_frequency_dt, file = commute_freq_file)
+# fwrite(commute_frequency_dt, file = commute_freq_file)
 # Demographics
 fwrite(age_group_dt, file = age_file)
 fwrite(gender_dt, file = gender_file)
-# Trips OD
-fwrite(county_trips,#[!(Cnty_Nm_o=="External" | Cnty_Nm_d == "External")], 
-       file = trip_od_file1)
-fwrite(county_trips,#[!(Cnty_Nm_o=="External" | Cnty_Nm_d == "External")], 
-       file = trip_od_file2)
 
-# Trips Zone
-fwrite(trip_zone, file = trip_zone_file1)
-fwrite(trip_zone, file = trip_zone_file2)
-fwrite(trip_zone, file = trip_zone_file3)
+## Passive Data
+# Geojson files
+st_write(overall_sf,         driver = "GeoJSON", dsn = overall_geo_file,         delete_dsn = TRUE)
+st_write(hillsborough_sf,    driver = "GeoJSON", dsn = hillsborough_geo_file,    delete_dsn = TRUE)
+st_write(pinellas_sf,        driver = "GeoJSON", dsn = pinellas_geo_file,        delete_dsn = TRUE)
+st_write(pasco_sf,           driver = "GeoJSON", dsn = pasco_geo_file,           delete_dsn = TRUE)
+st_write(hernando_citrus_sf, driver = "GeoJSON", dsn = hernando_citrus_geo_file, delete_dsn = TRUE)
+
+# Trip OD
+fwrite(overall_trip_dt,         file = trip_od_overall_file)
+fwrite(hillsborough_trip_dt,    file = trip_od_hillsborough_file)
+fwrite(pinellas_trip_dt,        file = trip_od_pinellas_file)
+fwrite(pasco_trip_dt,           file = trip_od_pasco_file)
+fwrite(hernando_citrus_trip_dt, file = trip_od_hernando_citrus_file)
+
+## Travel Survey
+# Trip OD
+fwrite(overall_trip_dt,         file = trip_od_overall_file2)
+fwrite(hillsborough_trip_dt,    file = trip_od_hillsborough_file2)
+fwrite(pinellas_trip_dt,        file = trip_od_pinellas_file2)
+fwrite(pasco_trip_dt,           file = trip_od_pasco_file2)
+fwrite(hernando_citrus_trip_dt, file = trip_od_hernando_citrus_file2)
 
 # Trips Mode
 fwrite(trips_mode, file = trip_mode_file)
+# Seasonal trips mode
 fwrite(seasonal_trips_mode, file = seasonal_trip_mode_file)
+# University trips mode
 fwrite(uni_trips_mode, file = uni_trip_mode_file)
+# Trips Zone
+fwrite(trip_zone, file = trip_zone_file)
+# Day Pattern
 fwrite(day_pattern_dt, file = day_pattern_file)
+# Time Use
 fwrite(time_use_dt, file = time_use_file)
+
+
