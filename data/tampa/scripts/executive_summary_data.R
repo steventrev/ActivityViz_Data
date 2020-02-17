@@ -17,7 +17,10 @@ library(geojsonsf)
 ##################################################################################
 
 # Input files
-data_dir   = getwd()
+data_dir   = normalizePath(paste0("Q:/Projects/FL/FDOT/R1705_Tampa Bay Surveys/",
+                                  "7.Documentation/2.Main/deliverable_20191218/",
+                                  "HTS Data files (CSV)"),
+                           winslash = "/")
 
 household_file = file.path(data_dir, "TBRTS-HTS_Household_Table_20191218.csv")
 person_file    = file.path(data_dir, "TBRTS-HTS_Person_Table_20191218.csv") 
@@ -92,6 +95,14 @@ county_ls = fromJSON(county_file)
 taz_sf = geojson_sf(taz_file)
 taz_dt = data.table(taz_sf)
 agg_dt = fread(agg_file)
+agg_dt[,HILLSBOROUGH_LBL_3:=gsub("\\&|\\/","",HILLSBOROUGH_LBL_3)]
+agg_dt[,HILLSBOROUGH_LBL_3:=gsub("\\s+","_",HILLSBOROUGH_LBL_3)]
+agg_dt[,PINELLAS_LBL:=gsub("\\&|\\/","",PINELLAS_LBL)]
+agg_dt[,PINELLAS_LBL:=gsub("\\s+","_",PINELLAS_LBL)]
+agg_dt[,PASCO_LBL:=gsub("\\&|\\/","",PASCO_LBL)]
+agg_dt[,PASCO_LBL:=gsub("\\s+","_",PASCO_LBL)]
+agg_dt[,HERNANDO_CITRUS_LBL_2:=gsub("\\&|\\/","",HERNANDO_CITRUS_LBL_2)]
+agg_dt[,HERNANDO_CITRUS_LBL_2:=gsub("\\s+","_",HERNANDO_CITRUS_LBL_2)]
 agg_sf = st_as_sf(merge(as.data.frame(agg_dt), taz_sf, by.x="TAZ", by.y="id",all.x = TRUE))
 
 
@@ -515,6 +526,17 @@ day_pattern_dt = day_pattern_dt[CJ(person_group, day_pattern, unique = TRUE)][!(
                       `DAY PATTERN` =day_pattern)]
 
 # Time Use
+
+purpose_labels = c(
+  "Activity at Home" = "HOME",
+  "Work/Work-related" = "WORK",
+  "Attending schoool/class" = "SCHOOL",
+  "Drop-off/pick-up/accompany another person" = "ESCORT",
+  "Shopping/errands/appointments" = "SHOP",
+  "Dine out/get coffee or take-out" = "MEAL",
+  "Social/Recreation" = "SOC AND REC",
+  "Change travel mode" = "CHANGE MODE"
+)
 
 trip_dt[, arr_time:=as.POSIXct(arrival_time, format = "%Y-%m-%d %H:%M:%S", tz = "EST")]
 trip_dt[, hour := hour(arr_time)]

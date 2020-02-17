@@ -1,168 +1,168 @@
 FROM,TO,TRIPS
 External,External,210053.41661
-Hillsborough & Manatee Spur,External,70562.23868
+Hillsborough_Manatee_Spur,External,70562.23868
 Pinellas,External,25297.54815
 Pasco,External,5970.96797
-Spring Hill and SW Hernando,External,1214.17207
-Croom WMA & NE Hernando,External,32.17132
-Brooksville Area,External,150.9042
-South Central Hernando,External,142.88559
-Richloam WMA and E Hernando,External,133.29332
-North Central Citrus,External,4761.66007
-Crystal River and NW Citrus,External,5377.53467
-Inverness and NE Citrus,External,921.08722
-Homosassa Springs & SW Citrus,External,2681.73584
-South East Citrus,External,626.04014
-Hillsborough & Manatee Spur,Hillsborough & Manatee Spur,5829310.71182998
-Pinellas,Hillsborough & Manatee Spur,225228.55334
-Pasco,Hillsborough & Manatee Spur,185618.86929
-External,Hillsborough & Manatee Spur,59251.32758
-Brooksville Area,Hillsborough & Manatee Spur,480.37276
-Spring Hill and SW Hernando,Hillsborough & Manatee Spur,4799.66545
-South Central Hernando,Hillsborough & Manatee Spur,2549.38654
-Richloam WMA and E Hernando,Hillsborough & Manatee Spur,2322.90179
-Homosassa Springs & SW Citrus,Hillsborough & Manatee Spur,203.51517
-Chassahowitzka WMA & NW Hernando,Hillsborough & Manatee Spur,278.03035
-South East Citrus,Hillsborough & Manatee Spur,4046.12433
-North Central Citrus,Hillsborough & Manatee Spur,138.90833
-Croom WMA & NE Hernando,Hillsborough & Manatee Spur,32.17132
+Spring_Hill_and_SW_Hernando,External,1214.17207
+Croom_WMA_NE_Hernando,External,32.17132
+Brooksville_Area,External,150.9042
+South_Central_Hernando,External,142.88559
+Richloam_WMA_and_E_Hernando,External,133.29332
+North_Central_Citrus,External,4761.66007
+Crystal_River_and_NW_Citrus,External,5377.53467
+Inverness_and_NE_Citrus,External,921.08722
+Homosassa_Springs_SW_Citrus,External,2681.73584
+South_East_Citrus,External,626.04014
+Hillsborough_Manatee_Spur,Hillsborough_Manatee_Spur,5829310.71182998
+Pinellas,Hillsborough_Manatee_Spur,225228.55334
+Pasco,Hillsborough_Manatee_Spur,185618.86929
+External,Hillsborough_Manatee_Spur,59251.32758
+Brooksville_Area,Hillsborough_Manatee_Spur,480.37276
+Spring_Hill_and_SW_Hernando,Hillsborough_Manatee_Spur,4799.66545
+South_Central_Hernando,Hillsborough_Manatee_Spur,2549.38654
+Richloam_WMA_and_E_Hernando,Hillsborough_Manatee_Spur,2322.90179
+Homosassa_Springs_SW_Citrus,Hillsborough_Manatee_Spur,203.51517
+Chassahowitzka_WMA_NW_Hernando,Hillsborough_Manatee_Spur,278.03035
+South_East_Citrus,Hillsborough_Manatee_Spur,4046.12433
+North_Central_Citrus,Hillsborough_Manatee_Spur,138.90833
+Croom_WMA_NE_Hernando,Hillsborough_Manatee_Spur,32.17132
 Pinellas,Pinellas,3538763.35511998
 Pasco,Pinellas,105943.22158
-Hillsborough & Manatee Spur,Pinellas,222981.92086
+Hillsborough_Manatee_Spur,Pinellas,222981.92086
 External,Pinellas,19223.01157
-Spring Hill and SW Hernando,Pinellas,2404.25101
-Brooksville Area,Pinellas,118.40302
-Homosassa Springs & SW Citrus,Pinellas,545.91627
-Chassahowitzka WMA & NW Hernando,Pinellas,84.01617
-Croom WMA & NE Hernando,Pinellas,98.27294
-North Central Citrus,Pinellas,0
-South Central Hernando,Pinellas,0
-Crystal River and NW Citrus,Pinellas,0
-Hillsborough & Manatee Spur,Pasco,165598.8798
+Spring_Hill_and_SW_Hernando,Pinellas,2404.25101
+Brooksville_Area,Pinellas,118.40302
+Homosassa_Springs_SW_Citrus,Pinellas,545.91627
+Chassahowitzka_WMA_NW_Hernando,Pinellas,84.01617
+Croom_WMA_NE_Hernando,Pinellas,98.27294
+North_Central_Citrus,Pinellas,0
+South_Central_Hernando,Pinellas,0
+Crystal_River_and_NW_Citrus,Pinellas,0
+Hillsborough_Manatee_Spur,Pasco,165598.8798
 Pasco,Pasco,1581165.54056999
-Spring Hill and SW Hernando,Pasco,25673.45342
+Spring_Hill_and_SW_Hernando,Pasco,25673.45342
 External,Pasco,3792.45779
-Lake Lindsey & N. Central Hernando,Pasco,0
+Lake_Lindsey_N._Central_Hernando,Pasco,0
 Pinellas,Pasco,99415.3737
-Brooksville Area,Pasco,8721.59095
-Homosassa Springs & SW Citrus,Pasco,3308.3657
-South Central Hernando,Pasco,3722.10984
-Richloam WMA and E Hernando,Pasco,3632.22703
-Crystal River and NW Citrus,Pasco,0
-Pinellas,Chassahowitzka WMA & NW Hernando,0
-Pasco,Chassahowitzka WMA & NW Hernando,0
-Chassahowitzka WMA & NW Hernando,Chassahowitzka WMA & NW Hernando,2832.8092
-Spring Hill and SW Hernando,Chassahowitzka WMA & NW Hernando,13897.41086
-South Central Hernando,Chassahowitzka WMA & NW Hernando,756.8814
-Chassahowitzka WMA & NW Hernando,Spring Hill and SW Hernando,16199.29287
-Spring Hill and SW Hernando,Spring Hill and SW Hernando,229276.40348
-Brooksville Area,Spring Hill and SW Hernando,16861.20624
-Pasco,Spring Hill and SW Hernando,28427.8978
-Hillsborough & Manatee Spur,Spring Hill and SW Hernando,3750.82715
-Pinellas,Spring Hill and SW Hernando,1474.61215
-External,Spring Hill and SW Hernando,2565.36207
-Homosassa Springs & SW Citrus,Spring Hill and SW Hernando,2826.47614
-Hillsborough & Manatee Spur,Chassahowitzka WMA & NW Hernando,196.71632
-Homosassa Springs & SW Citrus,Chassahowitzka WMA & NW Hernando,0
-Spring Hill and SW Hernando,Lake Lindsey & N. Central Hernando,4478.17531
-Brooksville Area,Chassahowitzka WMA & NW Hernando,606.96709
-Lake Lindsey & N. Central Hernando,Lake Lindsey & N. Central Hernando,213.82258
-Brooksville Area,Lake Lindsey & N. Central Hernando,889.85183
-Pasco,Lake Lindsey & N. Central Hernando,0
-Lake Lindsey & N. Central Hernando,Spring Hill and SW Hernando,7468.51759
-Brooksville Area,Brooksville Area,35187.57965
-Spring Hill and SW Hernando,Brooksville Area,20774.85573
-Crystal River and NW Citrus,Spring Hill and SW Hernando,820.6184
-South Central Hernando,Spring Hill and SW Hernando,7600.78094
-South East Citrus,Spring Hill and SW Hernando,0
-Chassahowitzka WMA & NW Hernando,Brooksville Area,66.85124
-Lake Lindsey & N. Central Hernando,Brooksville Area,709.84484
-South Central Hernando,Brooksville Area,5446.05807
-Homosassa Springs & SW Citrus,Brooksville Area,1164.388
-Inverness and NE Citrus,Croom WMA & NE Hernando,244.33935
-Croom WMA & NE Hernando,Croom WMA & NE Hernando,268.19562
-Spring Hill and SW Hernando,Croom WMA & NE Hernando,102.16152
-Brooksville Area,Croom WMA & NE Hernando,2928.67581
-Pinellas,Croom WMA & NE Hernando,98.27294
-South Central Hernando,Croom WMA & NE Hernando,0
-Richloam WMA and E Hernando,Croom WMA & NE Hernando,0
-Homosassa Springs & SW Citrus,Croom WMA & NE Hernando,642.92399
-External,Croom WMA & NE Hernando,22.76235
-Hillsborough & Manatee Spur,Croom WMA & NE Hernando,22.76235
-Croom WMA & NE Hernando,Spring Hill and SW Hernando,256.72736
-North Central Citrus,Spring Hill and SW Hernando,346.61478
-Inverness and NE Citrus,Spring Hill and SW Hernando,0
-Pasco,Brooksville Area,4221.85079
-External,Brooksville Area,43.51218
-Brooksville Area,South Central Hernando,2693.52404
-South Central Hernando,South Central Hernando,3394.5528
-Spring Hill and SW Hernando,South Central Hernando,8938.34653
-Pasco,South Central Hernando,6431.10279
-Lake Lindsey & N. Central Hernando,South Central Hernando,0
-Richloam WMA and E Hernando,South Central Hernando,40.24514
-Richloam WMA and E Hernando,Spring Hill and SW Hernando,98.31669
-Hillsborough & Manatee Spur,South Central Hernando,1679.59589
-Croom WMA & NE Hernando,South Central Hernando,146.66007
-Homosassa Springs & SW Citrus,South Central Hernando,98.30714
-Crystal River and NW Citrus,South Central Hernando,100.62937
-Croom WMA & NE Hernando,Brooksville Area,2587.08363
-Hillsborough & Manatee Spur,Brooksville Area,345.42532
-Richloam WMA and E Hernando,Brooksville Area,53.09724
-Pinellas,Brooksville Area,118.40302
-External,South Central Hernando,101.09662
-Pasco,Richloam WMA and E Hernando,2928.8867
-Brooksville Area,Richloam WMA and E Hernando,53.09724
-Richloam WMA and E Hernando,Richloam WMA and E Hernando,8078.6076
-South Central Hernando,Richloam WMA and E Hernando,40.24514
-Hillsborough & Manatee Spur,Richloam WMA and E Hernando,2729.51712
-External,Richloam WMA and E Hernando,26.54862
-Croom WMA & NE Hernando,Richloam WMA and E Hernando,0
-Spring Hill and SW Hernando,Richloam WMA and E Hernando,138.95656
-Crystal River and NW Citrus,Crystal River and NW Citrus,53034.90673
-External,North Central Citrus,5004.37109
-North Central Citrus,North Central Citrus,101735.0353
-Crystal River and NW Citrus,North Central Citrus,24693.71682
-Homosassa Springs & SW Citrus,North Central Citrus,14552.96218
-Homosassa Springs & SW Citrus,Crystal River and NW Citrus,7463.57765
-External,Crystal River and NW Citrus,2730.43242
-North Central Citrus,Crystal River and NW Citrus,33215.19364
-Pasco,Crystal River and NW Citrus,2454.06016
-Spring Hill and SW Hernando,Crystal River and NW Citrus,820.6184
-Inverness and NE Citrus,Crystal River and NW Citrus,11371.67989
-Crystal River and NW Citrus,Homosassa Springs & SW Citrus,10768.94441
-Homosassa Springs & SW Citrus,Homosassa Springs & SW Citrus,38323.15644
-Pinellas,North Central Citrus,0
-Inverness and NE Citrus,North Central Citrus,25495.66433
-Hillsborough & Manatee Spur,Crystal River and NW Citrus,0
-Hillsborough & Manatee Spur,North Central Citrus,98.28257
-South East Citrus,North Central Citrus,7327.94928
-Spring Hill and SW Hernando,North Central Citrus,346.61478
-North Central Citrus,Inverness and NE Citrus,24686.92473
-External,Inverness and NE Citrus,676.88317
-Inverness and NE Citrus,Inverness and NE Citrus,37445.03982
-Homosassa Springs & SW Citrus,Inverness and NE Citrus,3762.79202
-South East Citrus,Inverness and NE Citrus,20547.53544
-Hillsborough & Manatee Spur,Inverness and NE Citrus,42.11615
-Crystal River and NW Citrus,Inverness and NE Citrus,9757.42564
-External,Homosassa Springs & SW Citrus,1993.50129
-North Central Citrus,Homosassa Springs & SW Citrus,14166.35088
-Inverness and NE Citrus,Homosassa Springs & SW Citrus,895.8876
-South East Citrus,Homosassa Springs & SW Citrus,39.52553
-Pinellas,Homosassa Springs & SW Citrus,513.07672
-Spring Hill and SW Hernando,Homosassa Springs & SW Citrus,3277.30449
-Pasco,Homosassa Springs & SW Citrus,1.1909
-South Central Hernando,Crystal River and NW Citrus,153.3375
-South East Citrus,Crystal River and NW Citrus,3650.51144
-Hillsborough & Manatee Spur,Homosassa Springs & SW Citrus,37.83016
-Homosassa Springs & SW Citrus,South East Citrus,22.76534
-Croom WMA & NE Hernando,Inverness and NE Citrus,257.57865
-Brooksville Area,Homosassa Springs & SW Citrus,1017.29657
-Chassahowitzka WMA & NW Hernando,Homosassa Springs & SW Citrus,0
-South Central Hernando,Homosassa Springs & SW Citrus,98.30714
-Hillsborough & Manatee Spur,South East Citrus,3409.737
-North Central Citrus,South East Citrus,9063.65656
-Crystal River and NW Citrus,South East Citrus,3449.26253
-Inverness and NE Citrus,South East Citrus,15867.30411
-South East Citrus,South East Citrus,10996.3153
-External,South East Citrus,106.74478
-Spring Hill and SW Hernando,South East Citrus,0
+Brooksville_Area,Pasco,8721.59095
+Homosassa_Springs_SW_Citrus,Pasco,3308.3657
+South_Central_Hernando,Pasco,3722.10984
+Richloam_WMA_and_E_Hernando,Pasco,3632.22703
+Crystal_River_and_NW_Citrus,Pasco,0
+Pinellas,Chassahowitzka_WMA_NW_Hernando,0
+Pasco,Chassahowitzka_WMA_NW_Hernando,0
+Chassahowitzka_WMA_NW_Hernando,Chassahowitzka_WMA_NW_Hernando,2832.8092
+Spring_Hill_and_SW_Hernando,Chassahowitzka_WMA_NW_Hernando,13897.41086
+South_Central_Hernando,Chassahowitzka_WMA_NW_Hernando,756.8814
+Chassahowitzka_WMA_NW_Hernando,Spring_Hill_and_SW_Hernando,16199.29287
+Spring_Hill_and_SW_Hernando,Spring_Hill_and_SW_Hernando,229276.40348
+Brooksville_Area,Spring_Hill_and_SW_Hernando,16861.20624
+Pasco,Spring_Hill_and_SW_Hernando,28427.8978
+Hillsborough_Manatee_Spur,Spring_Hill_and_SW_Hernando,3750.82715
+Pinellas,Spring_Hill_and_SW_Hernando,1474.61215
+External,Spring_Hill_and_SW_Hernando,2565.36207
+Homosassa_Springs_SW_Citrus,Spring_Hill_and_SW_Hernando,2826.47614
+Hillsborough_Manatee_Spur,Chassahowitzka_WMA_NW_Hernando,196.71632
+Homosassa_Springs_SW_Citrus,Chassahowitzka_WMA_NW_Hernando,0
+Spring_Hill_and_SW_Hernando,Lake_Lindsey_N._Central_Hernando,4478.17531
+Brooksville_Area,Chassahowitzka_WMA_NW_Hernando,606.96709
+Lake_Lindsey_N._Central_Hernando,Lake_Lindsey_N._Central_Hernando,213.82258
+Brooksville_Area,Lake_Lindsey_N._Central_Hernando,889.85183
+Pasco,Lake_Lindsey_N._Central_Hernando,0
+Lake_Lindsey_N._Central_Hernando,Spring_Hill_and_SW_Hernando,7468.51759
+Brooksville_Area,Brooksville_Area,35187.57965
+Spring_Hill_and_SW_Hernando,Brooksville_Area,20774.85573
+Crystal_River_and_NW_Citrus,Spring_Hill_and_SW_Hernando,820.6184
+South_Central_Hernando,Spring_Hill_and_SW_Hernando,7600.78094
+South_East_Citrus,Spring_Hill_and_SW_Hernando,0
+Chassahowitzka_WMA_NW_Hernando,Brooksville_Area,66.85124
+Lake_Lindsey_N._Central_Hernando,Brooksville_Area,709.84484
+South_Central_Hernando,Brooksville_Area,5446.05807
+Homosassa_Springs_SW_Citrus,Brooksville_Area,1164.388
+Inverness_and_NE_Citrus,Croom_WMA_NE_Hernando,244.33935
+Croom_WMA_NE_Hernando,Croom_WMA_NE_Hernando,268.19562
+Spring_Hill_and_SW_Hernando,Croom_WMA_NE_Hernando,102.16152
+Brooksville_Area,Croom_WMA_NE_Hernando,2928.67581
+Pinellas,Croom_WMA_NE_Hernando,98.27294
+South_Central_Hernando,Croom_WMA_NE_Hernando,0
+Richloam_WMA_and_E_Hernando,Croom_WMA_NE_Hernando,0
+Homosassa_Springs_SW_Citrus,Croom_WMA_NE_Hernando,642.92399
+External,Croom_WMA_NE_Hernando,22.76235
+Hillsborough_Manatee_Spur,Croom_WMA_NE_Hernando,22.76235
+Croom_WMA_NE_Hernando,Spring_Hill_and_SW_Hernando,256.72736
+North_Central_Citrus,Spring_Hill_and_SW_Hernando,346.61478
+Inverness_and_NE_Citrus,Spring_Hill_and_SW_Hernando,0
+Pasco,Brooksville_Area,4221.85079
+External,Brooksville_Area,43.51218
+Brooksville_Area,South_Central_Hernando,2693.52404
+South_Central_Hernando,South_Central_Hernando,3394.5528
+Spring_Hill_and_SW_Hernando,South_Central_Hernando,8938.34653
+Pasco,South_Central_Hernando,6431.10279
+Lake_Lindsey_N._Central_Hernando,South_Central_Hernando,0
+Richloam_WMA_and_E_Hernando,South_Central_Hernando,40.24514
+Richloam_WMA_and_E_Hernando,Spring_Hill_and_SW_Hernando,98.31669
+Hillsborough_Manatee_Spur,South_Central_Hernando,1679.59589
+Croom_WMA_NE_Hernando,South_Central_Hernando,146.66007
+Homosassa_Springs_SW_Citrus,South_Central_Hernando,98.30714
+Crystal_River_and_NW_Citrus,South_Central_Hernando,100.62937
+Croom_WMA_NE_Hernando,Brooksville_Area,2587.08363
+Hillsborough_Manatee_Spur,Brooksville_Area,345.42532
+Richloam_WMA_and_E_Hernando,Brooksville_Area,53.09724
+Pinellas,Brooksville_Area,118.40302
+External,South_Central_Hernando,101.09662
+Pasco,Richloam_WMA_and_E_Hernando,2928.8867
+Brooksville_Area,Richloam_WMA_and_E_Hernando,53.09724
+Richloam_WMA_and_E_Hernando,Richloam_WMA_and_E_Hernando,8078.6076
+South_Central_Hernando,Richloam_WMA_and_E_Hernando,40.24514
+Hillsborough_Manatee_Spur,Richloam_WMA_and_E_Hernando,2729.51712
+External,Richloam_WMA_and_E_Hernando,26.54862
+Croom_WMA_NE_Hernando,Richloam_WMA_and_E_Hernando,0
+Spring_Hill_and_SW_Hernando,Richloam_WMA_and_E_Hernando,138.95656
+Crystal_River_and_NW_Citrus,Crystal_River_and_NW_Citrus,53034.90673
+External,North_Central_Citrus,5004.37109
+North_Central_Citrus,North_Central_Citrus,101735.0353
+Crystal_River_and_NW_Citrus,North_Central_Citrus,24693.71682
+Homosassa_Springs_SW_Citrus,North_Central_Citrus,14552.96218
+Homosassa_Springs_SW_Citrus,Crystal_River_and_NW_Citrus,7463.57765
+External,Crystal_River_and_NW_Citrus,2730.43242
+North_Central_Citrus,Crystal_River_and_NW_Citrus,33215.19364
+Pasco,Crystal_River_and_NW_Citrus,2454.06016
+Spring_Hill_and_SW_Hernando,Crystal_River_and_NW_Citrus,820.6184
+Inverness_and_NE_Citrus,Crystal_River_and_NW_Citrus,11371.67989
+Crystal_River_and_NW_Citrus,Homosassa_Springs_SW_Citrus,10768.94441
+Homosassa_Springs_SW_Citrus,Homosassa_Springs_SW_Citrus,38323.15644
+Pinellas,North_Central_Citrus,0
+Inverness_and_NE_Citrus,North_Central_Citrus,25495.66433
+Hillsborough_Manatee_Spur,Crystal_River_and_NW_Citrus,0
+Hillsborough_Manatee_Spur,North_Central_Citrus,98.28257
+South_East_Citrus,North_Central_Citrus,7327.94928
+Spring_Hill_and_SW_Hernando,North_Central_Citrus,346.61478
+North_Central_Citrus,Inverness_and_NE_Citrus,24686.92473
+External,Inverness_and_NE_Citrus,676.88317
+Inverness_and_NE_Citrus,Inverness_and_NE_Citrus,37445.03982
+Homosassa_Springs_SW_Citrus,Inverness_and_NE_Citrus,3762.79202
+South_East_Citrus,Inverness_and_NE_Citrus,20547.53544
+Hillsborough_Manatee_Spur,Inverness_and_NE_Citrus,42.11615
+Crystal_River_and_NW_Citrus,Inverness_and_NE_Citrus,9757.42564
+External,Homosassa_Springs_SW_Citrus,1993.50129
+North_Central_Citrus,Homosassa_Springs_SW_Citrus,14166.35088
+Inverness_and_NE_Citrus,Homosassa_Springs_SW_Citrus,895.8876
+South_East_Citrus,Homosassa_Springs_SW_Citrus,39.52553
+Pinellas,Homosassa_Springs_SW_Citrus,513.07672
+Spring_Hill_and_SW_Hernando,Homosassa_Springs_SW_Citrus,3277.30449
+Pasco,Homosassa_Springs_SW_Citrus,1.1909
+South_Central_Hernando,Crystal_River_and_NW_Citrus,153.3375
+South_East_Citrus,Crystal_River_and_NW_Citrus,3650.51144
+Hillsborough_Manatee_Spur,Homosassa_Springs_SW_Citrus,37.83016
+Homosassa_Springs_SW_Citrus,South_East_Citrus,22.76534
+Croom_WMA_NE_Hernando,Inverness_and_NE_Citrus,257.57865
+Brooksville_Area,Homosassa_Springs_SW_Citrus,1017.29657
+Chassahowitzka_WMA_NW_Hernando,Homosassa_Springs_SW_Citrus,0
+South_Central_Hernando,Homosassa_Springs_SW_Citrus,98.30714
+Hillsborough_Manatee_Spur,South_East_Citrus,3409.737
+North_Central_Citrus,South_East_Citrus,9063.65656
+Crystal_River_and_NW_Citrus,South_East_Citrus,3449.26253
+Inverness_and_NE_Citrus,South_East_Citrus,15867.30411
+South_East_Citrus,South_East_Citrus,10996.3153
+External,South_East_Citrus,106.74478
+Spring_Hill_and_SW_Hernando,South_East_Citrus,0
