@@ -17,10 +17,7 @@ library(geojsonsf)
 ##################################################################################
 
 # Input files
-data_dir   = normalizePath(paste0("Q:/Projects/FL/FDOT/R1705_Tampa Bay Surveys/",
-                                  "7.Documentation/2.Main/deliverable_20191218/",
-                                  "HTS Data files (CSV)"),
-                           winslash = "/")
+data_dir   = getwd()
 
 household_file = file.path(data_dir, "TBRTS-HTS_Household_Table_20191218.csv")
 person_file    = file.path(data_dir, "TBRTS-HTS_Person_Table_20191218.csv") 
