@@ -46,11 +46,11 @@
             {"name":"Time Use","config":"Default","file":"time_use.csv","info":"Displays person out-of-home travel purpose by time of day. The vertical axis displays the sum or percent of activity and the horizontal axis displays the period of the day"}
             ],
         "Chord": [
-            {"name":"Overall","config":"Overall","file":"trip_od_overall.csv","info":"Daily trips OD"},
-            {"name":"Hillsborough","config":"Hillsborough","file":"trip_od_hillsborough.csv","info":"Daily trips OD"},
-            {"name":"Pinellas","config":"Pinellas","file":"trip_od_pinellas.csv","info":"Daily trips OD"},
-            {"name":"Pasco","config":"Pasco","file":"trip_od_pasco.csv","info":"Daily trips OD"},
-            {"name":"Hernando and Citrus","config":"Hernando","file":"trip_od_hernando_citrus.csv","info":"Daily trips OD"}
+            {"name":"Overall OD Flows","config":"Overall","file":"trip_od_overall.csv","info":"Daily trips OD"},
+            {"name":"Hillsborough OD Flows","config":"Hillsborough","file":"trip_od_hillsborough.csv","info":"Daily trips OD"},
+            {"name":"Pinellas OD Flows","config":"Pinellas","file":"trip_od_pinellas.csv","info":"Daily trips OD"},
+            {"name":"Pasco OD Flows","config":"Pasco","file":"trip_od_pasco.csv","info":"Daily trips OD"},
+            {"name":"Hernando and Citrus OD Flows","config":"Hernando","file":"trip_od_hernando_citrus.csv","info":"Daily trips OD"}
             ]
       }
     },
@@ -58,11 +58,11 @@
       "title": "- 2019 Processing",
       "visualizations": {
         "Chord": [
-            {"name":"Overall","config":"Overall","file":"trip_od_overall.csv","info":"Daily trips OD"},
-            {"name":"Hillsborough","config":"Hillsborough","file":"trip_od_hillsborough.csv","info":"Daily trips OD"},
-            {"name":"Pinellas","config":"Pinellas","file":"trip_od_pinellas.csv","info":"Daily trips OD"},
-            {"name":"Pasco","config":"Pasco","file":"trip_od_pasco.csv","info":"Daily trips OD"},
-            {"name":"Hernando and Citrus","config":"Hernando","file":"trip_od_hernando_citrus.csv","info":"Daily trips OD"}
+            {"name":"Overall OD Flows","config":"Overall","file":"trip_od_overall.csv","info":"Daily trips OD"},
+            {"name":"Hillsborough OD Flows","config":"Hillsborough","file":"trip_od_hillsborough.csv","info":"Daily trips OD"},
+            {"name":"Pinellas OD Flows","config":"Pinellas","file":"trip_od_pinellas.csv","info":"Daily trips OD"},
+            {"name":"Pasco OD Flows","config":"Pasco","file":"trip_od_pasco.csv","info":"Daily trips OD"},
+            {"name":"Hernando and Citrus OD Flows","config":"Hernando","file":"trip_od_hernando_citrus.csv","info":"Daily trips OD"}
             ]
       }
     }
@@ -105,7 +105,7 @@
       "ChartType": 3
     },
     "Pie": {
-      "ChartType": 1
+      "ChartType": 2
     }
   },
   "Chord": {

@@ -439,7 +439,7 @@ setkey(taz_dt, id)
 trips_mode[,COUNTY:=taz_dt[.(ZONE),Cnty_Nm]]
 setcolorder(trips_mode, c("ZONE", "COUNTY"))
 
-trip_total = trips_mode[,.(TRIPS=sum(TRIPS), MODE = "TOTAL"),.(ZONE, COUNTY)]
+trip_total = trips_mode[,.(TRIPS=sum(TRIPS), MODE = "ALL_MODES"),.(ZONE, COUNTY)]
 trips_mode = rbindlist(list(trips_mode, trip_total), use.names = TRUE)
 
 # Trip mode by zone
@@ -468,7 +468,7 @@ seasonal_trips_mode[is.na(TRIPS), TRIPS:=0]
 seasonal_trips_mode[,COUNTY:=taz_dt[.(ZONE),Cnty_Nm]]
 setcolorder(seasonal_trips_mode, c("ZONE", "COUNTY"))
 
-trip_total = seasonal_trips_mode[,.(TRIPS=sum(TRIPS), MODE = "TOTAL"),.(ZONE, COUNTY)]
+trip_total = seasonal_trips_mode[,.(TRIPS=sum(TRIPS), MODE = "ALL_MODES"),.(ZONE, COUNTY)]
 seasonal_trips_mode = rbindlist(list(seasonal_trips_mode, trip_total), use.names = TRUE)
 
 # University student
@@ -486,7 +486,7 @@ uni_trips_mode[is.na(TRIPS), TRIPS:=0]
 uni_trips_mode[,COUNTY:=taz_dt[.(ZONE),Cnty_Nm]]
 setcolorder(uni_trips_mode, c("ZONE", "COUNTY"))
 
-trip_total = uni_trips_mode[,.(TRIPS=sum(TRIPS), MODE = "TOTAL"),.(ZONE, COUNTY)]
+trip_total = uni_trips_mode[,.(TRIPS=sum(TRIPS), MODE = "ALL_MODES"),.(ZONE, COUNTY)]
 uni_trips_mode = rbindlist(list(uni_trips_mode, trip_total), use.names = TRUE)
 
 # Day Pattern
@@ -719,8 +719,10 @@ tmp2 = tmp[,.(TIME_USE=sum(TIME_USE)),.(PERSON_TYPE = person_type, PER, ORIG_PUR
 tmp2 = tmp2[!is.na(PERSON_TYPE)]
 tmp2[,ORIG_PURPOSE:=purpose_labels[ORIG_PURPOSE]]
 tmp2[is.na(ORIG_PURPOSE), ORIG_PURPOSE:="OTHER"]
-time_use_dt = tmp2[,.(TIME_USE=sum(TIME_USE)),.(PERSON_TYPE, PER, ORIG_PURPOSE)]
+time_use_dt = tmp2[,.(TIME_USE=(sum(TIME_USE))),.(PERSON_TYPE, PER, ORIG_PURPOSE)]
 setkey(time_use_dt, PERSON_TYPE, PER, ORIG_PURPOSE)
+time_use_dt = time_use_dt[CJ(PERSON_TYPE, PER, ORIG_PURPOSE, unique = TRUE)]
+time_use_dt[is.na(TIME_USE), TIME_USE:=0]
 # fwrite(time_use_dt, "time_use.csv")
 
 
