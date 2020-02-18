@@ -442,7 +442,8 @@ setkey(taz_dt, id)
 trips_mode[,COUNTY:=taz_dt[.(ZONE),Cnty_Nm]]
 setcolorder(trips_mode, c("ZONE", "COUNTY"))
 
-# trip_total = trips_mode[,.(TRIPS=sum(TRIPS), MODE = "TOTAL"),.()]
+trip_total = trips_mode[,.(TRIPS=sum(TRIPS), MODE = "TOTAL"),.(ZONE, COUNTY)]
+trips_mode = rbindlist(list(trips_mode, trip_total), use.names = TRUE)
 
 # Trip mode by zone
 trip_zone = trip_dt[
@@ -470,6 +471,9 @@ seasonal_trips_mode[is.na(TRIPS), TRIPS:=0]
 seasonal_trips_mode[,COUNTY:=taz_dt[.(ZONE),Cnty_Nm]]
 setcolorder(seasonal_trips_mode, c("ZONE", "COUNTY"))
 
+trip_total = seasonal_trips_mode[,.(TRIPS=sum(TRIPS), MODE = "TOTAL"),.(ZONE, COUNTY)]
+seasonal_trips_mode = rbindlist(list(seasonal_trips_mode, trip_total), use.names = TRUE)
+
 # University student
 trip_dt[,uni_student:=0L]
 trip_dt[person_dt[university_student==1,.(personid)],uni_student:=1L,on=.(personid)]
@@ -485,16 +489,47 @@ uni_trips_mode[is.na(TRIPS), TRIPS:=0]
 uni_trips_mode[,COUNTY:=taz_dt[.(ZONE),Cnty_Nm]]
 setcolorder(uni_trips_mode, c("ZONE", "COUNTY"))
 
+trip_total = uni_trips_mode[,.(TRIPS=sum(TRIPS), MODE = "TOTAL"),.(ZONE, COUNTY)]
+uni_trips_mode = rbindlist(list(uni_trips_mode, trip_total), use.names = TRUE)
+
 # Day Pattern
 # day_pattern_dt = person_dt[,.(personid, age, employment, university_student)][trip_dt[,.(personid,trip_id,d_purpose_category_imputed,trip_weight_household)],on=.(personid)]
-day_pattern_dt = person_dt[,.(personid, age, employment, university_student)][day_dt,on=.(personid)]
-day_pattern_dt[,person_group:=ifelse(age==1,"CHILD AGE 16 PLUS",
-                                     ifelse(age==3, "CHILD AGE 0 TO 4",
-                                            ifelse(age==4, "CHILD AGE 5 TO 15",
-                                                   ifelse(employment==1, "FULL TIME WORKER",
-                                                          ifelse(employment==2, "PART TIME WORKER",
-                                                                 ifelse(age >= 10 & employment > 2, "NON WORKER AGE 65 PLUS", "OTHER NON WORKING ADULT"))))))]
-day_pattern_dt[university_student==1,person_group:="UNIVERSITY STUDENT"]
+day_pattern_dt = household_dt[,.(hh_id, seasonal_household, hh_recruitment)][
+  person_dt,.(personid, age, employment, university_student, seasonal_household,hh_recruitment),on=.(hh_id)][
+    day_dt,on=.(personid)]
+
+categories_ar = c(
+  "cat1" = "CHILD AGE 0 TO 4",
+  "cat2" = "CHILD AGE 5 TO 15",
+  "cat3" = "CHILD AGE 16 PLUS",
+  "cat4" = "FULL TIME WORKER",
+  "cat5" = "PART TIME WORKER",
+  "cat6" = "NON WORKER AGE 65 PLUS",
+  "cat7" = "OTHER NON WORKING ADULT",
+  "cat8" = "UNIVERSITY STUDENT",
+  "cat9" = "SEASONAL RESIDENT",
+  "cat10"= "ALL"
+)
+
+day_pattern_dt[,c(names(categories_ar)):=0L]
+day_pattern_dt[seasonal_household==1,                                   cat9:=1L]
+day_pattern_dt[hh_recruitment==6,                                       cat8:=1L]
+day_pattern_dt[age==3 & cat8==0 & cat9==0,                              cat1:=1L]
+day_pattern_dt[age==4 & cat8==0 & cat9==0,                              cat2:=1L]
+day_pattern_dt[age==1 & cat8==0 & cat9==0,                              cat3:=1L]
+day_pattern_dt[employment==1 & cat8==0 & cat9==0,                       cat4:=1L]
+day_pattern_dt[employment==2 & cat8==0 & cat9==0,                       cat5:=1L]
+day_pattern_dt[age>=10 & employment > 2 & cat8==0 & cat9==0,            cat6:=1L]
+day_pattern_dt[age < 10 & age > 4 & employment > 2 & cat8==0 & cat9==0, cat7:=1L]
+day_pattern_dt[,                                                        cat10:=1L]
+
+# day_pattern_dt[,person_group:=ifelse(age==1,"CHILD AGE 16 PLUS",
+#                                      ifelse(age==3, "CHILD AGE 0 TO 4",
+#                                             ifelse(age==4, "CHILD AGE 5 TO 15",
+#                                                    ifelse(employment==1, "FULL TIME WORKER",
+#                                                           ifelse(employment==2, "PART TIME WORKER",
+#                                                                  ifelse(age >= 10 & employment > 2, "NON WORKER AGE 65 PLUS", "OTHER NON WORKING ADULT"))))))]
+# day_pattern_dt[university_student==1,person_group:="UNIVERSITY STUDENT"]
 day_pattern_dt[num_trips==0 & per_day_iscomplete==1,
                day_pattern:="Home All Day"]
 trip_category = c(
@@ -519,6 +554,11 @@ notravel_reason = c("notravel_weather", "notravel_nowork", "notravel_telework",
 
 day_pattern_dt[,reason_notravel:=apply(.SD,1,function(x) ifelse(sum(x==1),1L,0L)),.SDcols=notravel_reason]
 day_pattern_dt[reason_notravel==1 & is.na(day_pattern), day_pattern:= "Home All Day"]
+
+day_pattern_dt = rbindlist(lapply(names(categories_ar), function(x) {tmp = day_pattern_dt[get(x)==1]
+tmp[,person_group:=categories_ar[x]] 
+tmp[,.(person_group, day_pattern, day_weight_person)]}))
+
 setkey(day_pattern_dt, person_group, day_pattern)
 day_pattern_dt = day_pattern_dt[CJ(person_group, day_pattern, unique = TRUE)][!(is.na(day_pattern) | (day_pattern=="Missing/Non-Response")),.(`COUNT`= sum(day_weight_person),
                   CHART = "Day Pattern"),
@@ -535,8 +575,11 @@ purpose_labels = c(
   "Shopping/errands/appointments" = "SHOP",
   "Dine out/get coffee or take-out" = "MEAL",
   "Social/Recreation" = "SOC AND REC",
-  "Change travel mode" = "CHANGE MODE"
+  "Change travel mode" = "CHANGE MODE",
+  "Travel/Other"      = "OTHER OR TRAVEL"
 )
+
+setkey(trip_dt, personid, day_num, departure_time)
 
 trip_dt[, arr_time:=as.POSIXct(arrival_time, format = "%Y-%m-%d %H:%M:%S", tz = "EST")]
 trip_dt[, hour := hour(arr_time)]
@@ -546,6 +589,7 @@ trip_dt[, mpm_period := as.integer(mpm / 30)]
 trip_dt[, mpm_period_shift := mpm_period - 5]
 trip_dt[mpm_period_shift < 1, mpm_period_shift := mpm_period_shift + 48]
 trip_dt[,end_time:=mpm_period_shift]
+trip_dt[,end_time2:=(day_num-1)*48 + end_time]
 
 trip_dt[, dep_time:=as.POSIXct(departure_time, format = "%Y-%m-%d %H:%M:%S", tz = "EST")]
 trip_dt[, hour := hour(dep_time)]
@@ -555,8 +599,20 @@ trip_dt[, mpm_period := as.integer(mpm / 30)]
 trip_dt[, mpm_period_shift := mpm_period - 5]
 trip_dt[mpm_period_shift < 1, mpm_period_shift := mpm_period_shift + 48]
 trip_dt[,start_time:=mpm_period_shift]
+trip_dt[,start_time2:=(day_num-1)*48 + start_time]
+trip_dt[order(personid, day_num, departure_time),next_act_time:=shift(start_time2,type = "lead"),.(personid)]
+trip_dt[order(personid, day_num, departure_time),next_act_day:=shift(day_num,type = "lead"),.(personid)]
+
+
+change_day_idx = trip_dt[,.I[end_time2 > next_act_time & !(is.na(end_time2)) & !is.na(next_act_time)]]
+change_day_idx = change_day_idx+1L
+trip_dt[change_day_idx, start_time2:= (day_num)*48+start_time]
+trip_dt[order(personid, day_num, departure_time),next_act_time:=shift(start_time2,type = "lead"),.(personid)]
+
 
 code_time = function(start_time, end_time){
+  if(is.na(start_time)) start_time = end_time
+  if(is.na(end_time)) end_time = start_time
   if(end_time >= start_time){
     return(seq(start_time, end_time, 1L))
   } else if(start_time > end_time){
@@ -564,27 +620,104 @@ code_time = function(start_time, end_time){
   }
 }
 
+code_day = function(start_time, end_time, start_day_num, end_day_num){
+  if(is.na(start_time)) start_time = end_time
+  if(is.na(end_time)) end_time = start_time
+  if(end_time >= start_time){
+    return(rep(start_day_num,length(seq(start_time, end_time, 1L))))
+  } else if(start_time > end_time){
+    return(c(rep(start_day_num,length(c(seq(start_time, 48, 1L)))), rep(start_day_num+1L,length(seq(1, end_time, 1L)))))
+  }
+}
+
+# code_duration = function(start_time, end_time, duration, dep_min, arr_min){
+#   if(end_time >= start_time){
+#     time_seq  = seq(start_time, end_time, 1L)
+#   } else if(start_time > end_time){
+#     time_seq = c(seq(start_time, 48, 1L), seq(1, end_time, 1L))
+#   }
+#   
+# }
 
 
-time_use_dt = day_dt[,.(PER=1:48),.(personid, day_num, day_weight_person=day_weight_person/48)]
-time_use_dt = person_dt[,.(personid, age, employment, university_student)][time_use_dt,on=.(personid)]
-time_use_dt[,person_type:=ifelse(age==1,"CHILD AGE 16 PLUS",
-                                     ifelse(age==3, "CHILD AGE 0 TO 4",
-                                            ifelse(age==4, "CHILD AGE 5 TO 15",
-                                                   ifelse(employment==1, "FULL TIME WORKER",
-                                                          ifelse(employment==2, "PART TIME WORKER",
-                                                                 ifelse(age >= 10 & employment > 2, "NON WORKER AGE 65 PLUS", "OTHER NON WORKING ADULT"))))))]
-time_use_dt[university_student==1,person_type:="UNIVERSITY STUDENT"]
+time_use_dt = day_dt[,.(PER=1:48),.(personid, day_num, day_weight_person=day_weight_person/48, num_trips)]
+time_use_dt = household_dt[,.(hh_id, seasonal_household, hh_recruitment)][
+  person_dt,.(personid, age, employment, university_student, seasonal_household,hh_recruitment),on=.(hh_id)][time_use_dt,on=.(personid)]
+# time_use_dt[,person_type:=ifelse(age==1,"CHILD AGE 16 PLUS",
+#                                      ifelse(age==3, "CHILD AGE 0 TO 4",
+#                                             ifelse(age==4, "CHILD AGE 5 TO 15",
+#                                                    ifelse(employment==1, "FULL TIME WORKER",
+#                                                           ifelse(employment==2, "PART TIME WORKER",
+#                                                                  ifelse(age >= 10 & employment > 2, "NON WORKER AGE 65 PLUS", "OTHER NON WORKING ADULT"))))))]
+# time_use_dt[university_student==1,person_type:="UNIVERSITY STUDENT"]
 time_use_dt[,personid:=as.numeric(personid)]
 
-time_trip_dt = trip_dt[,.(PER=code_time(start_time, end_time)), by=.(trip_id)]
-time_trip_dt = trip_dt[,.(trip_id, personid, day_num, destination_labels, trip_weight_household)][time_trip_dt,on=.(trip_id)]
+time_use_dt[,c(names(categories_ar)):=0L]
+time_use_dt[seasonal_household==1,                                   cat9:=1L]
+time_use_dt[hh_recruitment==6,                                       cat8:=1L]
+time_use_dt[age==3 & cat8==0 & cat9==0,                              cat1:=1L]
+time_use_dt[age==4 & cat8==0 & cat9==0,                              cat2:=1L]
+time_use_dt[age==1 & cat8==0 & cat9==0,                              cat3:=1L]
+time_use_dt[employment==1 & cat8==0 & cat9==0,                       cat4:=1L]
+time_use_dt[employment==2 & cat8==0 & cat9==0,                       cat5:=1L]
+time_use_dt[age>=10 & employment > 2 & cat8==0 & cat9==0,            cat6:=1L]
+time_use_dt[age < 10 & age > 4 & employment > 2 & cat8==0 & cat9==0, cat7:=1L]
+time_use_dt[,                                                        cat10:=1L]
+
+time_trip_dt = trip_dt[day_num > 0,.(PER=code_time(end_time2, next_act_time)#,
+                          # day_num = code_day(end_time, next_act_time, day_num)
+                          ), by=.(trip_id)]
+time_trip_dt = trip_dt[,.(trip_id, personid, destination_labels, trip_weight_household)][time_trip_dt,on=.(trip_id)]
 time_trip_dt[,trip_id:=NULL]
-time_trip_dt = time_trip_dt[,.(TIME_USE = sum(trip_weight_household)),.(personid, day_num, PER, destination_labels)]
+time_trip_dt[,day_num:=(PER %/% 48)+1]
+time_trip_dt[,PER2:=PER]
+time_trip_dt[,PER:=(PER %% 48)]
+time_trip_dt[PER==0, ":=" (PER=48, day_num=day_num-1)]
+# Replace change mode
+change_mode = function(activities){
+  change_mode_idx = grepl("Change", activities)
+  replace_activity_idx = diff(c(FALSE, change_mode_idx))
+  while(sum(replace_activity_idx==-1) > 0){
+    replace_idx = seq(min(which(replace_activity_idx==1)),
+                      min(which(replace_activity_idx==-1))-1, by = 1)
+    replace_activity = activities[min(which(replace_activity_idx==-1))]
+    activities[replace_idx] = replace_activity
+    change_mode_idx = grepl("Change", activities)
+    replace_activity_idx = diff(c(FALSE, change_mode_idx))
+  }
+  return(activities)
+}
+time_trip_dt[,destination_labels:=change_mode(destination_labels), by=.(personid)]
+time_trip_dt = time_trip_dt[,.(TIME_USE = sum(trip_weight_household)),.(personid, day_num, PER, PER2, destination_labels)]
 
 tmp = merge(time_use_dt, time_trip_dt, by = c("personid", "day_num", "PER"), all = TRUE)
-tmp[is.na(destination_labels), destination_labels:="Activity at Home"]
+
+setkey(tmp, personid, day_num, PER)
+
+code_home = function(activities, personid){
+  if(all(is.na(activities))) return(rep("Activity at Home", length(activities)))
+  # cat("Person id ", personid, "\n")
+  # Start from home
+  act_index = min(which(!is.na(activities)))
+  # cat("Start ", act_index, "\n")
+  if(act_index >= 2) activities[seq(1,act_index-1, 1)] = "Activity at Home"
+  # End at home
+  act_index = max(which(!is.na(activities)))
+  # cat("End ", act_index, "\n")
+  if(act_index <= (length(activities)-1)) activities[seq(act_index+1, length(activities), 1)] = "Activity at Home"
+  return(activities)
+}
+
+tmp[order(personid, day_num, PER),activity:=code_home(destination_labels, as.numeric(personid)),.(personid)]
+tmp[num_trips==0, activity:="Activity at Home"]
+tmp[is.na(destination_labels), destination_labels:="Travel/Other"]
 tmp[is.na(TIME_USE), TIME_USE:= day_weight_person]
+tmp = rbindlist(lapply(names(categories_ar), function(x) {
+  tmp_dt = tmp[get(x)==1]
+  tmp_dt[, person_type:=categories_ar[x]]
+  tmp_dt[,.(person_type, PER, destination_labels, TIME_USE)]
+}))
+
 tmp2 = tmp[,.(TIME_USE=sum(TIME_USE)),.(PERSON_TYPE = person_type, PER, ORIG_PURPOSE = destination_labels)]
 tmp2 = tmp2[!is.na(PERSON_TYPE)]
 tmp2[,ORIG_PURPOSE:=purpose_labels[ORIG_PURPOSE]]
