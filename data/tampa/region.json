@@ -20,11 +20,11 @@
           {"name":"Trip Destination", "config":"Destination", "file":"trips_destination.csv", "info":"Destinations for daily trips made"},
           {"name":"Telecommute Frequency", "config":"Frequency", "file":"telecommute_freq_age.csv", "info":"Telecommute frequency by age"},
           {"name":"Bike Use Frequency", "config":"Frequency", "file":"bike_freq_age.csv", "info":"Bike use frequency by age"},
-          {"name":"Participant Age", "config":"Destination", "file":"age_distribution.csv", "info":"Age of participants"}
+          {"name":"Survey Participant Age", "config":"Destination", "file":"age_distribution.csv", "info":"Age of participants"}
            ],
         "Sunburst": [
-            {"name":"Work Mode", "config":"Default", "file":"work_mode.csv", "info":"Usual way commutes to work"},
-          {"name":"Participant Gender", "config":"Pie", "file":"gender_distribution.csv", "info":"Gender of participants"}
+            {"name":"Survey Participant Gender", "config":"Pie", "file":"gender_distribution.csv", "info":"Gender of participants"},
+            {"name":"Work Mode", "config":"Default", "file":"work_mode.csv", "info":"Usual way commutes to work"}
             ] 
       }
     },
