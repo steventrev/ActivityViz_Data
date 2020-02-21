@@ -1,6 +1,4 @@
 FROM,TO,TRIPS
-External,External,210053.41661
-Hillsborough,External,70562.23868
 Tarpon_Springs_Area,External,0
 Pinellas_North,External,4053.97817
 Pinellas_Beaches,External,511.82362
@@ -12,17 +10,10 @@ St_Petersburg_Clearwater_Area,External,115.70621
 Pinellas_South,External,12446.45613
 Gateway_Area,External,0
 Dwntwn_USF_Albert_Whitted_Airport,External,1469.75351
-Pasco,External,5970.96797
-Hernando_Citrus,External,16041.48444
-Manatee_Spur,External,0
-Hillsborough,Hillsborough,5827658.07768999
 Pinellas_North,Hillsborough,20683.48507
 Pinellas_North_Central,Hillsborough,70453.89677
-Pasco,Hillsborough,185618.86929
-External,Hillsborough,59251.32758
 Mid-Cnty_Ind_Area,Hillsborough,7671.2761
 Gateway_Area,Hillsborough,10875.63194
-Hernando_Citrus,Hillsborough,14851.07604
 Pinellas_South,Hillsborough,41324.86403
 St_Petersburg_Clearwater_Area,Hillsborough,226.12365
 Pinellas_Beaches,Hillsborough,10269.84427
@@ -34,7 +25,6 @@ Clearwater_Mall,Hillsborough,492.8583
 Oldsmar_Ind_Area,Hillsborough,19666.70595
 Grand_Central_Area,Hillsborough,0
 Tyrone_Square_Area,Hillsborough,118.40416
-Manatee_Spur,Hillsborough,673.88821
 Pinellas_North,Pinellas_North,244458.47431
 Pinellas_North_Central,Pinellas_North,74213.65407
 Pasco,Pinellas_North,46884.05625
@@ -239,10 +229,6 @@ Grand_Central_Area,Grand_Central_Area,6764.34753
 External,Dwntwn_USF_Albert_Whitted_Airport,734.71942
 Tyrone_Square_Area,Dwntwn_USF_Albert_Whitted_Airport,329.003
 Clearwater_Dwntwn,Dwntwn_USF_Albert_Whitted_Airport,0
-Hillsborough,Pasco,165598.8798
-Pasco,Pasco,1581165.54056999
-Hernando_Citrus,Pasco,45057.74694
-External,Pasco,3792.45779
 Pinellas_North,Pasco,41507.53705
 Pinellas_North_Central,Pasco,23757.27459
 Pinellas_South,Pasco,1047.6639
@@ -257,11 +243,7 @@ Countryside_Mall,Pasco,98.27294
 Gateway_Area,Pasco,98.27294
 Clearwater_Mall,Pasco,100.0621
 Pinellas_North_Central,Hernando_Citrus,819.80234
-Pasco,Hernando_Citrus,44464.98914
-Hernando_Citrus,Hernando_Citrus,887635.240220001
-Hillsborough,Hernando_Citrus,12312.81003
 Oldsmar_Ind_Area,Hernando_Citrus,98.3691
-External,Hernando_Citrus,13271.21459
 Gateway_Area,Hernando_Citrus,0
 Clearwater_Dwntwn,Hernando_Citrus,98.27294
 Pinellas_North,Hernando_Citrus,159.67064
@@ -270,8 +252,4 @@ Mid-Cnty_Ind_Area,Hernando_Citrus,40.24512
 Tarpon_Springs_Area,Hernando_Citrus,6.09454
 Pinellas_South,Hernando_Citrus,902.79766
 Pinellas_Beaches,Manatee_Spur,546.63962
-External,Manatee_Spur,0
-Hillsborough,Manatee_Spur,672.44761
-Manatee_Spur,Manatee_Spur,306.29832
-Pasco,Manatee_Spur,0
 Pinellas_South,Manatee_Spur,0

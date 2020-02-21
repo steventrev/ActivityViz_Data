@@ -1,8 +1,4 @@
 FROM,TO,TRIPS
-External,External,210053.41661
-Hillsborough_Manatee_Spur,External,70562.23868
-Pinellas,External,25297.54815
-Pasco,External,5970.96797
 Spring_Hill_and_SW_Hernando,External,1214.17207
 Croom_WMA_NE_Hernando,External,32.17132
 Brooksville_Area,External,150.9042
@@ -13,10 +9,6 @@ Crystal_River_and_NW_Citrus,External,5377.53467
 Inverness_and_NE_Citrus,External,921.08722
 Homosassa_Springs_SW_Citrus,External,2681.73584
 South_East_Citrus,External,626.04014
-Hillsborough_Manatee_Spur,Hillsborough_Manatee_Spur,5829310.71182998
-Pinellas,Hillsborough_Manatee_Spur,225228.55334
-Pasco,Hillsborough_Manatee_Spur,185618.86929
-External,Hillsborough_Manatee_Spur,59251.32758
 Brooksville_Area,Hillsborough_Manatee_Spur,480.37276
 Spring_Hill_and_SW_Hernando,Hillsborough_Manatee_Spur,4799.66545
 South_Central_Hernando,Hillsborough_Manatee_Spur,2549.38654
@@ -26,10 +18,6 @@ Chassahowitzka_WMA_NW_Hernando,Hillsborough_Manatee_Spur,278.03035
 South_East_Citrus,Hillsborough_Manatee_Spur,4046.12433
 North_Central_Citrus,Hillsborough_Manatee_Spur,138.90833
 Croom_WMA_NE_Hernando,Hillsborough_Manatee_Spur,32.17132
-Pinellas,Pinellas,3538763.35511998
-Pasco,Pinellas,105943.22158
-Hillsborough_Manatee_Spur,Pinellas,222981.92086
-External,Pinellas,19223.01157
 Spring_Hill_and_SW_Hernando,Pinellas,2404.25101
 Brooksville_Area,Pinellas,118.40302
 Homosassa_Springs_SW_Citrus,Pinellas,545.91627
@@ -38,12 +26,8 @@ Croom_WMA_NE_Hernando,Pinellas,98.27294
 North_Central_Citrus,Pinellas,0
 South_Central_Hernando,Pinellas,0
 Crystal_River_and_NW_Citrus,Pinellas,0
-Hillsborough_Manatee_Spur,Pasco,165598.8798
-Pasco,Pasco,1581165.54056999
 Spring_Hill_and_SW_Hernando,Pasco,25673.45342
-External,Pasco,3792.45779
 Lake_Lindsey_N._Central_Hernando,Pasco,0
-Pinellas,Pasco,99415.3737
 Brooksville_Area,Pasco,8721.59095
 Homosassa_Springs_SW_Citrus,Pasco,3308.3657
 South_Central_Hernando,Pasco,3722.10984

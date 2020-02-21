@@ -373,10 +373,12 @@ trip_est_dt = trip_dt[,.(TRIPS = sum(trip_weight_household)),
                       by = .(OTAZ = o_taz_2020,
                              DTAZ = d_taz_2020)]
 trip_est_dt =  merge(trip_est_dt, agg_dt[,.(TAZ, HILLSBOROUGH_LBL_3, PINELLAS_LBL, PASCO_LBL,
-                                            HERNANDO_CITRUS_LBL_2, D7_ALL_LBL)],
+                                            HERNANDO_CITRUS_LBL_2, D7_ALL_LBL, 
+                                            COUNTY_NAME=`COUNTY NAME`)],
                      by.x = "OTAZ", by.y="TAZ", all.x = TRUE)
 trip_est_dt =  merge(trip_est_dt, agg_dt[,.(TAZ, HILLSBOROUGH_LBL_3, PINELLAS_LBL, PASCO_LBL,
-                                            HERNANDO_CITRUS_LBL_2, D7_ALL_LBL)],
+                                            HERNANDO_CITRUS_LBL_2, D7_ALL_LBL, 
+                                            COUNTY_NAME=`COUNTY NAME`)],
                      by.x = "DTAZ", by.y="TAZ", all.x = TRUE,
                      suffixes = c("_O", "_D"))
 # Overall
@@ -385,22 +387,32 @@ overall_trip_dt         = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = D7_ALL_LBL
 overall_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                       TO   = ifelse(is.na(TO), "External", TO))]
 # Hillsborough
-hillsborough_trip_dt    = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = HILLSBOROUGH_LBL_3_O,
-                                                               TO = HILLSBOROUGH_LBL_3_D)]
+hillsborough_trip_dt    = trip_est_dt[grepl("Hillsborough", COUNTY_NAME_O)|
+                                        grepl("Hillsborough", COUNTY_NAME_D),
+                                      .(TRIPS = sum(TRIPS)),.(FROM = HILLSBOROUGH_LBL_3_O,
+                                                              TO = HILLSBOROUGH_LBL_3_D)]
 hillsborough_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                            TO   = ifelse(is.na(TO), "External", TO))]
 # Pinellas
-pinellas_trip_dt        = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = PINELLAS_LBL_O,
+pinellas_trip_dt        = trip_est_dt[grepl("Pinellas", COUNTY_NAME_O)|
+                                        grepl("Pinellas", COUNTY_NAME_D),
+                                      .(TRIPS = sum(TRIPS)),.(FROM = PINELLAS_LBL_O,
                                                                TO = PINELLAS_LBL_D)]
 pinellas_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                        TO   = ifelse(is.na(TO), "External", TO))]
 # Pasco
-pasco_trip_dt           = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = PASCO_LBL_O,
+pasco_trip_dt           = trip_est_dt[grepl("Pasco", COUNTY_NAME_O)|
+                                        grepl("Pasco", COUNTY_NAME_D),
+                                      .(TRIPS = sum(TRIPS)),.(FROM = PASCO_LBL_O,
                                                                TO = PASCO_LBL_D)]
 pasco_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                     TO   = ifelse(is.na(TO), "External", TO))]
 # Hernando/Citrus
-hernando_citrus_trip_dt = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = HERNANDO_CITRUS_LBL_2_O,
+hernando_citrus_trip_dt = trip_est_dt[grepl("Hernando", COUNTY_NAME_O)|
+                                        grepl("Hernando", COUNTY_NAME_D)|
+                                        grepl("Citrus", COUNTY_NAME_O)|
+                                        grepl("Citrus", COUNTY_NAME_D),
+                                      .(TRIPS = sum(TRIPS)),.(FROM = HERNANDO_CITRUS_LBL_2_O,
                                                                TO = HERNANDO_CITRUS_LBL_2_D)]
 hernando_citrus_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                               TO   = ifelse(is.na(TO), "External", TO))]
