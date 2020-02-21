@@ -17,7 +17,7 @@
       "visualizations": {
         "GroupedCharts": [
           {"name":"Typical Travel", "config":"Travel", "file":"trips_period.csv", "info":"When people make trips in the region"},
-          {"name":"Trip Destination", "config":"Destination", "file":"trips_destination.csv", "info":"Destinations for daily trips made"},
+          {"name":"Trip Destination Activity", "config":"Destination", "file":"trips_destination.csv", "info":"Destination Activities for daily trips made"},
           {"name":"Telecommute Frequency", "config":"Frequency", "file":"telecommute_freq_age.csv", "info":"Telecommute frequency by age"},
           {"name":"Bike Use Frequency", "config":"Frequency", "file":"bike_freq_age.csv", "info":"Bike use frequency by age"},
           {"name":"Survey Participant Age", "config":"Destination", "file":"age_distribution.csv", "info":"Age of survey participants"}
@@ -32,10 +32,10 @@
       "title": "- Household Travel Survey",
       "visualizations": {
         "3DMap": [
-            {"name":"Trips","config":"Default","file":"trips_zone.csv","info":"Trips by Mode"}
+            {"name":"Trips by Mode","config":"Default","file":"trips_zone.csv","info":"Trips by Mode"}
             ],
         "BarMap": [
-          {"name":"Trip Mode","config":"Default", "file":"trip_mode_zone.csv", "info":"Trips by mode by county"},
+          {"name":"Trip Mode by County","config":"Default", "file":"trip_mode_zone.csv", "info":"Trips by mode by county"},
           {"name":"Trip Mode for Seasonal Households", "config":"Default", "file":"seasonal_trip_mode_zone.csv", "info":"Trips by mode by county for seasonal households"},
           {"name":"Trip Mode for University Students","config":"Default", "file":"uni_trip_mode_zone.csv", "info":"Trips by mode by county for university students"}
           ],

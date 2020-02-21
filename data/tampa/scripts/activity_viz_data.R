@@ -191,11 +191,11 @@ trip_dt[,destination_labels:=names(destination_labels_ar)[match(d_purpose_catego
 
 trip_destination_dt = trip_dt[!d_purpose_category_imputed %in% c(-9998, 11, 12),
                               .(TRIPS = round(sum(trip_weight_household), 2)),
-                              by = .(DESTINATION = destination_labels)]
+                              by = .(DESTINATION_ACTIVITY = destination_labels)]
 setorder(trip_destination_dt, -TRIPS)
 trip_destination_dt[,CHART:="TRIP DESTINATION"]
 trip_destination_dt[,GROUP:="ALL"]
-setcolorder(trip_destination_dt, c("GROUP","DESTINATION", "TRIPS", "CHART"))
+setcolorder(trip_destination_dt, c("GROUP","DESTINATION_ACTIVITY", "TRIPS", "CHART"))
 
 # Usual ways to commutes to work
 work_mode_labels_ar = c(
