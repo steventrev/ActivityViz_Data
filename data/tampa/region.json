@@ -8,31 +8,61 @@
   "CenterMap": [27.947896, -82.457335],
   "FrontPageTitle": "Tampa Bay Regional Travel Surveys",
   "FrontPageGraphic": "RSG_400px.jpg",
-  "SideBarTextLeft": "<b>ActivityViz</b> was initially funded by the <a href='https://atlantaregional.org/'>Atlanta Regional Commission</a> with additional support from <a href='https://www.oregonmetro.gov/'>Oregon Metro</a> and others.",
-  "SideBarTextRight": "<b>ActivityViz</b> is an interactive travel and activity data visualization tool.  It is built with JavaScript technologies and works with various types of travel and activity data - household travel surveys, trip-based model outputs, activity-based model outputs, disaggregate passive data, freight models, on-board surveys, etc.  The dashboard features several interactive and customizable visualizations for exploring data, such as 3D maps of trips in time and space, time use by person type and activity, radar charts for performance measure analysis, sunburst diagrams for visualizing mode shares, animated bubble maps, chord diagrams for OD data, point-of-interest maps for transit stop data, truck flow data, etc.  </b>ActivityViz</b> is published using <a href='https://pages.github.com/'>GitHub pages</a> which eliminates most of the administrative backend in traditional systems.",
+  "SideBarTextLeft": "<br>The 2018-2019 Tampa Bay Regional Household Travel Survey collected data on daily travel throughout the five-county Tampa Bay transportation model region. This survey was part of the Tampa Bay Regional Travel Surveys program, a comprehensive data collection program designed to support regional and local transportation planning and policy decisions today and in the future. Understanding the travel behavior of households in the travel region will help agencies prioritize transportation improvements to fit the region’s needs.</br><br>Over 4,500 households and 9,000 people in Citrus, Hernando, Hillsborough, Pasco and Pinellas counties participated. Two-thirds of households were randomly invited through a mailed invitation and one-third through community outreach efforts (volunteers). Data were collected between October 2018 and April 2019, when both year-round and seasonal residents are in the region. Participants provided basic demographic details to ensure survey results were representative of the regional population (compared with the Census).</br><br>The survey collected details about the trips participating households and persons took over a pre-assigned travel period, with a focus on weekday travel. Households participated by smartphone app, online or by telephone. Questions about typical travel behavior were also asked, including commuting behaviors and the frequency of transit and bicycle use.</br><br>To learn more about the survey and its results, visit <a href='https://tampabaysurveys.com/'>Tampa Bay Regional Survey</a> or contact: <a href='mailto:Kenneth.Spitz@dot.state.fl.us'>Ken Spitz</a>, FDOT.</br><br><b>ActivityViz</b> was initially funded by the <a href='https://atlantaregional.org/'>Atlanta Regional Commission</a> with additional support from <a href='https://www.oregonmetro.gov/'>Oregon Metro</a> and others.</br>",
+  "SideBarTextRight": "<br>The survey was conducted by the <a href='https://www.fdot.gov/'>Florida Department of Transportation District Seven</a> with support from the region’s four metropolitan planning organizations (MPOs): <a href='https://www.hernandocounty.us/departments/departments-f-m/metropolitan-planning-organization'>Hernando-Citrus MPO</a>, <a href='http://www.planhillsborough.org/'>Plan Hillsborough</a>, <a href='https://www.pascocountyfl.net/323/MPOTransportation-Planning'>Pasco County MPO</a> and <a href='https://forwardpinellas.org/'>Forward Pinellas</a>.</br><br> </br><br> </br><br> </br>",
   "SideBarImage":"tampa.png",
   "scenarios":{
     "Executive_Summary": {
       "title": "- Surveys and Data",
       "visualizations": {
-        "3DMap": [
-            {"name":"Trips","config":"Default","file":"trips_zone.csv","info":"Trips by Mode"}
-            ]
+        "GroupedCharts": [
+          {"name":"Typical Travel", "config":"Travel", "file":"trips_period.csv", "info":"When people make trips in the region"},
+          {"name":"Trip Destination Activity", "config":"Destination", "file":"trips_destination.csv", "info":"Destination Activities for daily trips made"},
+          {"name":"Telecommute Frequency", "config":"Frequency", "file":"telecommute_freq_age.csv", "info":"Telecommute frequency by age"},
+          {"name":"Bike Use Frequency", "config":"Frequency", "file":"bike_freq_age.csv", "info":"Bike use frequency by age"},
+          {"name":"Survey Participant Age", "config":"Destination", "file":"age_distribution.csv", "info":"Age of survey participants"}
+           ],
+        "Sunburst": [
+            {"name":"Survey Participant Gender", "config":"Pie", "file":"gender_distribution.csv", "info":"Gender of survey participants"},
+            {"name":"Work Trip Mode", "config":"Default", "file":"work_mode.csv", "info":"Usual way commutes to work"}
+            ] 
       }
     },
     "Travel_Survey": {
       "title": "- Household Travel Survey",
       "visualizations": {
         "3DMap": [
-            {"name":"Trips","config":"Default","file":"trips_zone.csv","info":"Trips by Mode"}
+            {"name":"Trips by Mode","config":"Default","file":"trips_zone.csv","info":"Trips by Mode"}
+            ],
+        "BarMap": [
+          {"name":"Trip Mode by County","config":"Default", "file":"trip_mode_zone.csv", "info":"Trips by mode by county"},
+          {"name":"Trip Mode for Seasonal Households", "config":"Default", "file":"seasonal_trip_mode_zone.csv", "info":"Trips by mode by county for seasonal households"},
+          {"name":"Trip Mode for University Students","config":"Default", "file":"uni_trip_mode_zone.csv", "info":"Trips by mode by county for university students"}
+          ],
+        "GroupedCharts": [
+            {"name":"Day Pattern","config":"Frequency","file":"day_pattern.csv","info":"Person day pattern by person type"}
+            ],
+        "TimeUse": [
+            {"name":"Time Use","config":"Default","file":"time_use.csv","info":"Displays person out-of-home travel purpose by time of day. The vertical axis displays the sum or percent of activity and the horizontal axis displays the period of the day"}
+            ],
+        "Chord": [
+            {"name":"Overall OD Flows","config":"Overall","file":"trip_od_overall.csv","info":"Daily trips OD"},
+            {"name":"Hillsborough OD Flows","config":"Hillsborough","file":"trip_od_hillsborough.csv","info":"Daily trips OD"},
+            {"name":"Pinellas OD Flows","config":"Pinellas","file":"trip_od_pinellas.csv","info":"Daily trips OD"},
+            {"name":"Pasco OD Flows","config":"Pasco","file":"trip_od_pasco.csv","info":"Daily trips OD"},
+            {"name":"Hernando and Citrus OD Flows","config":"Hernando","file":"trip_od_hernando_citrus.csv","info":"Daily trips OD"}
             ]
       }
     },
     "Passive_Data": {
       "title": "- 2019 Processing",
       "visualizations": {
-        "3DMap": [
-            {"name":"Trips","config":"Default","file":"trips_zone.csv","info":"Trips by Mode"}
+        "Chord": [
+            {"name":"Overall OD Flows","config":"Overall","file":"trip_od_overall.csv","info":"Daily trips OD"},
+            {"name":"Hillsborough OD Flows","config":"Hillsborough","file":"trip_od_hillsborough.csv","info":"Daily trips OD"},
+            {"name":"Pinellas OD Flows","config":"Pinellas","file":"trip_od_pinellas.csv","info":"Daily trips OD"},
+            {"name":"Pasco OD Flows","config":"Pasco","file":"trip_od_pasco.csv","info":"Daily trips OD"},
+            {"name":"Hernando and Citrus OD Flows","config":"Hernando","file":"trip_od_hernando_citrus.csv","info":"Daily trips OD"}
             ]
       }
     }
@@ -42,6 +72,78 @@
       "ShowPeriodsAsDropdown": true,
       "DataHasPeriods": false,
       "ZoneFile":"tampa2020.json"
+    }
+  },
+  "GroupedCharts":{
+    "Travel": {
+      "NumberColsGrouped": 1,
+      "SwapLegendByDefault": true,
+      "ShowAsPercentByDefault": false,
+      "ShowAsVerticalByDefault": true,
+      "StackAllChartsByDefault": false,
+      "ChartWidthOverride": []
+    },
+    "Destination": {
+      "NumberColsGrouped": 0,
+      "SwapLegendByDefault": false,
+      "ShowAsPercentByDefault": true,
+      "ShowAsVerticalByDefault": false,
+      "StackAllChartsByDefault": false,
+      "ChartWidthOverride": []
+    },
+    "Frequency": {
+      "NumberColsGrouped": 1,
+      "SwapLegendByDefault": false,
+      "ShowAsPercentByDefault": true,
+      "ShowAsVerticalByDefault": false,
+      "StackAllChartsByDefault": true,
+      "ChartWidthOverride": []
+    }
+  },
+  "Sunburst":{
+    "Default": {
+      "ChartType": 3
+    },
+    "Pie": {
+      "ChartType": 2
+    }
+  },
+  "Chord": {
+    "Overall": {
+      "ZoneFile":"overall.json",
+      "LabelSize": "14",
+      "LegendText": "TRIPS",
+      "DesireLinesOn": true    
+    },
+    "Hillsborough": {
+      "ZoneFile":"hillsborough.json",
+      "LabelSize": "14",
+      "LegendText": "TRIPS",
+      "DesireLinesOn": true
+    },
+    "Pinellas": {
+      "ZoneFile":"pinellas.json",
+      "LabelSize": "14",
+      "LegendText": "TRIPS",
+      "DesireLinesOn": true
+    },
+    "Pasco": {
+      "ZoneFile":"pasco.json",
+      "LabelSize": "14",
+      "LegendText": "TRIPS",
+      "DesireLinesOn": true
+    },
+    "Hernando": {
+      "ZoneFile":"hernandocitrus.json",
+      "LabelSize": "14",
+      "LegendText": "TRIPS",
+      "DesireLinesOn": true
+    }
+  },
+  "BarMap":{
+    "Default":{
+      "ZoneFile":"tampa2020.json",
+      "CycleMapTools": false 
     }
   }
 }
