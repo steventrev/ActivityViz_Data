@@ -55,6 +55,11 @@ bike_file        = file.path(es_output_dir, "bike_freq_age.csv")         # Bike 
 commute_freq_file= file.path(es_output_dir, "commute_freq_age.csv")      # Commute freq by age
 age_file         = file.path(es_output_dir, "age_distribution.csv")      # Age of participants
 gender_file      = file.path(es_output_dir, "gender_distribution.csv")   # Gender of participants
+trip_od_overall_file_d         = file.path(es_output_dir, "trip_od_overall_district.csv") # District level OD charts
+trip_od_hillsborough_file_d    = file.path(es_output_dir, "trip_od_hillsborough_district.csv") # District level OD charts
+trip_od_pinellas_file_d        = file.path(es_output_dir, "trip_od_pinellas_district.csv") # District level OD charts
+trip_od_pasco_file_d           = file.path(es_output_dir, "trip_od_pasco_district.csv") # District level OD charts
+trip_od_hernando_citrus_file_d = file.path(es_output_dir, "trip_od_hernando_citrus_district.csv") # District level OD charts
 
 # Passive_Data
 trip_od_overall_file         = file.path(pd_output_dir, "trip_od_overall.csv")
@@ -77,11 +82,16 @@ trip_od_pasco_file2           = file.path(ts_output_dir, "trip_od_pasco.csv")
 trip_od_hernando_citrus_file2 = file.path(ts_output_dir, "trip_od_hernando_citrus.csv")
 
 # Geography for chord chart (OD)
-overall_geo_file            = file.path(getwd(), "overall.json")
-hillsborough_geo_file       = file.path(getwd(), "hillsborough.json")
-pinellas_geo_file           = file.path(getwd(), "pinellas.json")
-pasco_geo_file              = file.path(getwd(), "pasco.json")
-hernando_citrus_geo_file    = file.path(getwd(), "hernandocitrus.json")
+overall_geo_file                    = file.path(getwd(), "overall.json")
+hillsborough_geo_file               = file.path(getwd(), "hillsborough.json")
+pinellas_geo_file                   = file.path(getwd(), "pinellas.json")
+pasco_geo_file                      = file.path(getwd(), "pasco.json")
+hernando_citrus_geo_file            = file.path(getwd(), "hernandocitrus.json")
+district_overall_geo_file           = file.path(getwd(), "district_overall.json")
+district_hillsborough_geo_file      = file.path(getwd(), "district_hillsborough.json")
+district_pinellas_geo_file          = file.path(getwd(), "district_pinellas.json")
+district_pasco_geo_file             = file.path(getwd(), "district_pasco.json")
+district_hernando_citrus_geo_file   = file.path(getwd(), "district_hernando_citrus.json")
 
 ### Load required datasets #######################################################
 ##################################################################################
@@ -137,6 +147,10 @@ names(pasco_sf) = c("NAME", "geometry")
 # Hernando/Citrus
 hernando_citrus_sf = dplyr::summarise(dplyr::group_by(agg_sf, HERNANDO_CITRUS_LBL_2))
 names(hernando_citrus_sf) = c("NAME", "geometry")
+
+# District
+district_sf = dplyr::summarise(dplyr::group_by(agg_sf, DISTRICT))
+names(district_sf) = c("NAME", "geometry")
 
 ### Executive Summary ############################################################
 ##################################################################################
@@ -369,11 +383,11 @@ setorder(gender_dt, GENDER)
 trip_est_dt = trip_dt[,.(TRIPS = sum(trip_weight_household)),
                       by = .(OTAZ = o_taz_2020,
                              DTAZ = d_taz_2020)]
-trip_est_dt =  merge(trip_est_dt, agg_dt[,.(TAZ, HILLSBOROUGH_LBL_3, PINELLAS_LBL, PASCO_LBL,
+trip_est_dt =  merge(trip_est_dt, agg_dt[,.(TAZ, DISTRICT, HILLSBOROUGH_LBL_3, PINELLAS_LBL, PASCO_LBL,
                                             HERNANDO_CITRUS_LBL_2, D7_ALL_LBL, 
                                             COUNTY_NAME=`COUNTY NAME`)],
                      by.x = "OTAZ", by.y="TAZ", all.x = TRUE)
-trip_est_dt =  merge(trip_est_dt, agg_dt[,.(TAZ, HILLSBOROUGH_LBL_3, PINELLAS_LBL, PASCO_LBL,
+trip_est_dt =  merge(trip_est_dt, agg_dt[,.(TAZ, DISTRICT, HILLSBOROUGH_LBL_3, PINELLAS_LBL, PASCO_LBL,
                                             HERNANDO_CITRUS_LBL_2, D7_ALL_LBL, 
                                             COUNTY_NAME=`COUNTY NAME`)],
                      by.x = "DTAZ", by.y="TAZ", all.x = TRUE,
@@ -383,6 +397,12 @@ overall_trip_dt         = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = D7_ALL_LBL
                                                                TO = D7_ALL_LBL_D)]
 overall_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                       TO   = ifelse(is.na(TO), "External", TO))]
+
+district_overall_trip_dt = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = DISTRICT_O,
+                                                               TO = DISTRICT_D)]
+district_overall_trip_dt[, ":="(FROM = ifelse(is.na(FROM), 999, FROM),
+                                TO   = ifelse(is.na(TO), 999, TO))]
+overall_district_sf = dplyr::filter(district_sf, NAME %in% unique(district_overall_trip_dt[,c(FROM,TO)]))
 # Hillsborough
 hillsborough_trip_dt    = trip_est_dt[grepl("Hillsborough", COUNTY_NAME_O)|
                                         grepl("Hillsborough", COUNTY_NAME_D),
@@ -390,6 +410,14 @@ hillsborough_trip_dt    = trip_est_dt[grepl("Hillsborough", COUNTY_NAME_O)|
                                                               TO = HILLSBOROUGH_LBL_3_D)]
 hillsborough_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                            TO   = ifelse(is.na(TO), "External", TO))]
+
+district_hillsborough_trip_dt = trip_est_dt[grepl("Hillsborough", COUNTY_NAME_O)|
+                                              grepl("Hillsborough", COUNTY_NAME_D),
+                                            .(TRIPS = sum(TRIPS)),.(FROM = DISTRICT_O,
+                                                                    TO = DISTRICT_D)]
+district_hillsborough_trip_dt[, ":="(FROM = ifelse(is.na(FROM), 999, FROM),
+                                     TO   = ifelse(is.na(TO), 999, TO))]
+hillsborough_district_sf = dplyr::filter(district_sf, NAME %in% unique(district_hillsborough_trip_dt[,c(FROM,TO)]))
 # Pinellas
 pinellas_trip_dt        = trip_est_dt[grepl("Pinellas", COUNTY_NAME_O)|
                                         grepl("Pinellas", COUNTY_NAME_D),
@@ -397,6 +425,14 @@ pinellas_trip_dt        = trip_est_dt[grepl("Pinellas", COUNTY_NAME_O)|
                                                                TO = PINELLAS_LBL_D)]
 pinellas_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                        TO   = ifelse(is.na(TO), "External", TO))]
+
+district_pinellas_trip_dt = trip_est_dt[grepl("Pinellas", COUNTY_NAME_O)|
+                                         grepl("Pinellas", COUNTY_NAME_D),
+                                       .(TRIPS = sum(TRIPS)),.(FROM = DISTRICT_O,
+                                                               TO = DISTRICT_D)]
+district_pinellas_trip_dt[, ":="(FROM = ifelse(is.na(FROM), 999, FROM),
+                                 TO   = ifelse(is.na(TO), 999, TO))]
+pinellas_district_sf = dplyr::filter(district_sf, NAME %in% unique(district_pinellas_trip_dt[,c(FROM,TO)]))
 # Pasco
 pasco_trip_dt           = trip_est_dt[grepl("Pasco", COUNTY_NAME_O)|
                                         grepl("Pasco", COUNTY_NAME_D),
@@ -404,6 +440,14 @@ pasco_trip_dt           = trip_est_dt[grepl("Pasco", COUNTY_NAME_O)|
                                                                TO = PASCO_LBL_D)]
 pasco_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                     TO   = ifelse(is.na(TO), "External", TO))]
+
+district_pasco_trip_dt = trip_est_dt[grepl("Pasco", COUNTY_NAME_O)|
+                                      grepl("Pasco", COUNTY_NAME_D),
+                                    .(TRIPS = sum(TRIPS)),.(FROM = DISTRICT_O,
+                                                            TO = DISTRICT_D)]
+district_pasco_trip_dt[, ":="(FROM = ifelse(is.na(FROM), 999, FROM),
+                              TO   = ifelse(is.na(TO), 999, TO))]
+pasco_district_sf = dplyr::filter(district_sf, NAME %in% unique(district_pasco_trip_dt[,c(FROM,TO)]))
 # Hernando/Citrus
 hernando_citrus_trip_dt = trip_est_dt[grepl("Hernando", COUNTY_NAME_O)|
                                         grepl("Hernando", COUNTY_NAME_D)|
@@ -413,6 +457,16 @@ hernando_citrus_trip_dt = trip_est_dt[grepl("Hernando", COUNTY_NAME_O)|
                                                                TO = HERNANDO_CITRUS_LBL_2_D)]
 hernando_citrus_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                               TO   = ifelse(is.na(TO), "External", TO))]
+
+district_hernando_citrus_trip_dt = trip_est_dt[grepl("Hernando", COUNTY_NAME_O)|
+                                                grepl("Hernando", COUNTY_NAME_D)|
+                                                grepl("Citrus", COUNTY_NAME_O)|
+                                                grepl("Citrus", COUNTY_NAME_D),
+                                              .(TRIPS = sum(TRIPS)),.(FROM = DISTRICT_O,
+                                                                      TO = DISTRICT_D)]
+district_hernando_citrus_trip_dt[, ":="(FROM = ifelse(is.na(FROM), 999, FROM),
+                                        TO   = ifelse(is.na(TO), 999, TO))]
+hernando_district_sf = dplyr::filter(district_sf, NAME %in% unique(district_hernando_citrus_trip_dt[,c(FROM,TO)]))
 
 ### Travel Survey Scenario #######################################################
 ##################################################################################
@@ -789,6 +843,13 @@ fwrite(bike_freq_dt, file = bike_file)
 fwrite(age_group_dt, file = age_file)
 fwrite(gender_dt, file = gender_file)
 
+# Trip OD
+fwrite(district_overall_trip_dt,         file = trip_od_overall_file_d)
+fwrite(district_hillsborough_trip_dt,    file = trip_od_hillsborough_file_d)
+fwrite(district_pinellas_trip_dt,        file = trip_od_pinellas_file_d)
+fwrite(district_pasco_trip_dt,           file = trip_od_pasco_file_d)
+fwrite(district_hernando_citrus_trip_dt, file = trip_od_hernando_citrus_file_d)
+
 ## Passive Data
 # Geojson files
 st_write(overall_sf,         driver = "GeoJSON", dsn = overall_geo_file,         delete_dsn = TRUE)
@@ -796,6 +857,12 @@ st_write(hillsborough_sf,    driver = "GeoJSON", dsn = hillsborough_geo_file,   
 st_write(pinellas_sf,        driver = "GeoJSON", dsn = pinellas_geo_file,        delete_dsn = TRUE)
 st_write(pasco_sf,           driver = "GeoJSON", dsn = pasco_geo_file,           delete_dsn = TRUE)
 st_write(hernando_citrus_sf, driver = "GeoJSON", dsn = hernando_citrus_geo_file, delete_dsn = TRUE)
+
+st_write(overall_district_sf,         driver = "GeoJSON", dsn = district_overall_geo_file,         delete_dsn = TRUE)
+st_write(hillsborough_district_sf,    driver = "GeoJSON", dsn = district_hillsborough_geo_file,    delete_dsn = TRUE)
+st_write(pinellas_district_sf,        driver = "GeoJSON", dsn = district_pinellas_geo_file,        delete_dsn = TRUE)
+st_write(pasco_district_sf,           driver = "GeoJSON", dsn = district_pasco_geo_file,           delete_dsn = TRUE)
+st_write(hernando_citrus_district_sf, driver = "GeoJSON", dsn = district_hernando_citrus_geo_file, delete_dsn = TRUE)
 
 # Trip OD
 fwrite(overall_trip_dt,         file = trip_od_overall_file)
