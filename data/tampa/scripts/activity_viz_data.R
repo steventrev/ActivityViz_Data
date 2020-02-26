@@ -862,7 +862,7 @@ st_write(overall_district_sf,         driver = "GeoJSON", dsn = district_overall
 st_write(hillsborough_district_sf,    driver = "GeoJSON", dsn = district_hillsborough_geo_file,    delete_dsn = TRUE)
 st_write(pinellas_district_sf,        driver = "GeoJSON", dsn = district_pinellas_geo_file,        delete_dsn = TRUE)
 st_write(pasco_district_sf,           driver = "GeoJSON", dsn = district_pasco_geo_file,           delete_dsn = TRUE)
-st_write(hernando_citrus_district_sf, driver = "GeoJSON", dsn = district_hernando_citrus_geo_file, delete_dsn = TRUE)
+st_write(hernando_district_sf,        driver = "GeoJSON", dsn = district_hernando_citrus_geo_file, delete_dsn = TRUE)
 
 # Trip OD
 fwrite(overall_trip_dt,         file = trip_od_overall_file)
