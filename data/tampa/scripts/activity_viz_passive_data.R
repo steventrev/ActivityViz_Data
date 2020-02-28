@@ -9,7 +9,7 @@
 # 3. Load required databases
 # 4. Create output data
 # 4a. Passive Data Scenario
-# 4c. Executive Summary Scenario
+# 4b. Executive Summary Scenario
 # 5. Write output data
 
 
