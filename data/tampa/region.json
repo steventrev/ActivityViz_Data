@@ -27,11 +27,7 @@
             {"name":"Work Trip Mode", "config":"Default", "file":"work_mode.csv", "info":"Usual way commutes to work"}
             ] ,
         "Chord": [
-            {"name":"Overall OD Flows","config":"DistrictOverall","file":"trip_od_overall_district.csv","info":"Daily trips OD by Districts"},
-            {"name":"Hillsborough OD Flows","config":"DistrictHillsborough","file":"trip_od_hillsborough_district.csv","info":"Daily trips OD by Districts"},
-            {"name":"Pinellas OD Flows","config":"DistrictPinellas","file":"trip_od_pinellas_district.csv","info":"Daily trips OD by Districts"},
-            {"name":"Pasco OD Flows","config":"DistrictPasco","file":"trip_od_pasco_district.csv","info":"Daily trips OD by Districts"},
-            {"name":"Hernando and Citrus OD Flows","config":"DistrictHernando","file":"trip_od_hernando_citrus_district.csv","info":"Daily trips OD by Districts"}
+            {"name":"Daily OD Flows","config":"SideBySide","file":"trip_od_overall.csv","info":"Daily trips OD by Districts for Passive and Survey Data"}
             ]
       }
     },
@@ -65,11 +61,16 @@
       "title": "- Origin-Destination Tables",
       "visualizations": {
         "Chord": [
-            {"name":"Overall OD Flows","config":"Overall","file":"trip_od_overall.csv","info":"Daily trips OD"},
-            {"name":"Hillsborough OD Flows","config":"Hillsborough","file":"trip_od_hillsborough.csv","info":"Daily trips OD"},
-            {"name":"Pinellas OD Flows","config":"Pinellas","file":"trip_od_pinellas.csv","info":"Daily trips OD"},
-            {"name":"Pasco OD Flows","config":"Pasco","file":"trip_od_pasco.csv","info":"Daily trips OD"},
-            {"name":"Hernando and Citrus OD Flows","config":"Hernando","file":"trip_od_hernando_citrus.csv","info":"Daily trips OD"}
+            {"name":"Overall OD Flows","config":"Overall","file":"trip_daily_pod_overall.csv","info":"Daily trips OD"},
+            {"name":"Hillsborough OD Flows","config":"Hillsborough","file":"trip_daily_pod_hillsborough.csv","info":"Daily trips OD"},
+            {"name":"Pinellas OD Flows","config":"Pinellas","file":"trip_daily_pod_pinellas.csv","info":"Daily trips OD"},
+            {"name":"Pasco OD Flows","config":"Pasco","file":"trip_daily_pod_pasco.csv","info":"Daily trips OD"},
+            {"name":"Hernando and Citrus OD Flows","config":"Hernando","file":"trip_daily_pod_hernando_citrus.csv","info":"Daily trips OD"},
+            {"name":"Overall OD Flows by Residency","config":"SideBySide","file":"trip_res_vis_pod_overall.csv","info":"Daily trips OD for residents and visitors"},
+            {"name":"Hillsborough OD Flows by Residency","config":"SideBySide","file":"trip_res_vis_pod_hillsborough.csv","info":"Daily trips OD for residents and visitors"},
+            {"name":"Pinellas OD Flows by Residency","config":"SideBySide","file":"trip_res_vis_pod_pinellas.csv","info":"Daily trips OD for residents and visitors"},
+            {"name":"Pasco OD Flows by Residency","config":"SideBySide","file":"trip_res_vis_pod_pasco.csv","info":"Daily trips OD for residents and visitors"},
+            {"name":"Hernando and Citrus OD Flows by Residency","config":"SideBySide","file":"trip_res_vis_pod_hernando_citrus.csv","info":"Daily trips OD for residents and visitors"}
             ]
       }
     }
@@ -155,35 +156,12 @@
       "LegendText": "TRIPS",
       "DesireLinesOn": true
     },
-    "DistrictOverall": {
-      "ZoneFile":"district_overall.json",
+    "SideBySide": {
       "LabelSize": "14",
       "LegendText": "TRIPS",
-      "DesireLinesOn": true
-    },
-    "DistrictHillsborough": {
-      "ZoneFile":"district_hillsborough.json",
-      "LabelSize": "14",
-      "LegendText": "TRIPS",
-      "DesireLinesOn": true
-    },
-    "DistrictPinellas": {
-      "ZoneFile":"district_pinellas.json",
-      "LabelSize": "14",
-      "LegendText": "TRIPS",
-      "DesireLinesOn": true
-    },
-    "DistrictPasco": {
-      "ZoneFile":"district_pasco.json",
-      "LabelSize": "14",
-      "LegendText": "TRIPS",
-      "DesireLinesOn": true
-    },
-    "DistrictHernando": {
-      "ZoneFile":"district_hernando_citrus.json",
-      "LabelSize": "14",
-      "LegendText": "TRIPS",
-      "DesireLinesOn": true
+      "ExcludeSameOD": false,
+      "SideBySide": true,
+      "ChartPerRow": 2
     }
   },
   "BarMap":{

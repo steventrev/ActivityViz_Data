@@ -46,27 +46,16 @@ pd_output_dir = file.path(getwd(), "Passive_Data")
 ts_output_dir = file.path(getwd(), "Travel_Survey")
 
 # Executive_Summary
-snapshot_file = file.path(es_output_dir, "snapshot.csv")
-trips_period_file = file.path(es_output_dir, "trips_period.csv")         # Typical Travel
-destination_file = file.path(es_output_dir, "trips_destination.csv")     # Trip Destination
-work_mode_file   = file.path(es_output_dir, "work_mode.csv")             # Usual Ways to commute to Work 
-telecommute_file = file.path(es_output_dir, "telecommute_freq_age.csv")  # Telecommute freq by age
-bike_file        = file.path(es_output_dir, "bike_freq_age.csv")         # Bike use freq by age
-commute_freq_file= file.path(es_output_dir, "commute_freq_age.csv")      # Commute freq by age
-age_file         = file.path(es_output_dir, "age_distribution.csv")      # Age of participants
-gender_file      = file.path(es_output_dir, "gender_distribution.csv")   # Gender of participants
-trip_od_overall_file_d         = file.path(es_output_dir, "trip_od_overall_district.csv") # District level OD charts
-trip_od_hillsborough_file_d    = file.path(es_output_dir, "trip_od_hillsborough_district.csv") # District level OD charts
-trip_od_pinellas_file_d        = file.path(es_output_dir, "trip_od_pinellas_district.csv") # District level OD charts
-trip_od_pasco_file_d           = file.path(es_output_dir, "trip_od_pasco_district.csv") # District level OD charts
-trip_od_hernando_citrus_file_d = file.path(es_output_dir, "trip_od_hernando_citrus_district.csv") # District level OD charts
-
-# Passive_Data
-trip_od_overall_file         = file.path(pd_output_dir, "trip_od_overall.csv")
-trip_od_hillsborough_file    = file.path(pd_output_dir, "trip_od_hillsborough.csv")
-trip_od_pinellas_file        = file.path(pd_output_dir, "trip_od_pinellas.csv")
-trip_od_pasco_file           = file.path(pd_output_dir, "trip_od_pasco.csv")
-trip_od_hernando_citrus_file = file.path(pd_output_dir, "trip_od_hernando_citrus.csv")
+snapshot_file     = file.path(es_output_dir, "snapshot.csv")
+trips_period_file = file.path(es_output_dir, "trips_period.csv")          # Typical Travel
+destination_file  = file.path(es_output_dir, "trips_destination.csv")     # Trip Destination
+work_mode_file    = file.path(es_output_dir, "work_mode.csv")             # Usual Ways to commute to Work 
+telecommute_file  = file.path(es_output_dir, "telecommute_freq_age.csv")  # Telecommute freq by age
+bike_file         = file.path(es_output_dir, "bike_freq_age.csv")         # Bike use freq by age
+commute_freq_file = file.path(es_output_dir, "commute_freq_age.csv")      # Commute freq by age
+age_file          = file.path(es_output_dir, "age_distribution.csv")      # Age of participants
+gender_file       = file.path(es_output_dir, "gender_distribution.csv")   # Gender of participants
+trip_od_overall_file_d         = file.path(es_output_dir, "trip_od_overall.csv") # Overall survey OD data
 
 # Travel_Survey
 trip_zone_file                = file.path(ts_output_dir, "trips_zone.csv")
@@ -75,11 +64,11 @@ seasonal_trip_mode_file       = file.path(ts_output_dir, "seasonal_trip_mode_zon
 uni_trip_mode_file            = file.path(ts_output_dir, "uni_trip_mode_zone.csv")
 day_pattern_file              = file.path(ts_output_dir, "day_pattern.csv")
 time_use_file                 = file.path(ts_output_dir, "time_use.csv")
-trip_od_overall_file2         = file.path(ts_output_dir, "trip_od_overall.csv")
-trip_od_hillsborough_file2    = file.path(ts_output_dir, "trip_od_hillsborough.csv")
-trip_od_pinellas_file2        = file.path(ts_output_dir, "trip_od_pinellas.csv")
-trip_od_pasco_file2           = file.path(ts_output_dir, "trip_od_pasco.csv")
-trip_od_hernando_citrus_file2 = file.path(ts_output_dir, "trip_od_hernando_citrus.csv")
+trip_od_overall_file          = file.path(ts_output_dir, "trip_od_overall.csv")
+trip_od_hillsborough_file     = file.path(ts_output_dir, "trip_od_hillsborough.csv")
+trip_od_pinellas_file         = file.path(ts_output_dir, "trip_od_pinellas.csv")
+trip_od_pasco_file            = file.path(ts_output_dir, "trip_od_pasco.csv")
+trip_od_hernando_citrus_file  = file.path(ts_output_dir, "trip_od_hernando_citrus.csv")
 
 # Geography for chord chart (OD)
 overall_geo_file                    = file.path(getwd(), "overall.json")
@@ -87,11 +76,6 @@ hillsborough_geo_file               = file.path(getwd(), "hillsborough.json")
 pinellas_geo_file                   = file.path(getwd(), "pinellas.json")
 pasco_geo_file                      = file.path(getwd(), "pasco.json")
 hernando_citrus_geo_file            = file.path(getwd(), "hernandocitrus.json")
-district_overall_geo_file           = file.path(getwd(), "district_overall.json")
-district_hillsborough_geo_file      = file.path(getwd(), "district_hillsborough.json")
-district_pinellas_geo_file          = file.path(getwd(), "district_pinellas.json")
-district_pasco_geo_file             = file.path(getwd(), "district_pasco.json")
-district_hernando_citrus_geo_file   = file.path(getwd(), "district_hernando_citrus.json")
 
 ### Load required datasets #######################################################
 ##################################################################################
@@ -148,9 +132,6 @@ names(pasco_sf) = c("NAME", "geometry")
 hernando_citrus_sf = dplyr::summarise(dplyr::group_by(agg_sf, HERNANDO_CITRUS_LBL_2))
 names(hernando_citrus_sf) = c("NAME", "geometry")
 
-# District
-district_sf = dplyr::summarise(dplyr::group_by(agg_sf, DISTRICT))
-names(district_sf) = c("NAME", "geometry")
 
 ### Executive Summary ############################################################
 ##################################################################################
@@ -397,12 +378,10 @@ overall_trip_dt         = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = D7_ALL_LBL
                                                                TO = D7_ALL_LBL_D)]
 overall_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                       TO   = ifelse(is.na(TO), "External", TO))]
+setkey(overall_trip_dt, FROM, TO)
+overall_trip_dt = overall_trip_dt[CJ(agg_dt$D7_ALL_LBL, agg_dt$D7_ALL_LBL, unique = TRUE)]
+overall_trip_dt[is.na(TRIPS), TRIPS := 0]
 
-district_overall_trip_dt = trip_est_dt[,.(TRIPS = sum(TRIPS)),.(FROM = DISTRICT_O,
-                                                               TO = DISTRICT_D)]
-district_overall_trip_dt[, ":="(FROM = ifelse(is.na(FROM), 999, FROM),
-                                TO   = ifelse(is.na(TO), 999, TO))]
-overall_district_sf = dplyr::filter(district_sf, NAME %in% unique(district_overall_trip_dt[,c(FROM,TO)]))
 # Hillsborough
 hillsborough_trip_dt    = trip_est_dt[grepl("Hillsborough", COUNTY_NAME_O)|
                                         grepl("Hillsborough", COUNTY_NAME_D),
@@ -410,14 +389,12 @@ hillsborough_trip_dt    = trip_est_dt[grepl("Hillsborough", COUNTY_NAME_O)|
                                                               TO = HILLSBOROUGH_LBL_3_D)]
 hillsborough_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                            TO   = ifelse(is.na(TO), "External", TO))]
+setkey(hillsborough_trip_dt, FROM, TO)
+hillsborough_trip_dt = hillsborough_trip_dt[CJ(agg_dt$HILLSBOROUGH_LBL_3,
+                                               agg_dt$HILLSBOROUGH_LBL_3,
+                                               unique = TRUE)]
+hillsborough_trip_dt[is.na(TRIPS), TRIPS := 0]
 
-district_hillsborough_trip_dt = trip_est_dt[grepl("Hillsborough", COUNTY_NAME_O)|
-                                              grepl("Hillsborough", COUNTY_NAME_D),
-                                            .(TRIPS = sum(TRIPS)),.(FROM = DISTRICT_O,
-                                                                    TO = DISTRICT_D)]
-district_hillsborough_trip_dt[, ":="(FROM = ifelse(is.na(FROM), 999, FROM),
-                                     TO   = ifelse(is.na(TO), 999, TO))]
-hillsborough_district_sf = dplyr::filter(district_sf, NAME %in% unique(district_hillsborough_trip_dt[,c(FROM,TO)]))
 # Pinellas
 pinellas_trip_dt        = trip_est_dt[grepl("Pinellas", COUNTY_NAME_O)|
                                         grepl("Pinellas", COUNTY_NAME_D),
@@ -425,14 +402,11 @@ pinellas_trip_dt        = trip_est_dt[grepl("Pinellas", COUNTY_NAME_O)|
                                                                TO = PINELLAS_LBL_D)]
 pinellas_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                        TO   = ifelse(is.na(TO), "External", TO))]
-
-district_pinellas_trip_dt = trip_est_dt[grepl("Pinellas", COUNTY_NAME_O)|
-                                         grepl("Pinellas", COUNTY_NAME_D),
-                                       .(TRIPS = sum(TRIPS)),.(FROM = DISTRICT_O,
-                                                               TO = DISTRICT_D)]
-district_pinellas_trip_dt[, ":="(FROM = ifelse(is.na(FROM), 999, FROM),
-                                 TO   = ifelse(is.na(TO), 999, TO))]
-pinellas_district_sf = dplyr::filter(district_sf, NAME %in% unique(district_pinellas_trip_dt[,c(FROM,TO)]))
+setkey(pinellas_trip_dt, FROM, TO)
+pinellas_trip_dt = pinellas_trip_dt[CJ(agg_dt$PINELLAS_LBL,
+                                       agg_dt$PINELLAS_LBL,
+                                       unique = TRUE)]
+pinellas_trip_dt[is.na(TRIPS), TRIPS := 0]
 # Pasco
 pasco_trip_dt           = trip_est_dt[grepl("Pasco", COUNTY_NAME_O)|
                                         grepl("Pasco", COUNTY_NAME_D),
@@ -440,14 +414,12 @@ pasco_trip_dt           = trip_est_dt[grepl("Pasco", COUNTY_NAME_O)|
                                                                TO = PASCO_LBL_D)]
 pasco_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                     TO   = ifelse(is.na(TO), "External", TO))]
+setkey(pasco_trip_dt, FROM, TO)
+pasco_trip_dt = pasco_trip_dt[CJ(agg_dt$PASCO_LBL,
+                                 agg_dt$PASCO_LBL,
+                                 unique = TRUE)]
+pasco_trip_dt[is.na(TRIPS), TRIPS := 0]
 
-district_pasco_trip_dt = trip_est_dt[grepl("Pasco", COUNTY_NAME_O)|
-                                      grepl("Pasco", COUNTY_NAME_D),
-                                    .(TRIPS = sum(TRIPS)),.(FROM = DISTRICT_O,
-                                                            TO = DISTRICT_D)]
-district_pasco_trip_dt[, ":="(FROM = ifelse(is.na(FROM), 999, FROM),
-                              TO   = ifelse(is.na(TO), 999, TO))]
-pasco_district_sf = dplyr::filter(district_sf, NAME %in% unique(district_pasco_trip_dt[,c(FROM,TO)]))
 # Hernando/Citrus
 hernando_citrus_trip_dt = trip_est_dt[grepl("Hernando", COUNTY_NAME_O)|
                                         grepl("Hernando", COUNTY_NAME_D)|
@@ -457,16 +429,11 @@ hernando_citrus_trip_dt = trip_est_dt[grepl("Hernando", COUNTY_NAME_O)|
                                                                TO = HERNANDO_CITRUS_LBL_2_D)]
 hernando_citrus_trip_dt[,":="(FROM = ifelse(is.na(FROM), "External", FROM),
                               TO   = ifelse(is.na(TO), "External", TO))]
-
-district_hernando_citrus_trip_dt = trip_est_dt[grepl("Hernando", COUNTY_NAME_O)|
-                                                grepl("Hernando", COUNTY_NAME_D)|
-                                                grepl("Citrus", COUNTY_NAME_O)|
-                                                grepl("Citrus", COUNTY_NAME_D),
-                                              .(TRIPS = sum(TRIPS)),.(FROM = DISTRICT_O,
-                                                                      TO = DISTRICT_D)]
-district_hernando_citrus_trip_dt[, ":="(FROM = ifelse(is.na(FROM), 999, FROM),
-                                        TO   = ifelse(is.na(TO), 999, TO))]
-hernando_district_sf = dplyr::filter(district_sf, NAME %in% unique(district_hernando_citrus_trip_dt[,c(FROM,TO)]))
+setkey(hernando_citrus_trip_dt, FROM, TO)
+hernando_citrus_trip_dt = hernando_citrus_trip_dt[CJ(agg_dt$HERNANDO_CITRUS_LBL_2,
+                                                     agg_dt$HERNANDO_CITRUS_LBL_2,
+                                                     unique = TRUE)]
+hernando_citrus_trip_dt[is.na(TRIPS), TRIPS := 0]
 
 ### Travel Survey Scenario #######################################################
 ##################################################################################
@@ -844,11 +811,7 @@ fwrite(age_group_dt, file = age_file)
 fwrite(gender_dt, file = gender_file)
 
 # Trip OD
-fwrite(district_overall_trip_dt,         file = trip_od_overall_file_d)
-fwrite(district_hillsborough_trip_dt,    file = trip_od_hillsborough_file_d)
-fwrite(district_pinellas_trip_dt,        file = trip_od_pinellas_file_d)
-fwrite(district_pasco_trip_dt,           file = trip_od_pasco_file_d)
-fwrite(district_hernando_citrus_trip_dt, file = trip_od_hernando_citrus_file_d)
+fwrite(overall_trip_dt,         file = trip_od_overall_file_d)
 
 ## Passive Data
 # Geojson files
@@ -858,26 +821,15 @@ st_write(pinellas_sf,        driver = "GeoJSON", dsn = pinellas_geo_file,       
 st_write(pasco_sf,           driver = "GeoJSON", dsn = pasco_geo_file,           delete_dsn = TRUE)
 st_write(hernando_citrus_sf, driver = "GeoJSON", dsn = hernando_citrus_geo_file, delete_dsn = TRUE)
 
-st_write(overall_district_sf,         driver = "GeoJSON", dsn = district_overall_geo_file,         delete_dsn = TRUE)
-st_write(hillsborough_district_sf,    driver = "GeoJSON", dsn = district_hillsborough_geo_file,    delete_dsn = TRUE)
-st_write(pinellas_district_sf,        driver = "GeoJSON", dsn = district_pinellas_geo_file,        delete_dsn = TRUE)
-st_write(pasco_district_sf,           driver = "GeoJSON", dsn = district_pasco_geo_file,           delete_dsn = TRUE)
-st_write(hernando_district_sf,        driver = "GeoJSON", dsn = district_hernando_citrus_geo_file, delete_dsn = TRUE)
+# Trip OD
 
+## Travel Survey
 # Trip OD
 fwrite(overall_trip_dt,         file = trip_od_overall_file)
 fwrite(hillsborough_trip_dt,    file = trip_od_hillsborough_file)
 fwrite(pinellas_trip_dt,        file = trip_od_pinellas_file)
 fwrite(pasco_trip_dt,           file = trip_od_pasco_file)
 fwrite(hernando_citrus_trip_dt, file = trip_od_hernando_citrus_file)
-
-## Travel Survey
-# Trip OD
-fwrite(overall_trip_dt,         file = trip_od_overall_file2)
-fwrite(hillsborough_trip_dt,    file = trip_od_hillsborough_file2)
-fwrite(pinellas_trip_dt,        file = trip_od_pinellas_file2)
-fwrite(pasco_trip_dt,           file = trip_od_pasco_file2)
-fwrite(hernando_citrus_trip_dt, file = trip_od_hernando_citrus_file2)
 
 # Trips Mode
 fwrite(trips_mode, file = trip_mode_file)
