@@ -1,0 +1,51 @@
+{
+  "Title":"NASHVILLE ABMVIZ",
+  "CountyFile":"counties.json",
+  "Icon":"",
+  "Logo":"",
+  "NavbarTitle":"ActivityViz",
+  "LinkURL":"https://www.gnrc.org/",
+  "CenterMap": [36.07425, -86.6825],  
+  "FrontPageTitle": "NASHVILLE",
+  "FrontPageGraphic": "",
+  "SideBarTextLeft": "<b>ActivityViz</b> was initially funded by the <a href='https://atlantaregional.org/'>Atlanta Regional Commission</a> with additional support from <a href='https://www.oregonmetro.gov/'>Oregon Metro</a> and others.",
+  "SideBarTextRight": "<b>ActivityViz</b> is an interactive travel and activity data visualization tool.  It is built with JavaScript technologies and works with various types of travel and activity data - household travel surveys, trip-based model outputs, activity-based model outputs, disaggregate passive data, freight models, on-board surveys, etc.  The dashboard features several interactive and customizable visualizations for exploring data, such as 3D maps of trips in time and space, time use by person type and activity, radar charts for performance measure analysis, sunburst diagrams for visualizing mode shares, animated bubble maps, chord diagrams for OD data, point-of-interest maps for transit stop data, truck flow data, etc.  </b>ActivityViz</b> is published using <a href='https://pages.github.com/'>GitHub pages</a> which eliminates most of the administrative backend in traditional systems.",
+  "SideBarImage":"example.png",
+  "scenarios":{
+    "OD": {
+      "title":"- OD flows by data source",
+      "visualizations": {
+        "Chord": [{"name":"Overall Trip ODs","config":"SideBySide","file":"daily_overall_trips.csv","info":"Daily Trip ODs"},
+        {"name":"Overall Trip ODs By Period","config":"SideBySide4","file":"daily_overall_period_trips.csv","info":"Daily Trip ODs by Time Period"},
+        {"name":"AM Trip ODs","config":"SideBySide","file":"daily_am_trips.csv","info":"Daily Trip ODs in AM"},
+        {"name":"MD Trip ODs","config":"SideBySide","file":"daily_md_trips.csv","info":"Daily Trip ODs in MD"},
+        {"name":"PM Trip ODs","config":"SideBySide","file":"daily_pm_trips.csv","info":"Daily Trip ODs in PM"},
+        {"name":"OP Trip ODs","config":"SideBySide","file":"daily_op_trips.csv","info":"Daily Trip ODs in OP"}]
+      }
+    }
+  },
+  "Chord": {
+    "Default": {
+      "ZoneFile":"counties.json",
+      "LabelSize": "14",
+      "LegendText": "TRIPS"
+    },
+    "SideBySide": {
+      "ZoneFile":"counties.json",
+      "LabelSize": "14",
+      "LegendText": "TRIPS",
+      "ExcludeSameOD": false,
+      "SideBySide": true,
+      "ChartPerRow": 3
+    },
+    "SideBySide4": {
+      "ZoneFile":"counties.json",
+      "LabelSize": "14",
+      "LegendText": "TRIPS",
+      "ExcludeSameOD": false,
+      "SideBySide": true,
+      "ChartPerRow": 4
+    }
+  }
+}
+
