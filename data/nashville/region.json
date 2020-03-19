@@ -13,7 +13,7 @@
   "SideBarImage":"example.png",
   "scenarios":{
     "OD": {
-      "title":"- Passive Data",
+      "title":"- Fall 2018 Passive Data",
       "visualizations": {
         "BarMap":[{"name":   "Trip Flows by County",
                    "config": "Default",

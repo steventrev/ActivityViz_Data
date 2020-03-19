@@ -88,9 +88,9 @@ od_PM_dt[Auto_Visitors < 0, Auto_Visitors:=0]
 od_OP_dt[Auto_Visitors < 0, Auto_Visitors:=0]
 
 od_AM_dt[, TYPE:="AM"]
-od_MD_dt[, TYPE:="MID_DAY"]
+od_MD_dt[, TYPE:="MIDDAY"]
 od_PM_dt[, TYPE:="PM"]
-od_OP_dt[, TYPE:="OFF_PEAK"]
+od_OP_dt[, TYPE:="OFFPEAK"]
 
 trip_dt = rbindlist(list(od_AM_dt, od_MD_dt, od_PM_dt, od_OP_dt),
                     use.names = TRUE,
@@ -130,7 +130,7 @@ taz_simplify_sf = st_as_sf(ms_simplify(input = as(taz_add_sf[,c("ID_NEW_NEW",
                                        weighting = 0.8,
                                        keep_shapes = TRUE))
 colnames(taz_simplify_sf) = c("id", "NAME", "geometry")
-taz_simplify_sf = taz_simplify_sf[order(taz_simplify_sf$ID),]
+taz_simplify_sf = taz_simplify_sf[order(taz_simplify_sf$id),]
 # county_simplify_sf = taz_add_sf %>% group_by(NAME, NAMELSAD) %>% summarize(AREA=sum(AREA))
 # county_simplify_sf = st_as_sf(ms_simplify(input = as(county_simplify_sf[,c("NAME",
 #                                                                            "NAMELSAD",
@@ -246,7 +246,7 @@ am_trips_dt[is.na(TOTAL),     TOTAL:=0]
 am_trips_dt[is.na(RESIDENTS), RESIDENTS:=0]
 am_trips_dt[is.na(VISITORS),  VISITORS:=0]
 ## MD
-md_trips_dt = time_trip_dt[TIMEZONE=="MID_DAY"][,TIMEZONE:=NULL][]
+md_trips_dt = time_trip_dt[TIMEZONE=="MIDDAY"][,TIMEZONE:=NULL][]
 setkey(md_trips_dt, FROM, TO)
 md_trips_dt = md_trips_dt[CJ(FROM, TO, unique = TRUE)]
 md_trips_dt[is.na(TOTAL),     TOTAL:=0]
@@ -260,7 +260,7 @@ pm_trips_dt[is.na(TOTAL),     TOTAL:=0]
 pm_trips_dt[is.na(RESIDENTS), RESIDENTS:=0]
 pm_trips_dt[is.na(VISITORS),  VISITORS:=0]
 ## OP
-op_trips_dt = time_trip_dt[TIMEZONE=="OFF_PEAK"][,TIMEZONE:=NULL][]
+op_trips_dt = time_trip_dt[TIMEZONE=="OFFPEAK"][,TIMEZONE:=NULL][]
 setkey(op_trips_dt, FROM, TO)
 op_trips_dt = op_trips_dt[CJ(FROM, TO, unique = TRUE)]
 op_trips_dt[is.na(TOTAL),     TOTAL:=0]
