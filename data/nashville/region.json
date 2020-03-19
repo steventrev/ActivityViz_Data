@@ -3,7 +3,7 @@
   "CountyFile":"counties.json",
   "Icon":"RSG.ico",
   "Logo":"logo.png",
-  "NavbarTitle":"GNRC ActivityViz",
+  "NavbarTitle":"GNRC ABMVIZ",
   "LinkURL":"https://www.gnrc.org/",
   "CenterMap": [36.07425, -86.6825],  
   "FrontPageTitle": "Greater Nashville Regional Council",
@@ -15,6 +15,9 @@
     "OD": {
       "title":"- Fall 2018 Passive Data",
       "visualizations": {
+        "GroupedCharts": [
+            {"name":"Trips By Time of Day","config":"Default","file":"trip_tod.csv","info":"Total trips by time of day"}
+            ],
         "BarMap":[{"name":   "Trip Flows by County",
                    "config": "Default",
                    "file":   "daily_dest_trips.csv",
@@ -62,6 +65,16 @@
     "Default": {
       "CycleMapTools": false,
       "ZoneFile": "taz.json"
+    }
+  },
+  "GroupedCharts":{
+    "Default": {
+      "NumberColsGrouped": 1,
+      "SwapLegendByDefault": false,
+      "ShowAsPercentByDefault": true,
+      "ShowAsVerticalByDefault": false,
+      "StackAllChartsByDefault": true,
+      "ChartWidthOverride": []
     }
   }
 }

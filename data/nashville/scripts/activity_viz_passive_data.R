@@ -65,6 +65,8 @@ daily_pm_file                         = file.path(od_output_dir,
                                                   "daily_pm_trips.csv")    # Daily pm passive data OD charts
 daily_op_file                         = file.path(od_output_dir,
                                                   "daily_op_trips.csv")    # Daily op passive data OD charts
+daily_tod_file                        = file.path(od_output_dir,
+                                                  "trip_tod.csv")    #
 
 
 
@@ -267,6 +269,19 @@ op_trips_dt[is.na(TOTAL),     TOTAL:=0]
 op_trips_dt[is.na(RESIDENTS), RESIDENTS:=0]
 op_trips_dt[is.na(VISITORS),  VISITORS:=0]
 
+# Time of day vs Resident/Visitor
+tod_trips_dt = trip_dt[,.(#ALL      =round(sum(Auto_Residents+Auto_Visitors), 2),
+                          RESIDENTS=round(sum(Auto_Residents), 2),
+                          VISITORS =round(sum(Auto_Visitors), 2)),
+                       .(`TIME OF DAY` = TYPE)]
+
+tod_trips_dt = melt.data.table(tod_trips_dt, id.vars = c("TIME OF DAY"),
+                               variable.name = "PERSON GROUP",
+                               variable.factor = FALSE,
+                               value.name = "TRIPS",
+                               value.factor = FALSE)
+tod_trips_dt[,CHART:="TRIPS BY TIME OF DAY"]
+
 
 ### Write output data ############################################################
 ##################################################################################
@@ -288,6 +303,7 @@ fwrite(am_trips_dt,        file = daily_am_file)
 fwrite(md_trips_dt,        file = daily_md_file)
 fwrite(pm_trips_dt,        file = daily_pm_file)
 fwrite(op_trips_dt,        file = daily_op_file)
+fwrite(tod_trips_dt,       file = daily_tod_file)
 
 
 
