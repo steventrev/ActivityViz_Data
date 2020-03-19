@@ -48,6 +48,10 @@ taz_shapefile_file                    = file.path(getwd(),
                                                   "taz.json")         # TAZ Shapefile
 county_shapefile_file                 = file.path(getwd(),
                                                   "counties.json")    # Counties Shapefile
+county_filter_file                    = file.path(od_output_dir,
+                                                  "counties.csv")    # Counties Shapefile
+daily_dest_file                       = file.path(od_output_dir,
+                                                  "daily_dest_trips.csv")  #
 daily_overall_file                    = file.path(od_output_dir,
                                                   "daily_overall_trips.csv")  # Daily overall passive data OD charts
 daily_overall_time_file               = file.path(od_output_dir,
@@ -141,6 +145,25 @@ taz_simplify_sf = st_as_sf(ms_simplify(input = as(taz_add_sf[,c("ID_NEW_NEW",
 ### Passive Data Scenario ########################################################
 ##################################################################################
 
+# County Filter File
+county_filter_sf = county_sf[county_sf$NAME %in% taz_simplify_sf$NAME,c("NAME", "geometry")]
+county_mx = diag(nrow=nrow(county_filter_sf))
+colnames(county_mx) = county_filter_sf$NAME
+county_filter_dt = data.table(ID=seq_along(county_filter_sf$NAME),
+                              COUNTY=county_filter_sf$NAME,
+                              data.table(county_mx))
+
+# County File
+county_filter_sf = county_filter_sf[order(county_filter_sf$NAME),c("NAME", "geometry")]
+ext_zones_sf$NAME = "External"
+ext_add_sf = ext_zones_sf[,c("NAME", "geometry")]
+order_names = c("External", rev(sort(county_filter_sf$NAME)))
+# county_filter_sf = rbind(county_filter_sf, ext_add_sf)
+county_filter_sf = county_filter_sf %>% group_by(NAME) %>% summarise() %>% ungroup()
+county_filter_sf =county_filter_sf[order(-(match(county_filter_sf$NAME,order_names))),]
+county_filter_sf$ID = seq_len(nrow(county_filter_sf))
+county_filter_sf = county_filter_sf[,c("ID", "NAME", "geometry")]
+
 # Chord Diagram
 trip_dt[taz_add_dt,COUNTY_O:=i.NAME, on=.(origin=ID_NEW_NEW)]
 trip_dt[taz_add_dt,COUNTY_D:=i.NAME, on=.(destination=ID_NEW_NEW)]
@@ -150,6 +173,23 @@ trip_dt[destination %in% ext_zones_dt$ID_NEW & is.na(COUNTY_D),
         COUNTY_D:="External"]
 
 # Overall
+
+# Daily Destination
+daily_dest_dt    = trip_dt[,.(#ALL      =round(sum(Auto_Residents+Auto_Visitors), 2),
+                              RESIDENTS=round(sum(Auto_Residents), 2),
+                              VISITORS =round(sum(Auto_Visitors), 2)),
+                           by = .(COUNTY = COUNTY_D)]
+daily_dest_dt[,ID:=county_filter_sf$ID[match(COUNTY,county_filter_sf$NAME)]]
+setcolorder(daily_dest_dt, c("ID"))
+daily_dest_dt = melt.data.table(daily_dest_dt,
+                                id.vars = c("ID", "COUNTY"),
+                                variable.name = "RESIDENCY",
+                                variable.factor = FALSE,
+                                value.name = "TRIPS",
+                                value.factor = FALSE)
+daily_dest_dt = daily_dest_dt[order(ID, COUNTY, match(RESIDENCY,c("RESIDENTS", "VISITORS", "ALL")))]
+
+
 # Daily Total
 daily_overall_dt = trip_dt[,.(TOTAL    =round(sum(Auto_Residents+Auto_Visitors), 2),
                               RESIDENTS=round(sum(Auto_Residents), 2),
@@ -233,10 +273,14 @@ op_trips_dt[is.na(VISITORS),  VISITORS:=0]
 ## Passive Data
 # Shapefile
 st_write(taz_simplify_sf, dsn = taz_shapefile_file, driver = "GeoJSON", delete_dsn = TRUE)
-st_write(county_sf[county_sf$NAME %in% taz_simplify_sf$NAME,c("NAME", "NAMELSAD", "geometry")], 
+st_write(county_filter_sf, 
          dsn = county_shapefile_file, driver = "GeoJSON", delete_dsn = TRUE)
 
+# Filter File
+fwrite(county_filter_dt,   file = county_filter_file)
+
 # Trip OD
+fwrite(daily_dest_dt[COUNTY!="External"],      file = daily_dest_file)
 fwrite(daily_overall_dt,   file = daily_overall_file)
 fwrite(daily_time_dt,      file = daily_overall_time_file)
 fwrite(am_trips_dt,        file = daily_am_file)
