@@ -179,15 +179,15 @@ daily_dest_dt    = trip_dt[,.(#ALL      =round(sum(Auto_Residents+Auto_Visitors)
                               RESIDENTS=round(sum(Auto_Residents), 2),
                               VISITORS =round(sum(Auto_Visitors), 2)),
                            by = .(COUNTY = COUNTY_D)]
-daily_dest_dt[,ID:=county_filter_sf$ID[match(COUNTY,county_filter_sf$NAME)]]
-setcolorder(daily_dest_dt, c("ID"))
+daily_dest_dt[,ZONE:=county_filter_sf$ID[match(COUNTY,county_filter_sf$NAME)]]
+setcolorder(daily_dest_dt, c("ZONE"))
 daily_dest_dt = melt.data.table(daily_dest_dt,
-                                id.vars = c("ID", "COUNTY"),
+                                id.vars = c("ZONE", "COUNTY"),
                                 variable.name = "RESIDENCY",
                                 variable.factor = FALSE,
-                                value.name = "TRIPS",
+                                value.name = "QUANTITY",
                                 value.factor = FALSE)
-daily_dest_dt = daily_dest_dt[order(ID, COUNTY, match(RESIDENCY,c("RESIDENTS", "VISITORS", "ALL")))]
+daily_dest_dt = daily_dest_dt[order(ZONE, COUNTY, match(RESIDENCY,c("RESIDENTS", "VISITORS", "ALL")))]
 
 
 # Daily Total
