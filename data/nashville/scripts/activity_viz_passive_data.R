@@ -88,9 +88,9 @@ od_PM_dt[Auto_Visitors < 0, Auto_Visitors:=0]
 od_OP_dt[Auto_Visitors < 0, Auto_Visitors:=0]
 
 od_AM_dt[, TYPE:="AM"]
-od_MD_dt[, TYPE:="MD"]
+od_MD_dt[, TYPE:="MID_DAY"]
 od_PM_dt[, TYPE:="PM"]
-od_OP_dt[, TYPE:="OP"]
+od_OP_dt[, TYPE:="OFF_PEAK"]
 
 trip_dt = rbindlist(list(od_AM_dt, od_MD_dt, od_PM_dt, od_OP_dt),
                     use.names = TRUE,
@@ -125,11 +125,12 @@ taz_sf$NAME = taz_add_sf$NAME[match(taz_sf$ID_NEW_NEW, taz_add_sf$ID_NEW_NEW)]
 taz_add_dt = data.table(taz_add_sf)
 taz_simplify_sf = st_as_sf(ms_simplify(input = as(taz_add_sf[,c("ID_NEW_NEW",
                                                                 "NAME",
-                                                                "NAMELSAD",
                                                                 "geometry")], "Spatial"),
                                        keep = 0.04,
                                        weighting = 0.8,
                                        keep_shapes = TRUE))
+colnames(taz_simplify_sf) = c("id", "NAME", "geometry")
+taz_simplify_sf = taz_simplify_sf[order(taz_simplify_sf$ID),]
 # county_simplify_sf = taz_add_sf %>% group_by(NAME, NAMELSAD) %>% summarize(AREA=sum(AREA))
 # county_simplify_sf = st_as_sf(ms_simplify(input = as(county_simplify_sf[,c("NAME",
 #                                                                            "NAMELSAD",
@@ -178,8 +179,8 @@ trip_dt[destination %in% ext_zones_dt$ID_NEW & is.na(COUNTY_D),
 daily_dest_dt    = trip_dt[,.(#ALL      =round(sum(Auto_Residents+Auto_Visitors), 2),
                               RESIDENTS=round(sum(Auto_Residents), 2),
                               VISITORS =round(sum(Auto_Visitors), 2)),
-                           by = .(COUNTY = COUNTY_D)]
-daily_dest_dt[,ZONE:=county_filter_sf$ID[match(COUNTY,county_filter_sf$NAME)]]
+                           by = .(ZONE = destination, COUNTY = COUNTY_D)]
+# daily_dest_dt[,ZONE:=county_filter_sf$ID[match(COUNTY,county_filter_sf$NAME)]]
 setcolorder(daily_dest_dt, c("ZONE"))
 daily_dest_dt = melt.data.table(daily_dest_dt,
                                 id.vars = c("ZONE", "COUNTY"),
@@ -245,7 +246,7 @@ am_trips_dt[is.na(TOTAL),     TOTAL:=0]
 am_trips_dt[is.na(RESIDENTS), RESIDENTS:=0]
 am_trips_dt[is.na(VISITORS),  VISITORS:=0]
 ## MD
-md_trips_dt = time_trip_dt[TIMEZONE=="MD"][,TIMEZONE:=NULL][]
+md_trips_dt = time_trip_dt[TIMEZONE=="MID_DAY"][,TIMEZONE:=NULL][]
 setkey(md_trips_dt, FROM, TO)
 md_trips_dt = md_trips_dt[CJ(FROM, TO, unique = TRUE)]
 md_trips_dt[is.na(TOTAL),     TOTAL:=0]
@@ -259,7 +260,7 @@ pm_trips_dt[is.na(TOTAL),     TOTAL:=0]
 pm_trips_dt[is.na(RESIDENTS), RESIDENTS:=0]
 pm_trips_dt[is.na(VISITORS),  VISITORS:=0]
 ## OP
-op_trips_dt = time_trip_dt[TIMEZONE=="OP"][,TIMEZONE:=NULL][]
+op_trips_dt = time_trip_dt[TIMEZONE=="OFF_PEAK"][,TIMEZONE:=NULL][]
 setkey(op_trips_dt, FROM, TO)
 op_trips_dt = op_trips_dt[CJ(FROM, TO, unique = TRUE)]
 op_trips_dt[is.na(TOTAL),     TOTAL:=0]
