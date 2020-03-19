@@ -1,9 +1,9 @@
 {
-  "Title":"GNRC ABMVIZ",
+  "Title":"GNRC ActivityViz",
   "CountyFile":"counties.json",
   "Icon":"RSG.ico",
   "Logo":"logo.png",
-  "NavbarTitle":"GNRC ABMVIZ",
+  "NavbarTitle":"GNRC ActivityViz",
   "LinkURL":"https://www.gnrc.org/",
   "CenterMap": [36.07425, -86.6825],  
   "FrontPageTitle": "Greater Nashville Regional Council",
