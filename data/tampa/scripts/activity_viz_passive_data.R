@@ -92,13 +92,15 @@ taz_sf = geojson_sf(taz_file)
 taz_dt = data.table(taz_sf)
 agg_dt = fread(agg_file)
 agg_dt[,HILLSBOROUGH_LBL_3:=gsub("\\&|\\/","",HILLSBOROUGH_LBL_3)]
-agg_dt[,HILLSBOROUGH_LBL_3:=gsub("\\s+","_",HILLSBOROUGH_LBL_3)]
+# agg_dt[,HILLSBOROUGH_LBL_3:=gsub("\\s+","_",HILLSBOROUGH_LBL_3)]
 agg_dt[,PINELLAS_LBL:=gsub("\\&|\\/","",PINELLAS_LBL)]
-agg_dt[,PINELLAS_LBL:=gsub("\\s+","_",PINELLAS_LBL)]
+# agg_dt[,PINELLAS_LBL:=gsub("\\s+","_",PINELLAS_LBL)]
 agg_dt[,PASCO_LBL:=gsub("\\&|\\/","",PASCO_LBL)]
-agg_dt[,PASCO_LBL:=gsub("\\s+","_",PASCO_LBL)]
+# agg_dt[,PASCO_LBL:=gsub("\\s+","_",PASCO_LBL)]
 agg_dt[,HERNANDO_CITRUS_LBL_2:=gsub("\\&|\\/","",HERNANDO_CITRUS_LBL_2)]
-agg_dt[,HERNANDO_CITRUS_LBL_2:=gsub("\\s+","_",HERNANDO_CITRUS_LBL_2)]
+# agg_dt[,HERNANDO_CITRUS_LBL_2:=gsub("\\s+","_",HERNANDO_CITRUS_LBL_2)]
+agg_dt[,D7_ALL_LBL:=gsub("\\&|\\/","",D7_ALL_LBL)]
+# agg_dt[,D7_ALL_LBL:=gsub("\\s+","_",D7_ALL_LBL)]
 agg_sf = st_as_sf(merge(as.data.frame(agg_dt), taz_sf, by.x="TAZ", by.y="id",all.x = TRUE))
 
 

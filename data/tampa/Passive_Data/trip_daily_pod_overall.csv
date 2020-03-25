@@ -1,197 +1,197 @@
 FROM,TO,TRIPS
 Citrus,Citrus,0
 Citrus,Clearwater,0
-Citrus,Hernando_Other,0
-Citrus,Hillsborough_Other,0
-Citrus,Manatee_Spur,0
+Citrus,Hernando Other,0
+Citrus,Hillsborough Other,0
+Citrus,Manatee Spur,0
 Citrus,New_Port_Richey,0
-Citrus,Pasco_Other,0
+Citrus,Pasco Other,0
+Citrus,Pinellas Other,0
 Citrus,Pinellas_Beaches,0
-Citrus,Pinellas_Other,0
-Citrus,Plant_City,0
+Citrus,Plant City,0
 Citrus,Spring_Hill,0
 Citrus,St_Petersburg,0
 Citrus,Tampa,0
-Citrus,USF_Hosp_Busch,0
+Citrus,USF  Hosp  Busch,0
 Clearwater,Citrus,0
 Clearwater,Clearwater,821647.423770335
-Clearwater,Hernando_Other,3753.97628910327
-Clearwater,Hillsborough_Other,80292.323700008
-Clearwater,Manatee_Spur,0
+Clearwater,Hernando Other,3753.97628910327
+Clearwater,Hillsborough Other,80292.323700008
+Clearwater,Manatee Spur,0
 Clearwater,New_Port_Richey,104.506509780884
-Clearwater,Pasco_Other,3576.16555006243
+Clearwater,Pasco Other,3576.16555006243
+Clearwater,Pinellas Other,496728.881099757
 Clearwater,Pinellas_Beaches,86311.336400489
-Clearwater,Pinellas_Other,496728.881099757
-Clearwater,Plant_City,790.743044853211
+Clearwater,Plant City,790.743044853211
 Clearwater,Spring_Hill,0
 Clearwater,St_Petersburg,51112.8128683111
 Clearwater,Tampa,27062.0794697446
-Clearwater,USF_Hosp_Busch,1909.84533572197
-Hernando_Other,Citrus,0
-Hernando_Other,Clearwater,3863.56419502338
-Hernando_Other,Hernando_Other,105384.743892221
-Hernando_Other,Hillsborough_Other,86754.2673226758
-Hernando_Other,Manatee_Spur,0
-Hernando_Other,New_Port_Richey,1021.10057853395
-Hernando_Other,Pasco_Other,60361.566285504
-Hernando_Other,Pinellas_Beaches,2382.13876383565
-Hernando_Other,Pinellas_Other,29057.8251253008
-Hernando_Other,Plant_City,19441.166379232
-Hernando_Other,Spring_Hill,0
-Hernando_Other,St_Petersburg,13574.5170503031
-Hernando_Other,Tampa,30362.9219993344
-Hernando_Other,USF_Hosp_Busch,4669.41701958701
-Hillsborough_Other,Citrus,0
-Hillsborough_Other,Clearwater,77904.1235220519
-Hillsborough_Other,Hernando_Other,86559.8977402826
-Hillsborough_Other,Hillsborough_Other,9207745.74915011
-Hillsborough_Other,Manatee_Spur,0
-Hillsborough_Other,New_Port_Richey,4050.04552019387
-Hillsborough_Other,Pasco_Other,114709.956919781
-Hillsborough_Other,Pinellas_Beaches,23881.9088607673
-Hillsborough_Other,Pinellas_Other,657361.619631482
-Hillsborough_Other,Plant_City,155600.167711649
-Hillsborough_Other,Spring_Hill,0
-Hillsborough_Other,St_Petersburg,219265.225894205
-Hillsborough_Other,Tampa,1389994.92917597
-Hillsborough_Other,USF_Hosp_Busch,196399.70046255
-Manatee_Spur,Citrus,0
-Manatee_Spur,Clearwater,0
-Manatee_Spur,Hernando_Other,0
-Manatee_Spur,Hillsborough_Other,0
-Manatee_Spur,Manatee_Spur,0
-Manatee_Spur,New_Port_Richey,0
-Manatee_Spur,Pasco_Other,0
-Manatee_Spur,Pinellas_Beaches,0
-Manatee_Spur,Pinellas_Other,0
-Manatee_Spur,Plant_City,0
-Manatee_Spur,Spring_Hill,0
-Manatee_Spur,St_Petersburg,0
-Manatee_Spur,Tampa,0
-Manatee_Spur,USF_Hosp_Busch,0
+Clearwater,USF  Hosp  Busch,1909.84533572197
+Hernando Other,Citrus,0
+Hernando Other,Clearwater,3863.56419502338
+Hernando Other,Hernando Other,105384.743892221
+Hernando Other,Hillsborough Other,86754.2673226758
+Hernando Other,Manatee Spur,0
+Hernando Other,New_Port_Richey,1021.10057853395
+Hernando Other,Pasco Other,60361.566285504
+Hernando Other,Pinellas Other,29057.8251253008
+Hernando Other,Pinellas_Beaches,2382.13876383565
+Hernando Other,Plant City,19441.166379232
+Hernando Other,Spring_Hill,0
+Hernando Other,St_Petersburg,13574.5170503031
+Hernando Other,Tampa,30362.9219993344
+Hernando Other,USF  Hosp  Busch,4669.41701958701
+Hillsborough Other,Citrus,0
+Hillsborough Other,Clearwater,77904.1235220519
+Hillsborough Other,Hernando Other,86559.8977402826
+Hillsborough Other,Hillsborough Other,9207745.74915011
+Hillsborough Other,Manatee Spur,0
+Hillsborough Other,New_Port_Richey,4050.04552019387
+Hillsborough Other,Pasco Other,114709.956919781
+Hillsborough Other,Pinellas Other,657361.619631482
+Hillsborough Other,Pinellas_Beaches,23881.9088607673
+Hillsborough Other,Plant City,155600.167711649
+Hillsborough Other,Spring_Hill,0
+Hillsborough Other,St_Petersburg,219265.225894205
+Hillsborough Other,Tampa,1389994.92917597
+Hillsborough Other,USF  Hosp  Busch,196399.70046255
+Manatee Spur,Citrus,0
+Manatee Spur,Clearwater,0
+Manatee Spur,Hernando Other,0
+Manatee Spur,Hillsborough Other,0
+Manatee Spur,Manatee Spur,0
+Manatee Spur,New_Port_Richey,0
+Manatee Spur,Pasco Other,0
+Manatee Spur,Pinellas Other,0
+Manatee Spur,Pinellas_Beaches,0
+Manatee Spur,Plant City,0
+Manatee Spur,Spring_Hill,0
+Manatee Spur,St_Petersburg,0
+Manatee Spur,Tampa,0
+Manatee Spur,USF  Hosp  Busch,0
 New_Port_Richey,Citrus,0
 New_Port_Richey,Clearwater,43.2954368591309
-New_Port_Richey,Hernando_Other,1045.68540977174
-New_Port_Richey,Hillsborough_Other,4202.90937161446
-New_Port_Richey,Manatee_Spur,0
+New_Port_Richey,Hernando Other,1045.68540977174
+New_Port_Richey,Hillsborough Other,4202.90937161446
+New_Port_Richey,Manatee Spur,0
 New_Port_Richey,New_Port_Richey,45829.0539259911
-New_Port_Richey,Pasco_Other,63924.6537709385
+New_Port_Richey,Pasco Other,63924.6537709385
+New_Port_Richey,Pinellas Other,18138.9485571035
 New_Port_Richey,Pinellas_Beaches,24.5639200210571
-New_Port_Richey,Pinellas_Other,18138.9485571035
-New_Port_Richey,Plant_City,405.666914463043
+New_Port_Richey,Plant City,405.666914463043
 New_Port_Richey,Spring_Hill,0
 New_Port_Richey,St_Petersburg,623.580429553986
 New_Port_Richey,Tampa,2765.70542287827
-New_Port_Richey,USF_Hosp_Busch,497.289978027344
-Pasco_Other,Citrus,0
-Pasco_Other,Clearwater,3519.26020500157
-Pasco_Other,Hernando_Other,62069.41114935
-Pasco_Other,Hillsborough_Other,106451.671957624
-Pasco_Other,Manatee_Spur,0
-Pasco_Other,New_Port_Richey,65393.4092579037
-Pasco_Other,Pasco_Other,3192004.10639494
-Pasco_Other,Pinellas_Beaches,1487.29983067513
-Pasco_Other,Pinellas_Other,293610.140946569
-Pasco_Other,Plant_City,6268.56864596903
-Pasco_Other,Spring_Hill,0
-Pasco_Other,St_Petersburg,76291.2671500347
-Pasco_Other,Tampa,68911.181743023
-Pasco_Other,USF_Hosp_Busch,12551.6907863738
+New_Port_Richey,USF  Hosp  Busch,497.289978027344
+Pasco Other,Citrus,0
+Pasco Other,Clearwater,3519.26020500157
+Pasco Other,Hernando Other,62069.41114935
+Pasco Other,Hillsborough Other,106451.671957624
+Pasco Other,Manatee Spur,0
+Pasco Other,New_Port_Richey,65393.4092579037
+Pasco Other,Pasco Other,3192004.10639494
+Pasco Other,Pinellas Other,293610.140946569
+Pasco Other,Pinellas_Beaches,1487.29983067513
+Pasco Other,Plant City,6268.56864596903
+Pasco Other,Spring_Hill,0
+Pasco Other,St_Petersburg,76291.2671500347
+Pasco Other,Tampa,68911.181743023
+Pasco Other,USF  Hosp  Busch,12551.6907863738
+Pinellas Other,Citrus,0
+Pinellas Other,Clearwater,503697.715745368
+Pinellas Other,Hernando Other,28782.5727139716
+Pinellas Other,Hillsborough Other,654509.268889928
+Pinellas Other,Manatee Spur,0
+Pinellas Other,New_Port_Richey,17939.6335108592
+Pinellas Other,Pasco Other,293936.782850293
+Pinellas Other,Pinellas Other,5072444.54074698
+Pinellas Other,Pinellas_Beaches,211162.373150355
+Pinellas Other,Plant City,6338.51673654467
+Pinellas Other,Spring_Hill,0
+Pinellas Other,St_Petersburg,799571.170267469
+Pinellas Other,Tampa,241327.680843654
+Pinellas Other,USF  Hosp  Busch,25490.6846855993
 Pinellas_Beaches,Citrus,0
 Pinellas_Beaches,Clearwater,87819.1799271895
-Pinellas_Beaches,Hernando_Other,2508.61347096227
-Pinellas_Beaches,Hillsborough_Other,23683.080203901
-Pinellas_Beaches,Manatee_Spur,0
+Pinellas_Beaches,Hernando Other,2508.61347096227
+Pinellas_Beaches,Hillsborough Other,23683.080203901
+Pinellas_Beaches,Manatee Spur,0
 Pinellas_Beaches,New_Port_Richey,24.322033087723
-Pinellas_Beaches,Pasco_Other,1481.58603906631
+Pinellas_Beaches,Pasco Other,1481.58603906631
+Pinellas_Beaches,Pinellas Other,213412.711674619
 Pinellas_Beaches,Pinellas_Beaches,101497.525288343
-Pinellas_Beaches,Pinellas_Other,213412.711674619
-Pinellas_Beaches,Plant_City,258.437190532684
+Pinellas_Beaches,Plant City,258.437190532684
 Pinellas_Beaches,Spring_Hill,0
 Pinellas_Beaches,St_Petersburg,76296.4727959773
 Pinellas_Beaches,Tampa,12051.4089791386
-Pinellas_Beaches,USF_Hosp_Busch,733.420316423522
-Pinellas_Other,Citrus,0
-Pinellas_Other,Clearwater,503697.715745368
-Pinellas_Other,Hernando_Other,28782.5727139716
-Pinellas_Other,Hillsborough_Other,654509.268889928
-Pinellas_Other,Manatee_Spur,0
-Pinellas_Other,New_Port_Richey,17939.6335108592
-Pinellas_Other,Pasco_Other,293936.782850293
-Pinellas_Other,Pinellas_Beaches,211162.373150355
-Pinellas_Other,Pinellas_Other,5072444.54074698
-Pinellas_Other,Plant_City,6338.51673654467
-Pinellas_Other,Spring_Hill,0
-Pinellas_Other,St_Petersburg,799571.170267469
-Pinellas_Other,Tampa,241327.680843654
-Pinellas_Other,USF_Hosp_Busch,25490.6846855993
-Plant_City,Citrus,0
-Plant_City,Clearwater,776.153527736664
-Plant_City,Hernando_Other,19442.3011090942
-Plant_City,Hillsborough_Other,154689.975248792
-Plant_City,Manatee_Spur,0
-Plant_City,New_Port_Richey,343.625220775604
-Plant_City,Pasco_Other,6872.84006239474
-Plant_City,Pinellas_Beaches,235.091350078583
-Plant_City,Pinellas_Other,5884.34509044886
-Plant_City,Plant_City,414057.6217587
-Plant_City,Spring_Hill,0
-Plant_City,St_Petersburg,1421.08479046822
-Plant_City,Tampa,16695.638052989
-Plant_City,USF_Hosp_Busch,1545.62775164843
+Pinellas_Beaches,USF  Hosp  Busch,733.420316423522
+Plant City,Citrus,0
+Plant City,Clearwater,776.153527736664
+Plant City,Hernando Other,19442.3011090942
+Plant City,Hillsborough Other,154689.975248792
+Plant City,Manatee Spur,0
+Plant City,New_Port_Richey,343.625220775604
+Plant City,Pasco Other,6872.84006239474
+Plant City,Pinellas Other,5884.34509044886
+Plant City,Pinellas_Beaches,235.091350078583
+Plant City,Plant City,414057.6217587
+Plant City,Spring_Hill,0
+Plant City,St_Petersburg,1421.08479046822
+Plant City,Tampa,16695.638052989
+Plant City,USF  Hosp  Busch,1545.62775164843
 Spring_Hill,Citrus,0
 Spring_Hill,Clearwater,0
-Spring_Hill,Hernando_Other,0
-Spring_Hill,Hillsborough_Other,0
-Spring_Hill,Manatee_Spur,0
+Spring_Hill,Hernando Other,0
+Spring_Hill,Hillsborough Other,0
+Spring_Hill,Manatee Spur,0
 Spring_Hill,New_Port_Richey,0
-Spring_Hill,Pasco_Other,0
+Spring_Hill,Pasco Other,0
+Spring_Hill,Pinellas Other,0
 Spring_Hill,Pinellas_Beaches,0
-Spring_Hill,Pinellas_Other,0
-Spring_Hill,Plant_City,0
+Spring_Hill,Plant City,0
 Spring_Hill,Spring_Hill,0
 Spring_Hill,St_Petersburg,0
 Spring_Hill,Tampa,0
-Spring_Hill,USF_Hosp_Busch,0
+Spring_Hill,USF  Hosp  Busch,0
 St_Petersburg,Citrus,0
 St_Petersburg,Clearwater,51065.2273337131
-St_Petersburg,Hernando_Other,13411.1743719946
-St_Petersburg,Hillsborough_Other,210843.087777969
-St_Petersburg,Manatee_Spur,0
+St_Petersburg,Hernando Other,13411.1743719946
+St_Petersburg,Hillsborough Other,210843.087777969
+St_Petersburg,Manatee Spur,0
 St_Petersburg,New_Port_Richey,859.864929437637
-St_Petersburg,Pasco_Other,77256.6474720631
+St_Petersburg,Pasco Other,77256.6474720631
+St_Petersburg,Pinellas Other,784718.214443105
 St_Petersburg,Pinellas_Beaches,74343.2755626054
-St_Petersburg,Pinellas_Other,784718.214443105
-St_Petersburg,Plant_City,1650.49747991562
+St_Petersburg,Plant City,1650.49747991562
 St_Petersburg,Spring_Hill,0
 St_Petersburg,St_Petersburg,2677699.79103631
 St_Petersburg,Tampa,57540.9841896067
-St_Petersburg,USF_Hosp_Busch,5036.83915544488
+St_Petersburg,USF  Hosp  Busch,5036.83915544488
 Tampa,Citrus,0
 Tampa,Clearwater,26612.1065231436
-Tampa,Hernando_Other,30314.6324561825
-Tampa,Hillsborough_Other,1427993.06139966
-Tampa,Manatee_Spur,0
+Tampa,Hernando Other,30314.6324561825
+Tampa,Hillsborough Other,1427993.06139966
+Tampa,Manatee Spur,0
 Tampa,New_Port_Richey,3033.03861675854
-Tampa,Pasco_Other,71507.4364731179
+Tampa,Pasco Other,71507.4364731179
+Tampa,Pinellas Other,244085.926386931
 Tampa,Pinellas_Beaches,13145.3275895246
-Tampa,Pinellas_Other,244085.926386931
-Tampa,Plant_City,17369.1935965198
+Tampa,Plant City,17369.1935965198
 Tampa,Spring_Hill,0
 Tampa,St_Petersburg,58664.7001162572
 Tampa,Tampa,3864110.58876192
-Tampa,USF_Hosp_Busch,124279.333964795
-USF_Hosp_Busch,Citrus,0
-USF_Hosp_Busch,Clearwater,1980.2253742218
-USF_Hosp_Busch,Hernando_Other,4743.72607634589
-USF_Hosp_Busch,Hillsborough_Other,204923.167693229
-USF_Hosp_Busch,Manatee_Spur,0
-USF_Hosp_Busch,New_Port_Richey,596.988319396973
-USF_Hosp_Busch,Pasco_Other,13085.3681854419
-USF_Hosp_Busch,Pinellas_Beaches,854.966918979073
-USF_Hosp_Busch,Pinellas_Other,27383.9326562602
-USF_Hosp_Busch,Plant_City,1814.02502143383
-USF_Hosp_Busch,Spring_Hill,0
-USF_Hosp_Busch,St_Petersburg,5593.67172290059
-USF_Hosp_Busch,Tampa,128702.948327044
-USF_Hosp_Busch,USF_Hosp_Busch,285714.550440788
+Tampa,USF  Hosp  Busch,124279.333964795
+USF  Hosp  Busch,Citrus,0
+USF  Hosp  Busch,Clearwater,1980.2253742218
+USF  Hosp  Busch,Hernando Other,4743.72607634589
+USF  Hosp  Busch,Hillsborough Other,204923.167693229
+USF  Hosp  Busch,Manatee Spur,0
+USF  Hosp  Busch,New_Port_Richey,596.988319396973
+USF  Hosp  Busch,Pasco Other,13085.3681854419
+USF  Hosp  Busch,Pinellas Other,27383.9326562602
+USF  Hosp  Busch,Pinellas_Beaches,854.966918979073
+USF  Hosp  Busch,Plant City,1814.02502143383
+USF  Hosp  Busch,Spring_Hill,0
+USF  Hosp  Busch,St_Petersburg,5593.67172290059
+USF  Hosp  Busch,Tampa,128702.948327044
+USF  Hosp  Busch,USF  Hosp  Busch,285714.550440788

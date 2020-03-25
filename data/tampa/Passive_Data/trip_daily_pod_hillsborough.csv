@@ -1,677 +1,677 @@
 FROM,TO,TRIPS
 ,,0
-,CZ1,0
+,Apollo Beach  Ruskin,0
 ,CZ2,0
-,CZ3,0
 ,CZ4,0
-,Citrus_Park,0
+,Citrus Park,0
 ,Downtown,0
-,East_Town,0
-,Harney_Corridor_Tampa_Ex_Airpor,0
-,Hernando_Citrus,0
-,Hidden_River_Telecom_Park,0
-,MacDill_AFB_Port_Tampa,0
-,Manatee_Spur,0
-,Northeast_Hillsborough,0
-,Northwest_Hillsborough,0
+,East Town,0
+,Gibsonton,0
+,Harney Canal,0
+,Hernando  Citrus,0
+,MacDill AFB,0
+,Manatee Spur,0
+,NE Hilsborough,0
+,NW Hilsborough,0
+,New Tampa,0
 ,Pasco,0
 ,Pinellas,0
-,Plant_City_Area,0
-,Port_of_Tampa_50th_St_Corridor,0
-,Southeast_Hillsborough,0
-,Southwest_Hillsborough,0
-,Tampa_Central,0
-,Tampa_Intl_Airport_Anderson_Rd,0
-,USF_Hospitals_Busch_Gardens,0
-,West_Brandon_S_Falkenburg_Corrido,0
-,Westshore_Rocky_Point,0
-CZ1,,0
-CZ1,CZ1,245628.852155685
-CZ1,CZ2,38950.6065003872
-CZ1,CZ3,12543.986415863
-CZ1,CZ4,64936.1896780748
-CZ1,Citrus_Park,155.440634727478
-CZ1,Downtown,8030.41011917475
-CZ1,East_Town,10345.9097452164
-CZ1,Harney_Corridor_Tampa_Ex_Airpor,3765.32865142822
-CZ1,Hernando_Citrus,4341.06579815084
-CZ1,Hidden_River_Telecom_Park,751.111800670624
-CZ1,MacDill_AFB_Port_Tampa,2024.28677177429
-CZ1,Manatee_Spur,0
-CZ1,Northeast_Hillsborough,14156.7575068721
-CZ1,Northwest_Hillsborough,4968.59443228226
-CZ1,Pasco,1911.39217892289
-CZ1,Pinellas,9813.66425729846
-CZ1,Plant_City_Area,634.252862453461
-CZ1,Port_of_Tampa_50th_St_Corridor,3218.36233520508
-CZ1,Southeast_Hillsborough,55810.5557192564
-CZ1,Southwest_Hillsborough,4641.85452222824
-CZ1,Tampa_Central,20437.5066922531
-CZ1,Tampa_Intl_Airport_Anderson_Rd,2813.5894639492
-CZ1,USF_Hospitals_Busch_Gardens,4336.32707694569
-CZ1,West_Brandon_S_Falkenburg_Corrido,19841.7705586739
-CZ1,Westshore_Rocky_Point,3197.2331385836
+,Plant City Area,0
+,Port of Tampa  50th St Corridor,0
+,SE Hillsborough,0
+,SW Hillsborough,0
+,TPA  Anderson Rd,0
+,Tampa Central,0
+,USF  Hosp  Busch,0
+,West Brandon,0
+,Westshore  Rocky Point,0
+Apollo Beach  Ruskin,,0
+Apollo Beach  Ruskin,Apollo Beach  Ruskin,68655.9014492035
+Apollo Beach  Ruskin,CZ2,2618.14337062836
+Apollo Beach  Ruskin,CZ4,36015.6882920265
+Apollo Beach  Ruskin,Citrus Park,9.60142135620117
+Apollo Beach  Ruskin,Downtown,1472.90192842484
+Apollo Beach  Ruskin,East Town,1865.83284580708
+Apollo Beach  Ruskin,Gibsonton,12021.0617056228
+Apollo Beach  Ruskin,Harney Canal,1181.52582931519
+Apollo Beach  Ruskin,Hernando  Citrus,2364.83503261581
+Apollo Beach  Ruskin,MacDill AFB,493.720558166504
+Apollo Beach  Ruskin,Manatee Spur,0
+Apollo Beach  Ruskin,NE Hilsborough,3493.34451878071
+Apollo Beach  Ruskin,NW Hilsborough,1039.11844348907
+Apollo Beach  Ruskin,New Tampa,126.007099628449
+Apollo Beach  Ruskin,Pasco,814.161626338959
+Apollo Beach  Ruskin,Pinellas,4332.28944383003
+Apollo Beach  Ruskin,Plant City Area,136.231651306152
+Apollo Beach  Ruskin,Port of Tampa  50th St Corridor,890.805733203888
+Apollo Beach  Ruskin,SE Hillsborough,11942.4407541845
+Apollo Beach  Ruskin,SW Hillsborough,908.89051241288
+Apollo Beach  Ruskin,TPA  Anderson Rd,596.302229881287
+Apollo Beach  Ruskin,Tampa Central,4894.08370304108
+Apollo Beach  Ruskin,USF  Hosp  Busch,702.643296699971
+Apollo Beach  Ruskin,West Brandon,4062.18293368816
+Apollo Beach  Ruskin,Westshore  Rocky Point,656.969555020332
 CZ2,,0
-CZ2,CZ1,40176.3006432056
+CZ2,Apollo Beach  Ruskin,2841.11580705643
 CZ2,CZ2,149451.107965469
-CZ2,CZ3,2841.11580705643
 CZ2,CZ4,13830.6673902273
-CZ2,Citrus_Park,91.1929616928101
+CZ2,Citrus Park,91.1929616928101
 CZ2,Downtown,3837.24961152114
-CZ2,East_Town,5119.64816045761
-CZ2,Harney_Corridor_Tampa_Ex_Airpor,1036.93797659874
-CZ2,Hernando_Citrus,2659.54828410689
-CZ2,Hidden_River_Telecom_Park,250.86459684372
-CZ2,MacDill_AFB_Port_Tampa,1059.11606264114
-CZ2,Manatee_Spur,0
-CZ2,Northeast_Hillsborough,10854.0649412251
-CZ2,Northwest_Hillsborough,2206.84007827449
+CZ2,East Town,5119.64816045761
+CZ2,Gibsonton,40176.3006432056
+CZ2,Harney Canal,1036.93797659874
+CZ2,Hernando  Citrus,2659.54828410689
+CZ2,MacDill AFB,1059.11606264114
+CZ2,Manatee Spur,0
+CZ2,NE Hilsborough,10854.0649412251
+CZ2,NW Hilsborough,2206.84007827449
+CZ2,New Tampa,250.86459684372
 CZ2,Pasco,1016.6164867878
 CZ2,Pinellas,5336.87561202049
-CZ2,Plant_City_Area,421.136566198431
-CZ2,Port_of_Tampa_50th_St_Corridor,1391.53653717041
-CZ2,Southeast_Hillsborough,55570.6835951509
-CZ2,Southwest_Hillsborough,1995.70322227478
-CZ2,Tampa_Central,7647.07920585037
-CZ2,Tampa_Intl_Airport_Anderson_Rd,1768.56642818451
-CZ2,USF_Hospitals_Busch_Gardens,1654.06858885288
-CZ2,West_Brandon_S_Falkenburg_Corrido,9200.13930118084
-CZ2,Westshore_Rocky_Point,1289.6826441288
-CZ3,,0
-CZ3,CZ1,12021.0617056228
-CZ3,CZ2,2618.14337062836
-CZ3,CZ3,68655.9014492035
-CZ3,CZ4,36015.6882920265
-CZ3,Citrus_Park,9.60142135620117
-CZ3,Downtown,1472.90192842484
-CZ3,East_Town,1865.83284580708
-CZ3,Harney_Corridor_Tampa_Ex_Airpor,1181.52582931519
-CZ3,Hernando_Citrus,2364.83503261581
-CZ3,Hidden_River_Telecom_Park,126.007099628449
-CZ3,MacDill_AFB_Port_Tampa,493.720558166504
-CZ3,Manatee_Spur,0
-CZ3,Northeast_Hillsborough,3493.34451878071
-CZ3,Northwest_Hillsborough,1039.11844348907
-CZ3,Pasco,814.161626338959
-CZ3,Pinellas,4332.28944383003
-CZ3,Plant_City_Area,136.231651306152
-CZ3,Port_of_Tampa_50th_St_Corridor,890.805733203888
-CZ3,Southeast_Hillsborough,11942.4407541845
-CZ3,Southwest_Hillsborough,908.89051241288
-CZ3,Tampa_Central,4894.08370304108
-CZ3,Tampa_Intl_Airport_Anderson_Rd,596.302229881287
-CZ3,USF_Hospitals_Busch_Gardens,702.643296699971
-CZ3,West_Brandon_S_Falkenburg_Corrido,4062.18293368816
-CZ3,Westshore_Rocky_Point,656.969555020332
+CZ2,Plant City Area,421.136566198431
+CZ2,Port of Tampa  50th St Corridor,1391.53653717041
+CZ2,SE Hillsborough,55570.6835951509
+CZ2,SW Hillsborough,1995.70322227478
+CZ2,TPA  Anderson Rd,1768.56642818451
+CZ2,Tampa Central,7647.07920585037
+CZ2,USF  Hosp  Busch,1654.06858885288
+CZ2,West Brandon,9200.13930118084
+CZ2,Westshore  Rocky Point,1289.6826441288
 CZ4,,0
-CZ4,CZ1,63027.9344221354
+CZ4,Apollo Beach  Ruskin,35986.0102788098
 CZ4,CZ2,13408.2574462891
-CZ4,CZ3,35986.0102788098
 CZ4,CZ4,390913.347876072
-CZ4,Citrus_Park,75.4326362609863
+CZ4,Citrus Park,75.4326362609863
 CZ4,Downtown,5691.66347738821
-CZ4,East_Town,7493.39782955032
-CZ4,Harney_Corridor_Tampa_Ex_Airpor,2092.60722351074
-CZ4,Hernando_Citrus,11776.8433193481
-CZ4,Hidden_River_Telecom_Park,680.002148628235
-CZ4,MacDill_AFB_Port_Tampa,1041.3969669342
-CZ4,Manatee_Spur,0
-CZ4,Northeast_Hillsborough,11972.1395206028
-CZ4,Northwest_Hillsborough,4117.14351977617
+CZ4,East Town,7493.39782955032
+CZ4,Gibsonton,63027.9344221354
+CZ4,Harney Canal,2092.60722351074
+CZ4,Hernando  Citrus,11776.8433193481
+CZ4,MacDill AFB,1041.3969669342
+CZ4,Manatee Spur,0
+CZ4,NE Hilsborough,11972.1395206028
+CZ4,NW Hilsborough,4117.14351977617
+CZ4,New Tampa,680.002148628235
 CZ4,Pasco,1586.10723742982
 CZ4,Pinellas,13623.6985091819
-CZ4,Plant_City_Area,797.906684875488
-CZ4,Port_of_Tampa_50th_St_Corridor,1666.54613137245
-CZ4,Southeast_Hillsborough,64821.7824078265
-CZ4,Southwest_Hillsborough,2936.59154478926
-CZ4,Tampa_Central,16570.8822048977
-CZ4,Tampa_Intl_Airport_Anderson_Rd,3362.0729804039
-CZ4,USF_Hospitals_Busch_Gardens,2969.56714500114
-CZ4,West_Brandon_S_Falkenburg_Corrido,14650.2326214931
-CZ4,Westshore_Rocky_Point,2233.56663013622
-Citrus_Park,,0
-Citrus_Park,CZ1,129.449194908142
-Citrus_Park,CZ2,57.7361373901367
-Citrus_Park,CZ3,18.927939414978
-Citrus_Park,CZ4,81.4645733833313
-Citrus_Park,Citrus_Park,14077.4708862305
-Citrus_Park,Downtown,584.710974216461
-Citrus_Park,East_Town,133.935854911804
-Citrus_Park,Harney_Corridor_Tampa_Ex_Airpor,290.65246295929
-Citrus_Park,Hernando_Citrus,128.266250832006
-Citrus_Park,Hidden_River_Telecom_Park,26.2973999977112
-Citrus_Park,MacDill_AFB_Port_Tampa,22.5565643310547
-Citrus_Park,Manatee_Spur,0
-Citrus_Park,Northeast_Hillsborough,774.911350131035
-Citrus_Park,Northwest_Hillsborough,42406.3801188469
-Citrus_Park,Pasco,992.731065750122
-Citrus_Park,Pinellas,6955.29199067783
-Citrus_Park,Plant_City_Area,18.0953063964844
-Citrus_Park,Port_of_Tampa_50th_St_Corridor,45.6446800231934
-Citrus_Park,Southeast_Hillsborough,260.337368965149
-Citrus_Park,Southwest_Hillsborough,683.93194437027
-Citrus_Park,Tampa_Central,6495.91522067902
-Citrus_Park,Tampa_Intl_Airport_Anderson_Rd,2536.48614215851
-Citrus_Park,USF_Hospitals_Busch_Gardens,542.711265087128
-Citrus_Park,West_Brandon_S_Falkenburg_Corrido,150.126483380795
-Citrus_Park,Westshore_Rocky_Point,812.750600814819
+CZ4,Plant City Area,797.906684875488
+CZ4,Port of Tampa  50th St Corridor,1666.54613137245
+CZ4,SE Hillsborough,64821.7824078265
+CZ4,SW Hillsborough,2936.59154478926
+CZ4,TPA  Anderson Rd,3362.0729804039
+CZ4,Tampa Central,16570.8822048977
+CZ4,USF  Hosp  Busch,2969.56714500114
+CZ4,West Brandon,14650.2326214931
+CZ4,Westshore  Rocky Point,2233.56663013622
+Citrus Park,,0
+Citrus Park,Apollo Beach  Ruskin,18.927939414978
+Citrus Park,CZ2,57.7361373901367
+Citrus Park,CZ4,81.4645733833313
+Citrus Park,Citrus Park,14077.4708862305
+Citrus Park,Downtown,584.710974216461
+Citrus Park,East Town,133.935854911804
+Citrus Park,Gibsonton,129.449194908142
+Citrus Park,Harney Canal,290.65246295929
+Citrus Park,Hernando  Citrus,128.266250832006
+Citrus Park,MacDill AFB,22.5565643310547
+Citrus Park,Manatee Spur,0
+Citrus Park,NE Hilsborough,774.911350131035
+Citrus Park,NW Hilsborough,42406.3801188469
+Citrus Park,New Tampa,26.2973999977112
+Citrus Park,Pasco,992.731065750122
+Citrus Park,Pinellas,6955.29199067783
+Citrus Park,Plant City Area,18.0953063964844
+Citrus Park,Port of Tampa  50th St Corridor,45.6446800231934
+Citrus Park,SE Hillsborough,260.337368965149
+Citrus Park,SW Hillsborough,683.93194437027
+Citrus Park,TPA  Anderson Rd,2536.48614215851
+Citrus Park,Tampa Central,6495.91522067902
+Citrus Park,USF  Hosp  Busch,542.711265087128
+Citrus Park,West Brandon,150.126483380795
+Citrus Park,Westshore  Rocky Point,812.750600814819
 Downtown,,0
-Downtown,CZ1,9480.09419389069
+Downtown,Apollo Beach  Ruskin,1539.02846813202
 Downtown,CZ2,4087.24561419524
-Downtown,CZ3,1539.02846813202
 Downtown,CZ4,6547.71306984616
-Downtown,Citrus_Park,687.407181481831
+Downtown,Citrus Park,687.407181481831
 Downtown,Downtown,259803.716740176
-Downtown,East_Town,11538.106048523
-Downtown,Harney_Corridor_Tampa_Ex_Airpor,6665.10500574112
-Downtown,Hernando_Citrus,5631.69647698896
-Downtown,Hidden_River_Telecom_Park,1448.96636104584
-Downtown,MacDill_AFB_Port_Tampa,1983.86921930313
-Downtown,Manatee_Spur,0
-Downtown,Northeast_Hillsborough,21852.3304333747
-Downtown,Northwest_Hillsborough,41371.1136049642
+Downtown,East Town,11538.106048523
+Downtown,Gibsonton,9480.09419389069
+Downtown,Harney Canal,6665.10500574112
+Downtown,Hernando  Citrus,5631.69647698896
+Downtown,MacDill AFB,1983.86921930313
+Downtown,Manatee Spur,0
+Downtown,NE Hilsborough,21852.3304333747
+Downtown,NW Hilsborough,41371.1136049642
+Downtown,New Tampa,1448.96636104584
 Downtown,Pasco,9837.38246416906
 Downtown,Pinellas,50591.0282087403
-Downtown,Plant_City_Area,639.402280807495
-Downtown,Port_of_Tampa_50th_St_Corridor,7229.80831360817
-Downtown,Southeast_Hillsborough,28124.3674234827
-Downtown,Southwest_Hillsborough,68084.3226651896
-Downtown,Tampa_Central,140826.770600425
-Downtown,Tampa_Intl_Airport_Anderson_Rd,8900.02001376729
-Downtown,USF_Hospitals_Busch_Gardens,7907.15355749428
-Downtown,West_Brandon_S_Falkenburg_Corrido,11948.9795564576
-Downtown,Westshore_Rocky_Point,19983.0473982994
-East_Town,,0
-East_Town,CZ1,11448.8364784718
-East_Town,CZ2,5988.77305459976
-East_Town,CZ3,1912.45222365856
-East_Town,CZ4,9366.99356722832
-East_Town,Citrus_Park,168.539628982544
-East_Town,Downtown,11816.6904526949
-East_Town,East_Town,126290.169572672
-East_Town,Harney_Corridor_Tampa_Ex_Airpor,13962.8803058816
-East_Town,Hernando_Citrus,5465.40351206623
-East_Town,Hidden_River_Telecom_Park,1275.41455316544
-East_Town,MacDill_AFB_Port_Tampa,544.174149036408
-East_Town,Manatee_Spur,0
-East_Town,Northeast_Hillsborough,73810.9001795557
-East_Town,Northwest_Hillsborough,18520.0611257534
-East_Town,Pasco,7537.04208655935
-East_Town,Pinellas,23734.656262794
-East_Town,Plant_City_Area,1721.9732644558
-East_Town,Port_of_Tampa_50th_St_Corridor,5803.88647881616
-East_Town,Southeast_Hillsborough,49170.2949282155
-East_Town,Southwest_Hillsborough,8514.91349788429
-East_Town,Tampa_Central,89985.2592210718
-East_Town,Tampa_Intl_Airport_Anderson_Rd,4821.605969714
-East_Town,USF_Hospitals_Busch_Gardens,5329.85750286491
-East_Town,West_Brandon_S_Falkenburg_Corrido,26836.6125383377
-East_Town,Westshore_Rocky_Point,4279.68722385168
-Harney_Corridor_Tampa_Ex_Airpor,,0
-Harney_Corridor_Tampa_Ex_Airpor,CZ1,4074.1107480526
-Harney_Corridor_Tampa_Ex_Airpor,CZ2,1244.32862472534
-Harney_Corridor_Tampa_Ex_Airpor,CZ3,1351.23532533646
-Harney_Corridor_Tampa_Ex_Airpor,CZ4,2459.71580651915
-Harney_Corridor_Tampa_Ex_Airpor,Citrus_Park,259.832958221436
-Harney_Corridor_Tampa_Ex_Airpor,Downtown,6496.32318976475
-Harney_Corridor_Tampa_Ex_Airpor,East_Town,13922.1474218369
-Harney_Corridor_Tampa_Ex_Airpor,Harney_Corridor_Tampa_Ex_Airpor,67199.1064391136
-Harney_Corridor_Tampa_Ex_Airpor,Hernando_Citrus,2840.83854030073
-Harney_Corridor_Tampa_Ex_Airpor,Hidden_River_Telecom_Park,1866.30399560928
-Harney_Corridor_Tampa_Ex_Airpor,MacDill_AFB_Port_Tampa,148.289767742157
-Harney_Corridor_Tampa_Ex_Airpor,Manatee_Spur,0
-Harney_Corridor_Tampa_Ex_Airpor,Northeast_Hillsborough,25310.9015734138
-Harney_Corridor_Tampa_Ex_Airpor,Northwest_Hillsborough,11397.8040830633
-Harney_Corridor_Tampa_Ex_Airpor,Pasco,4393.08063817024
-Harney_Corridor_Tampa_Ex_Airpor,Pinellas,12910.6621254981
-Harney_Corridor_Tampa_Ex_Airpor,Plant_City_Area,886.747958183289
-Harney_Corridor_Tampa_Ex_Airpor,Port_of_Tampa_50th_St_Corridor,1716.87183427811
-Harney_Corridor_Tampa_Ex_Airpor,Southeast_Hillsborough,14773.7380476114
-Harney_Corridor_Tampa_Ex_Airpor,Southwest_Hillsborough,4028.90504407883
-Harney_Corridor_Tampa_Ex_Airpor,Tampa_Central,106157.945513398
-Harney_Corridor_Tampa_Ex_Airpor,Tampa_Intl_Airport_Anderson_Rd,2887.48671221733
-Harney_Corridor_Tampa_Ex_Airpor,USF_Hospitals_Busch_Gardens,7622.99657225609
-Harney_Corridor_Tampa_Ex_Airpor,West_Brandon_S_Falkenburg_Corrido,6372.04317736626
-Harney_Corridor_Tampa_Ex_Airpor,Westshore_Rocky_Point,2617.11003780365
-Hernando_Citrus,,0
-Hernando_Citrus,CZ1,4458.65053259069
-Hernando_Citrus,CZ2,2699.68326716963
-Hernando_Citrus,CZ3,2259.42838147655
-Hernando_Citrus,CZ4,11710.603228501
-Hernando_Citrus,Citrus_Park,112.369083626196
-Hernando_Citrus,Downtown,5669.17967992323
-Hernando_Citrus,East_Town,5496.1330834087
-Hernando_Citrus,Harney_Corridor_Tampa_Ex_Airpor,2780.74084399641
-Hernando_Citrus,Hernando_Citrus,0
-Hernando_Citrus,Hidden_River_Telecom_Park,664.56033423543
-Hernando_Citrus,MacDill_AFB_Port_Tampa,503.652430942282
-Hernando_Citrus,Manatee_Spur,0
-Hernando_Citrus,Northeast_Hillsborough,28327.6140475157
-Hernando_Citrus,Northwest_Hillsborough,8212.72706627287
-Hernando_Citrus,Pasco,0
-Hernando_Citrus,Pinellas,0
-Hernando_Citrus,Plant_City_Area,7682.81247015111
-Hernando_Citrus,Port_of_Tampa_50th_St_Corridor,1179.61637922749
-Hernando_Citrus,Southeast_Hillsborough,16503.2713884995
-Hernando_Citrus,Southwest_Hillsborough,3550.36796501651
-Hernando_Citrus,Tampa_Central,17307.3183151479
-Hernando_Citrus,Tampa_Intl_Airport_Anderson_Rd,4303.35684471531
-Hernando_Citrus,USF_Hospitals_Busch_Gardens,4669.41701958701
-Hernando_Citrus,West_Brandon_S_Falkenburg_Corrido,5331.89144102018
-Hernando_Citrus,Westshore_Rocky_Point,4033.40502477717
-Hidden_River_Telecom_Park,,0
-Hidden_River_Telecom_Park,CZ1,904.626233100891
-Hidden_River_Telecom_Park,CZ2,204.121191740036
-Hidden_River_Telecom_Park,CZ3,151.566262722015
-Hidden_River_Telecom_Park,CZ4,740.30214881897
-Hidden_River_Telecom_Park,Citrus_Park,0
-Hidden_River_Telecom_Park,Downtown,1402.00006437302
-Hidden_River_Telecom_Park,East_Town,1242.78473552922
-Hidden_River_Telecom_Park,Harney_Corridor_Tampa_Ex_Airpor,1752.45439863205
-Hidden_River_Telecom_Park,Hernando_Citrus,649.380682975054
-Hidden_River_Telecom_Park,Hidden_River_Telecom_Park,12133.8078079224
-Hidden_River_Telecom_Park,MacDill_AFB_Port_Tampa,16.3758268356323
-Hidden_River_Telecom_Park,Manatee_Spur,0
-Hidden_River_Telecom_Park,Northeast_Hillsborough,7609.42690563202
-Hidden_River_Telecom_Park,Northwest_Hillsborough,3504.74250197411
-Hidden_River_Telecom_Park,Pasco,1958.00400114059
-Hidden_River_Telecom_Park,Pinellas,5390.13388824463
-Hidden_River_Telecom_Park,Plant_City_Area,203.395937919617
-Hidden_River_Telecom_Park,Port_of_Tampa_50th_St_Corridor,157.68177986145
-Hidden_River_Telecom_Park,Southeast_Hillsborough,2380.79021453857
-Hidden_River_Telecom_Park,Southwest_Hillsborough,1173.93077039719
-Hidden_River_Telecom_Park,Tampa_Central,18114.2119732979
-Hidden_River_Telecom_Park,Tampa_Intl_Airport_Anderson_Rd,596.238680362701
-Hidden_River_Telecom_Park,USF_Hospitals_Busch_Gardens,4256.95379781723
-Hidden_River_Telecom_Park,West_Brandon_S_Falkenburg_Corrido,1044.94727420807
-Hidden_River_Telecom_Park,Westshore_Rocky_Point,689.4089179039
-MacDill_AFB_Port_Tampa,,0
-MacDill_AFB_Port_Tampa,CZ1,2319.80493545532
-MacDill_AFB_Port_Tampa,CZ2,1475.34305429459
-MacDill_AFB_Port_Tampa,CZ3,520.148080348969
-MacDill_AFB_Port_Tampa,CZ4,1569.13288283348
-MacDill_AFB_Port_Tampa,Citrus_Park,8.1868200302124
-MacDill_AFB_Port_Tampa,Downtown,2096.17513251305
-MacDill_AFB_Port_Tampa,East_Town,551.315156936646
-MacDill_AFB_Port_Tampa,Harney_Corridor_Tampa_Ex_Airpor,65.8698062896729
-MacDill_AFB_Port_Tampa,Hernando_Citrus,526.842597892508
-MacDill_AFB_Port_Tampa,Hidden_River_Telecom_Park,24.5630722045898
-MacDill_AFB_Port_Tampa,MacDill_AFB_Port_Tampa,39059.3176879883
-MacDill_AFB_Port_Tampa,Manatee_Spur,0
-MacDill_AFB_Port_Tampa,Northeast_Hillsborough,2004.98997354507
-MacDill_AFB_Port_Tampa,Northwest_Hillsborough,2925.08306598663
-MacDill_AFB_Port_Tampa,Pasco,354.09957909584
-MacDill_AFB_Port_Tampa,Pinellas,7406.45825464139
-MacDill_AFB_Port_Tampa,Plant_City_Area,0
-MacDill_AFB_Port_Tampa,Port_of_Tampa_50th_St_Corridor,121.526840686798
-MacDill_AFB_Port_Tampa,Southeast_Hillsborough,4089.41891120793
-MacDill_AFB_Port_Tampa,Southwest_Hillsborough,22999.4118590355
-MacDill_AFB_Port_Tampa,Tampa_Central,4246.9897582531
-MacDill_AFB_Port_Tampa,Tampa_Intl_Airport_Anderson_Rd,797.17680644989
-MacDill_AFB_Port_Tampa,USF_Hospitals_Busch_Gardens,290.373986005783
-MacDill_AFB_Port_Tampa,West_Brandon_S_Falkenburg_Corrido,1334.56205248833
-MacDill_AFB_Port_Tampa,Westshore_Rocky_Point,2466.32957429299
-Manatee_Spur,,0
-Manatee_Spur,CZ1,0
-Manatee_Spur,CZ2,0
-Manatee_Spur,CZ3,0
-Manatee_Spur,CZ4,0
-Manatee_Spur,Citrus_Park,0
-Manatee_Spur,Downtown,0
-Manatee_Spur,East_Town,0
-Manatee_Spur,Harney_Corridor_Tampa_Ex_Airpor,0
-Manatee_Spur,Hernando_Citrus,0
-Manatee_Spur,Hidden_River_Telecom_Park,0
-Manatee_Spur,MacDill_AFB_Port_Tampa,0
-Manatee_Spur,Manatee_Spur,0
-Manatee_Spur,Northeast_Hillsborough,0
-Manatee_Spur,Northwest_Hillsborough,0
-Manatee_Spur,Pasco,0
-Manatee_Spur,Pinellas,0
-Manatee_Spur,Plant_City_Area,0
-Manatee_Spur,Port_of_Tampa_50th_St_Corridor,0
-Manatee_Spur,Southeast_Hillsborough,0
-Manatee_Spur,Southwest_Hillsborough,0
-Manatee_Spur,Tampa_Central,0
-Manatee_Spur,Tampa_Intl_Airport_Anderson_Rd,0
-Manatee_Spur,USF_Hospitals_Busch_Gardens,0
-Manatee_Spur,West_Brandon_S_Falkenburg_Corrido,0
-Manatee_Spur,Westshore_Rocky_Point,0
-Northeast_Hillsborough,,0
-Northeast_Hillsborough,CZ1,14848.3453052044
-Northeast_Hillsborough,CZ2,11171.9565733052
-Northeast_Hillsborough,CZ3,3341.1894840328
-Northeast_Hillsborough,CZ4,12430.0836431244
-Northeast_Hillsborough,Citrus_Park,649.515727996826
-Northeast_Hillsborough,Downtown,21298.6699707054
-Northeast_Hillsborough,East_Town,71420.5262376608
-Northeast_Hillsborough,Harney_Corridor_Tampa_Ex_Airpor,22845.7770946734
-Northeast_Hillsborough,Hernando_Citrus,28345.7874317053
-Northeast_Hillsborough,Hidden_River_Telecom_Park,7461.94763708115
-Northeast_Hillsborough,MacDill_AFB_Port_Tampa,1533.8837761879
-Northeast_Hillsborough,Manatee_Spur,0
-Northeast_Hillsborough,Northeast_Hillsborough,1219895.59424309
-Northeast_Hillsborough,Northwest_Hillsborough,28759.8058896014
-Northeast_Hillsborough,Pasco,43013.2954206839
-Northeast_Hillsborough,Pinellas,65872.3981120359
-Northeast_Hillsborough,Plant_City_Area,85332.8775212765
-Northeast_Hillsborough,Port_of_Tampa_50th_St_Corridor,4013.16424298286
-Northeast_Hillsborough,Southeast_Hillsborough,172240.354476648
-Northeast_Hillsborough,Southwest_Hillsborough,11752.9992773943
-Northeast_Hillsborough,Tampa_Central,128775.988915736
-Northeast_Hillsborough,Tampa_Intl_Airport_Anderson_Rd,11802.200224638
-Northeast_Hillsborough,USF_Hospitals_Busch_Gardens,21670.3572138466
-Northeast_Hillsborough,West_Brandon_S_Falkenburg_Corrido,48927.4973626535
-Northeast_Hillsborough,Westshore_Rocky_Point,8813.84433389688
-Northwest_Hillsborough,,0
-Northwest_Hillsborough,CZ1,5234.46715569496
-Northwest_Hillsborough,CZ2,2083.3417247138
-Northwest_Hillsborough,CZ3,1118.87452483177
-Northwest_Hillsborough,CZ4,4007.87311307085
-Northwest_Hillsborough,Citrus_Park,41495.8769431114
-Northwest_Hillsborough,Downtown,39428.0086269854
-Northwest_Hillsborough,East_Town,16147.4168094811
-Northwest_Hillsborough,Harney_Corridor_Tampa_Ex_Airpor,10375.3719763297
-Northwest_Hillsborough,Hernando_Citrus,8271.39780203626
-Northwest_Hillsborough,Hidden_River_Telecom_Park,3334.8414747715
-Northwest_Hillsborough,MacDill_AFB_Port_Tampa,2331.2778570652
-Northwest_Hillsborough,Manatee_Spur,0
-Northwest_Hillsborough,Northeast_Hillsborough,28745.6077284905
-Northwest_Hillsborough,Northwest_Hillsborough,1642211.20393143
-Northwest_Hillsborough,Pasco,38498.8057287475
-Northwest_Hillsborough,Pinellas,219463.198078922
-Northwest_Hillsborough,Plant_City_Area,730.649414818734
-Northwest_Hillsborough,Port_of_Tampa_50th_St_Corridor,3163.30801773071
-Northwest_Hillsborough,Southeast_Hillsborough,17334.2223446835
-Northwest_Hillsborough,Southwest_Hillsborough,40008.1556472997
-Northwest_Hillsborough,Tampa_Central,329536.063776545
-Northwest_Hillsborough,Tampa_Intl_Airport_Anderson_Rd,153484.064142262
-Northwest_Hillsborough,USF_Hospitals_Busch_Gardens,31026.2673138531
-Northwest_Hillsborough,West_Brandon_S_Falkenburg_Corrido,9247.43725340115
-Northwest_Hillsborough,Westshore_Rocky_Point,63929.3712832169
+Downtown,Plant City Area,639.402280807495
+Downtown,Port of Tampa  50th St Corridor,7229.80831360817
+Downtown,SE Hillsborough,28124.3674234827
+Downtown,SW Hillsborough,68084.3226651896
+Downtown,TPA  Anderson Rd,8900.02001376729
+Downtown,Tampa Central,140826.770600425
+Downtown,USF  Hosp  Busch,7907.15355749428
+Downtown,West Brandon,11948.9795564576
+Downtown,Westshore  Rocky Point,19983.0473982994
+East Town,,0
+East Town,Apollo Beach  Ruskin,1912.45222365856
+East Town,CZ2,5988.77305459976
+East Town,CZ4,9366.99356722832
+East Town,Citrus Park,168.539628982544
+East Town,Downtown,11816.6904526949
+East Town,East Town,126290.169572672
+East Town,Gibsonton,11448.8364784718
+East Town,Harney Canal,13962.8803058816
+East Town,Hernando  Citrus,5465.40351206623
+East Town,MacDill AFB,544.174149036408
+East Town,Manatee Spur,0
+East Town,NE Hilsborough,73810.9001795557
+East Town,NW Hilsborough,18520.0611257534
+East Town,New Tampa,1275.41455316544
+East Town,Pasco,7537.04208655935
+East Town,Pinellas,23734.656262794
+East Town,Plant City Area,1721.9732644558
+East Town,Port of Tampa  50th St Corridor,5803.88647881616
+East Town,SE Hillsborough,49170.2949282155
+East Town,SW Hillsborough,8514.91349788429
+East Town,TPA  Anderson Rd,4821.605969714
+East Town,Tampa Central,89985.2592210718
+East Town,USF  Hosp  Busch,5329.85750286491
+East Town,West Brandon,26836.6125383377
+East Town,Westshore  Rocky Point,4279.68722385168
+Gibsonton,,0
+Gibsonton,Apollo Beach  Ruskin,12543.986415863
+Gibsonton,CZ2,38950.6065003872
+Gibsonton,CZ4,64936.1896780748
+Gibsonton,Citrus Park,155.440634727478
+Gibsonton,Downtown,8030.41011917475
+Gibsonton,East Town,10345.9097452164
+Gibsonton,Gibsonton,245628.852155685
+Gibsonton,Harney Canal,3765.32865142822
+Gibsonton,Hernando  Citrus,4341.06579815084
+Gibsonton,MacDill AFB,2024.28677177429
+Gibsonton,Manatee Spur,0
+Gibsonton,NE Hilsborough,14156.7575068721
+Gibsonton,NW Hilsborough,4968.59443228226
+Gibsonton,New Tampa,751.111800670624
+Gibsonton,Pasco,1911.39217892289
+Gibsonton,Pinellas,9813.66425729846
+Gibsonton,Plant City Area,634.252862453461
+Gibsonton,Port of Tampa  50th St Corridor,3218.36233520508
+Gibsonton,SE Hillsborough,55810.5557192564
+Gibsonton,SW Hillsborough,4641.85452222824
+Gibsonton,TPA  Anderson Rd,2813.5894639492
+Gibsonton,Tampa Central,20437.5066922531
+Gibsonton,USF  Hosp  Busch,4336.32707694569
+Gibsonton,West Brandon,19841.7705586739
+Gibsonton,Westshore  Rocky Point,3197.2331385836
+Harney Canal,,0
+Harney Canal,Apollo Beach  Ruskin,1351.23532533646
+Harney Canal,CZ2,1244.32862472534
+Harney Canal,CZ4,2459.71580651915
+Harney Canal,Citrus Park,259.832958221436
+Harney Canal,Downtown,6496.32318976475
+Harney Canal,East Town,13922.1474218369
+Harney Canal,Gibsonton,4074.1107480526
+Harney Canal,Harney Canal,67199.1064391136
+Harney Canal,Hernando  Citrus,2840.83854030073
+Harney Canal,MacDill AFB,148.289767742157
+Harney Canal,Manatee Spur,0
+Harney Canal,NE Hilsborough,25310.9015734138
+Harney Canal,NW Hilsborough,11397.8040830633
+Harney Canal,New Tampa,1866.30399560928
+Harney Canal,Pasco,4393.08063817024
+Harney Canal,Pinellas,12910.6621254981
+Harney Canal,Plant City Area,886.747958183289
+Harney Canal,Port of Tampa  50th St Corridor,1716.87183427811
+Harney Canal,SE Hillsborough,14773.7380476114
+Harney Canal,SW Hillsborough,4028.90504407883
+Harney Canal,TPA  Anderson Rd,2887.48671221733
+Harney Canal,Tampa Central,106157.945513398
+Harney Canal,USF  Hosp  Busch,7622.99657225609
+Harney Canal,West Brandon,6372.04317736626
+Harney Canal,Westshore  Rocky Point,2617.11003780365
+Hernando  Citrus,,0
+Hernando  Citrus,Apollo Beach  Ruskin,2259.42838147655
+Hernando  Citrus,CZ2,2699.68326716963
+Hernando  Citrus,CZ4,11710.603228501
+Hernando  Citrus,Citrus Park,112.369083626196
+Hernando  Citrus,Downtown,5669.17967992323
+Hernando  Citrus,East Town,5496.1330834087
+Hernando  Citrus,Gibsonton,4458.65053259069
+Hernando  Citrus,Harney Canal,2780.74084399641
+Hernando  Citrus,Hernando  Citrus,0
+Hernando  Citrus,MacDill AFB,503.652430942282
+Hernando  Citrus,Manatee Spur,0
+Hernando  Citrus,NE Hilsborough,28327.6140475157
+Hernando  Citrus,NW Hilsborough,8212.72706627287
+Hernando  Citrus,New Tampa,664.56033423543
+Hernando  Citrus,Pasco,0
+Hernando  Citrus,Pinellas,0
+Hernando  Citrus,Plant City Area,7682.81247015111
+Hernando  Citrus,Port of Tampa  50th St Corridor,1179.61637922749
+Hernando  Citrus,SE Hillsborough,16503.2713884995
+Hernando  Citrus,SW Hillsborough,3550.36796501651
+Hernando  Citrus,TPA  Anderson Rd,4303.35684471531
+Hernando  Citrus,Tampa Central,17307.3183151479
+Hernando  Citrus,USF  Hosp  Busch,4669.41701958701
+Hernando  Citrus,West Brandon,5331.89144102018
+Hernando  Citrus,Westshore  Rocky Point,4033.40502477717
+MacDill AFB,,0
+MacDill AFB,Apollo Beach  Ruskin,520.148080348969
+MacDill AFB,CZ2,1475.34305429459
+MacDill AFB,CZ4,1569.13288283348
+MacDill AFB,Citrus Park,8.1868200302124
+MacDill AFB,Downtown,2096.17513251305
+MacDill AFB,East Town,551.315156936646
+MacDill AFB,Gibsonton,2319.80493545532
+MacDill AFB,Harney Canal,65.8698062896729
+MacDill AFB,Hernando  Citrus,526.842597892508
+MacDill AFB,MacDill AFB,39059.3176879883
+MacDill AFB,Manatee Spur,0
+MacDill AFB,NE Hilsborough,2004.98997354507
+MacDill AFB,NW Hilsborough,2925.08306598663
+MacDill AFB,New Tampa,24.5630722045898
+MacDill AFB,Pasco,354.09957909584
+MacDill AFB,Pinellas,7406.45825464139
+MacDill AFB,Plant City Area,0
+MacDill AFB,Port of Tampa  50th St Corridor,121.526840686798
+MacDill AFB,SE Hillsborough,4089.41891120793
+MacDill AFB,SW Hillsborough,22999.4118590355
+MacDill AFB,TPA  Anderson Rd,797.17680644989
+MacDill AFB,Tampa Central,4246.9897582531
+MacDill AFB,USF  Hosp  Busch,290.373986005783
+MacDill AFB,West Brandon,1334.56205248833
+MacDill AFB,Westshore  Rocky Point,2466.32957429299
+Manatee Spur,,0
+Manatee Spur,Apollo Beach  Ruskin,0
+Manatee Spur,CZ2,0
+Manatee Spur,CZ4,0
+Manatee Spur,Citrus Park,0
+Manatee Spur,Downtown,0
+Manatee Spur,East Town,0
+Manatee Spur,Gibsonton,0
+Manatee Spur,Harney Canal,0
+Manatee Spur,Hernando  Citrus,0
+Manatee Spur,MacDill AFB,0
+Manatee Spur,Manatee Spur,0
+Manatee Spur,NE Hilsborough,0
+Manatee Spur,NW Hilsborough,0
+Manatee Spur,New Tampa,0
+Manatee Spur,Pasco,0
+Manatee Spur,Pinellas,0
+Manatee Spur,Plant City Area,0
+Manatee Spur,Port of Tampa  50th St Corridor,0
+Manatee Spur,SE Hillsborough,0
+Manatee Spur,SW Hillsborough,0
+Manatee Spur,TPA  Anderson Rd,0
+Manatee Spur,Tampa Central,0
+Manatee Spur,USF  Hosp  Busch,0
+Manatee Spur,West Brandon,0
+Manatee Spur,Westshore  Rocky Point,0
+NE Hilsborough,,0
+NE Hilsborough,Apollo Beach  Ruskin,3341.1894840328
+NE Hilsborough,CZ2,11171.9565733052
+NE Hilsborough,CZ4,12430.0836431244
+NE Hilsborough,Citrus Park,649.515727996826
+NE Hilsborough,Downtown,21298.6699707054
+NE Hilsborough,East Town,71420.5262376608
+NE Hilsborough,Gibsonton,14848.3453052044
+NE Hilsborough,Harney Canal,22845.7770946734
+NE Hilsborough,Hernando  Citrus,28345.7874317053
+NE Hilsborough,MacDill AFB,1533.8837761879
+NE Hilsborough,Manatee Spur,0
+NE Hilsborough,NE Hilsborough,1219895.59424309
+NE Hilsborough,NW Hilsborough,28759.8058896014
+NE Hilsborough,New Tampa,7461.94763708115
+NE Hilsborough,Pasco,43013.2954206839
+NE Hilsborough,Pinellas,65872.3981120359
+NE Hilsborough,Plant City Area,85332.8775212765
+NE Hilsborough,Port of Tampa  50th St Corridor,4013.16424298286
+NE Hilsborough,SE Hillsborough,172240.354476648
+NE Hilsborough,SW Hillsborough,11752.9992773943
+NE Hilsborough,TPA  Anderson Rd,11802.200224638
+NE Hilsborough,Tampa Central,128775.988915736
+NE Hilsborough,USF  Hosp  Busch,21670.3572138466
+NE Hilsborough,West Brandon,48927.4973626535
+NE Hilsborough,Westshore  Rocky Point,8813.84433389688
+NW Hilsborough,,0
+NW Hilsborough,Apollo Beach  Ruskin,1118.87452483177
+NW Hilsborough,CZ2,2083.3417247138
+NW Hilsborough,CZ4,4007.87311307085
+NW Hilsborough,Citrus Park,41495.8769431114
+NW Hilsborough,Downtown,39428.0086269854
+NW Hilsborough,East Town,16147.4168094811
+NW Hilsborough,Gibsonton,5234.46715569496
+NW Hilsborough,Harney Canal,10375.3719763297
+NW Hilsborough,Hernando  Citrus,8271.39780203626
+NW Hilsborough,MacDill AFB,2331.2778570652
+NW Hilsborough,Manatee Spur,0
+NW Hilsborough,NE Hilsborough,28745.6077284905
+NW Hilsborough,NW Hilsborough,1642211.20393143
+NW Hilsborough,New Tampa,3334.8414747715
+NW Hilsborough,Pasco,38498.8057287475
+NW Hilsborough,Pinellas,219463.198078922
+NW Hilsborough,Plant City Area,730.649414818734
+NW Hilsborough,Port of Tampa  50th St Corridor,3163.30801773071
+NW Hilsborough,SE Hillsborough,17334.2223446835
+NW Hilsborough,SW Hillsborough,40008.1556472997
+NW Hilsborough,TPA  Anderson Rd,153484.064142262
+NW Hilsborough,Tampa Central,329536.063776545
+NW Hilsborough,USF  Hosp  Busch,31026.2673138531
+NW Hilsborough,West Brandon,9247.43725340115
+NW Hilsborough,Westshore  Rocky Point,63929.3712832169
+New Tampa,,0
+New Tampa,Apollo Beach  Ruskin,151.566262722015
+New Tampa,CZ2,204.121191740036
+New Tampa,CZ4,740.30214881897
+New Tampa,Citrus Park,0
+New Tampa,Downtown,1402.00006437302
+New Tampa,East Town,1242.78473552922
+New Tampa,Gibsonton,904.626233100891
+New Tampa,Harney Canal,1752.45439863205
+New Tampa,Hernando  Citrus,649.380682975054
+New Tampa,MacDill AFB,16.3758268356323
+New Tampa,Manatee Spur,0
+New Tampa,NE Hilsborough,7609.42690563202
+New Tampa,NW Hilsborough,3504.74250197411
+New Tampa,New Tampa,12133.8078079224
+New Tampa,Pasco,1958.00400114059
+New Tampa,Pinellas,5390.13388824463
+New Tampa,Plant City Area,203.395937919617
+New Tampa,Port of Tampa  50th St Corridor,157.68177986145
+New Tampa,SE Hillsborough,2380.79021453857
+New Tampa,SW Hillsborough,1173.93077039719
+New Tampa,TPA  Anderson Rd,596.238680362701
+New Tampa,Tampa Central,18114.2119732979
+New Tampa,USF  Hosp  Busch,4256.95379781723
+New Tampa,West Brandon,1044.94727420807
+New Tampa,Westshore  Rocky Point,689.4089179039
 Pasco,,0
-Pasco,CZ1,1646.95716631413
+Pasco,Apollo Beach  Ruskin,913.329152107239
 Pasco,CZ2,839.988179683685
-Pasco,CZ3,913.329152107239
 Pasco,CZ4,1581.62016034126
-Pasco,Citrus_Park,1163.46170520782
+Pasco,Citrus Park,1163.46170520782
 Pasco,Downtown,9874.9466098533
-Pasco,East_Town,6425.28264408372
-Pasco,Harney_Corridor_Tampa_Ex_Airpor,3744.23033809662
-Pasco,Hernando_Citrus,0
-Pasco,Hidden_River_Telecom_Park,1671.69977855682
-Pasco,MacDill_AFB_Port_Tampa,340.37753868103
-Pasco,Manatee_Spur,0
-Pasco,Northeast_Hillsborough,41915.8357154615
-Pasco,Northwest_Hillsborough,35792.9500793193
+Pasco,East Town,6425.28264408372
+Pasco,Gibsonton,1646.95716631413
+Pasco,Harney Canal,3744.23033809662
+Pasco,Hernando  Citrus,0
+Pasco,MacDill AFB,340.37753868103
+Pasco,Manatee Spur,0
+Pasco,NE Hilsborough,41915.8357154615
+Pasco,NW Hilsborough,35792.9500793193
+Pasco,New Tampa,1671.69977855682
 Pasco,Pasco,0
 Pasco,Pinellas,0
-Pasco,Plant_City_Area,1990.83681726456
-Pasco,Port_of_Tampa_50th_St_Corridor,917.90730714798
-Pasco,Southeast_Hillsborough,6484.5636228174
-Pasco,Southwest_Hillsborough,4656.19049783936
-Pasco,Tampa_Central,39397.8709595064
-Pasco,Tampa_Intl_Airport_Anderson_Rd,9906.38231607853
-Pasco,USF_Hospitals_Busch_Gardens,13048.9807644011
-Pasco,West_Brandon_S_Falkenburg_Corrido,4413.16073144972
-Pasco,Westshore_Rocky_Point,5987.7074559927
+Pasco,Plant City Area,1990.83681726456
+Pasco,Port of Tampa  50th St Corridor,917.90730714798
+Pasco,SE Hillsborough,6484.5636228174
+Pasco,SW Hillsborough,4656.19049783936
+Pasco,TPA  Anderson Rd,9906.38231607853
+Pasco,Tampa Central,39397.8709595064
+Pasco,USF  Hosp  Busch,13048.9807644011
+Pasco,West Brandon,4413.16073144972
+Pasco,Westshore  Rocky Point,5987.7074559927
 Pinellas,,0
-Pinellas,CZ1,10542.0323627429
+Pinellas,Apollo Beach  Ruskin,4540.82483199239
 Pinellas,CZ2,5532.38286232948
-Pinellas,CZ3,4540.82483199239
 Pinellas,CZ4,14010.2102260187
-Pinellas,Citrus_Park,6776.56189183425
+Pinellas,Citrus Park,6776.56189183425
 Pinellas,Downtown,48843.1542832952
-Pinellas,East_Town,20871.3556190529
-Pinellas,Harney_Corridor_Tampa_Ex_Airpor,10356.1562767266
-Pinellas,Hernando_Citrus,0
-Pinellas,Hidden_River_Telecom_Park,4853.62607516546
-Pinellas,MacDill_AFB_Port_Tampa,6554.23709809245
-Pinellas,Manatee_Spur,0
-Pinellas,Northeast_Hillsborough,65329.0425265908
-Pinellas,Northwest_Hillsborough,217794.494384056
+Pinellas,East Town,20871.3556190529
+Pinellas,Gibsonton,10542.0323627429
+Pinellas,Harney Canal,10356.1562767266
+Pinellas,Hernando  Citrus,0
+Pinellas,MacDill AFB,6554.23709809245
+Pinellas,Manatee Spur,0
+Pinellas,NE Hilsborough,65329.0425265908
+Pinellas,NW Hilsborough,217794.494384056
+Pinellas,New Tampa,4853.62607516546
 Pinellas,Pasco,0
 Pinellas,Pinellas,0
-Pinellas,Plant_City_Area,2548.92998004705
-Pinellas,Port_of_Tampa_50th_St_Corridor,3452.39749654615
-Pinellas,Southeast_Hillsborough,31777.2057623016
-Pinellas,Southwest_Hillsborough,52518.2466051427
-Pinellas,Tampa_Central,161268.004895938
-Pinellas,Tampa_Intl_Airport_Anderson_Rd,58133.584252002
-Pinellas,USF_Hospitals_Busch_Gardens,33170.7894931897
-Pinellas,West_Brandon_S_Falkenburg_Corrido,16160.948731071
-Pinellas,Westshore_Rocky_Point,55172.0046448636
-Plant_City_Area,,0
-Plant_City_Area,CZ1,434.858984470367
-Plant_City_Area,CZ2,628.757738113403
-Plant_City_Area,CZ3,147.082977294922
-Plant_City_Area,CZ4,732.794319868088
-Plant_City_Area,Citrus_Park,8.18890762329102
-Plant_City_Area,Downtown,480.131638955325
-Plant_City_Area,East_Town,1338.36839771271
-Plant_City_Area,Harney_Corridor_Tampa_Ex_Airpor,851.136549472809
-Plant_City_Area,Hernando_Citrus,7653.59462709539
-Plant_City_Area,Hidden_River_Telecom_Park,95.3150992393494
-Plant_City_Area,MacDill_AFB_Port_Tampa,16.3907051086426
-Plant_City_Area,Manatee_Spur,0
-Plant_City_Area,Northeast_Hillsborough,85026.4345960617
-Plant_City_Area,Northwest_Hillsborough,884.311005592346
-Plant_City_Area,Pasco,2197.21742510796
-Plant_City_Area,Pinellas,2396.07280260325
-Plant_City_Area,Plant_City_Area,66956.1007099152
-Plant_City_Area,Port_of_Tampa_50th_St_Corridor,100.061190128326
-Plant_City_Area,Southeast_Hillsborough,7759.44726085663
-Plant_City_Area,Southwest_Hillsborough,666.056529998779
-Plant_City_Area,Tampa_Central,3425.68409872055
-Plant_City_Area,Tampa_Intl_Airport_Anderson_Rd,466.747425079346
-Plant_City_Area,USF_Hospitals_Busch_Gardens,372.139758586884
-Plant_City_Area,West_Brandon_S_Falkenburg_Corrido,675.20662817359
-Plant_City_Area,Westshore_Rocky_Point,242.855418205261
-Port_of_Tampa_50th_St_Corridor,,0
-Port_of_Tampa_50th_St_Corridor,CZ1,3902.11158704758
-Port_of_Tampa_50th_St_Corridor,CZ2,1598.02921819687
-Port_of_Tampa_50th_St_Corridor,CZ3,1103.06564426422
-Port_of_Tampa_50th_St_Corridor,CZ4,2059.65580415726
-Port_of_Tampa_50th_St_Corridor,Citrus_Park,75.1150312423706
-Port_of_Tampa_50th_St_Corridor,Downtown,6987.32928615809
-Port_of_Tampa_50th_St_Corridor,East_Town,5326.66229194682
-Port_of_Tampa_50th_St_Corridor,Harney_Corridor_Tampa_Ex_Airpor,1633.66732311249
-Port_of_Tampa_50th_St_Corridor,Hernando_Citrus,1159.46466013417
-Port_of_Tampa_50th_St_Corridor,Hidden_River_Telecom_Park,152.459769248962
-Port_of_Tampa_50th_St_Corridor,MacDill_AFB_Port_Tampa,153.61782169342
-Port_of_Tampa_50th_St_Corridor,Manatee_Spur,0
-Port_of_Tampa_50th_St_Corridor,Northeast_Hillsborough,4503.1354360655
-Port_of_Tampa_50th_St_Corridor,Northwest_Hillsborough,3641.85404993221
-Port_of_Tampa_50th_St_Corridor,Pasco,1232.16761498153
-Port_of_Tampa_50th_St_Corridor,Pinellas,3970.23373683775
-Port_of_Tampa_50th_St_Corridor,Plant_City_Area,127.771624565125
-Port_of_Tampa_50th_St_Corridor,Port_of_Tampa_50th_St_Corridor,22391.3253974915
-Port_of_Tampa_50th_St_Corridor,Southeast_Hillsborough,18833.0780091286
-Port_of_Tampa_50th_St_Corridor,Southwest_Hillsborough,4034.12217998505
-Port_of_Tampa_50th_St_Corridor,Tampa_Central,13326.5196964155
-Port_of_Tampa_50th_St_Corridor,Tampa_Intl_Airport_Anderson_Rd,877.307691574097
-Port_of_Tampa_50th_St_Corridor,USF_Hospitals_Busch_Gardens,465.727356910706
-Port_of_Tampa_50th_St_Corridor,West_Brandon_S_Falkenburg_Corrido,6574.08809185028
-Port_of_Tampa_50th_St_Corridor,Westshore_Rocky_Point,942.780569076538
-Southeast_Hillsborough,,0
-Southeast_Hillsborough,CZ1,58974.7787843943
-Southeast_Hillsborough,CZ2,54152.4699218869
-Southeast_Hillsborough,CZ3,11635.5976192951
-Southeast_Hillsborough,CZ4,62664.8646440007
-Southeast_Hillsborough,Citrus_Park,173.964334487915
-Southeast_Hillsborough,Downtown,26039.7226782641
-Southeast_Hillsborough,East_Town,44887.7413724009
-Southeast_Hillsborough,Harney_Corridor_Tampa_Ex_Airpor,12934.6369282482
-Southeast_Hillsborough,Hernando_Citrus,16342.5182942417
-Southeast_Hillsborough,Hidden_River_Telecom_Park,1883.05348682404
-Southeast_Hillsborough,MacDill_AFB_Port_Tampa,3080.65635489346
-Southeast_Hillsborough,Manatee_Spur,0
-Southeast_Hillsborough,Northeast_Hillsborough,174037.32539255
-Southeast_Hillsborough,Northwest_Hillsborough,17686.7112164903
-Southeast_Hillsborough,Pasco,6726.85199899972
-Southeast_Hillsborough,Pinellas,30643.0041772954
-Southeast_Hillsborough,Plant_City_Area,8193.34866976738
-Southeast_Hillsborough,Port_of_Tampa_50th_St_Corridor,18731.8522570769
-Southeast_Hillsborough,Southeast_Hillsborough,862554.306423503
-Southeast_Hillsborough,Southwest_Hillsborough,15446.6049876725
-Southeast_Hillsborough,Tampa_Central,72149.9276386901
-Southeast_Hillsborough,Tampa_Intl_Airport_Anderson_Rd,9328.89818324801
-Southeast_Hillsborough,USF_Hospitals_Busch_Gardens,9791.14762713015
-Southeast_Hillsborough,West_Brandon_S_Falkenburg_Corrido,131227.260823053
-Southeast_Hillsborough,Westshore_Rocky_Point,10073.4677816574
-Southwest_Hillsborough,,0
-Southwest_Hillsborough,CZ1,4980.08085317025
-Southwest_Hillsborough,CZ2,2141.84707117081
-Southwest_Hillsborough,CZ3,1008.76086091995
-Southwest_Hillsborough,CZ4,3450.75860486366
-Southwest_Hillsborough,Citrus_Park,878.681389331818
-Southwest_Hillsborough,Downtown,65785.115252096
-Southwest_Hillsborough,East_Town,8089.02874935814
-Southwest_Hillsborough,Harney_Corridor_Tampa_Ex_Airpor,3740.4522819519
-Southwest_Hillsborough,Hernando_Citrus,3579.18653992191
-Southwest_Hillsborough,Hidden_River_Telecom_Park,1239.25989341736
-Southwest_Hillsborough,MacDill_AFB_Port_Tampa,21730.5090312958
-Southwest_Hillsborough,Manatee_Spur,0
-Southwest_Hillsborough,Northeast_Hillsborough,12561.4436242688
-Southwest_Hillsborough,Northwest_Hillsborough,41172.6838164495
-Southwest_Hillsborough,Pasco,5029.8886793328
-Southwest_Hillsborough,Pinellas,53413.9119098533
-Southwest_Hillsborough,Plant_City_Area,655.277127742767
-Southwest_Hillsborough,Port_of_Tampa_50th_St_Corridor,4033.29226589203
-Southwest_Hillsborough,Southeast_Hillsborough,17164.4539565675
-Southwest_Hillsborough,Southwest_Hillsborough,488129.791908259
-Southwest_Hillsborough,Tampa_Central,93072.1654462636
-Southwest_Hillsborough,Tampa_Intl_Airport_Anderson_Rd,14978.7013090407
-Southwest_Hillsborough,USF_Hospitals_Busch_Gardens,5240.57546877861
-Southwest_Hillsborough,West_Brandon_S_Falkenburg_Corrido,6903.96876803041
-Southwest_Hillsborough,Westshore_Rocky_Point,43725.8506168269
-Tampa_Central,,0
-Tampa_Central,CZ1,21340.2264156977
-Tampa_Central,CZ2,7618.47457645612
-Tampa_Central,CZ3,4157.85188977979
-Tampa_Central,CZ4,17486.3852527374
-Tampa_Central,Citrus_Park,7229.80561971664
-Tampa_Central,Downtown,140265.177847681
-Tampa_Central,East_Town,85045.1624232095
-Tampa_Central,Harney_Corridor_Tampa_Ex_Airpor,99151.6785224939
-Tampa_Central,Hernando_Citrus,17215.2643445726
-Tampa_Central,Hidden_River_Telecom_Park,16254.6398262745
-Tampa_Central,MacDill_AFB_Port_Tampa,3455.28526425362
-Tampa_Central,Manatee_Spur,0
-Tampa_Central,Northeast_Hillsborough,128352.14504687
-Tampa_Central,Northwest_Hillsborough,334635.711368877
-Tampa_Central,Pasco,40733.254605571
-Tampa_Central,Pinellas,160997.083452856
-Tampa_Central,Plant_City_Area,3434.8205781877
-Tampa_Central,Port_of_Tampa_50th_St_Corridor,13090.6355105583
-Tampa_Central,Southeast_Hillsborough,71867.0910947929
-Tampa_Central,Southwest_Hillsborough,89859.3708772253
-Tampa_Central,Tampa_Central,2445636.13956663
-Tampa_Central,Tampa_Intl_Airport_Anderson_Rd,91126.7272381248
-Tampa_Central,USF_Hospitals_Busch_Gardens,203936.077800507
-Tampa_Central,West_Brandon_S_Falkenburg_Corrido,40610.420580923
-Tampa_Central,Westshore_Rocky_Point,88800.290292965
-Tampa_Intl_Airport_Anderson_Rd,,0
-Tampa_Intl_Airport_Anderson_Rd,CZ1,3063.52318091923
-Tampa_Intl_Airport_Anderson_Rd,CZ2,1677.94919840503
-Tampa_Intl_Airport_Anderson_Rd,CZ3,417.289988040924
-Tampa_Intl_Airport_Anderson_Rd,CZ4,3864.77385830879
-Tampa_Intl_Airport_Anderson_Rd,Citrus_Park,2783.82015954866
-Tampa_Intl_Airport_Anderson_Rd,Downtown,7534.75947141647
-Tampa_Intl_Airport_Anderson_Rd,East_Town,5208.35265111923
-Tampa_Intl_Airport_Anderson_Rd,Harney_Corridor_Tampa_Ex_Airpor,2883.70698451996
-Tampa_Intl_Airport_Anderson_Rd,Hernando_Citrus,4184.17258673115
-Tampa_Intl_Airport_Anderson_Rd,Hidden_River_Telecom_Park,610.369344234467
-Tampa_Intl_Airport_Anderson_Rd,MacDill_AFB_Port_Tampa,669.580977076432
-Tampa_Intl_Airport_Anderson_Rd,Manatee_Spur,0
-Tampa_Intl_Airport_Anderson_Rd,Northeast_Hillsborough,12221.7746269089
-Tampa_Intl_Airport_Anderson_Rd,Northwest_Hillsborough,161344.081360577
-Tampa_Intl_Airport_Anderson_Rd,Pasco,11581.2071774397
-Tampa_Intl_Airport_Anderson_Rd,Pinellas,57216.3713400483
-Tampa_Intl_Airport_Anderson_Rd,Plant_City_Area,548.423632621765
-Tampa_Intl_Airport_Anderson_Rd,Port_of_Tampa_50th_St_Corridor,772.524987220764
-Tampa_Intl_Airport_Anderson_Rd,Southeast_Hillsborough,9836.61257576768
-Tampa_Intl_Airport_Anderson_Rd,Southwest_Hillsborough,14987.3847999345
-Tampa_Intl_Airport_Anderson_Rd,Tampa_Central,97055.6895167546
-Tampa_Intl_Airport_Anderson_Rd,Tampa_Intl_Airport_Anderson_Rd,140126.808351254
-Tampa_Intl_Airport_Anderson_Rd,USF_Hospitals_Busch_Gardens,4069.1264062972
-Tampa_Intl_Airport_Anderson_Rd,West_Brandon_S_Falkenburg_Corrido,4503.83457146725
-Tampa_Intl_Airport_Anderson_Rd,Westshore_Rocky_Point,23347.1536234355
-USF_Hospitals_Busch_Gardens,,0
-USF_Hospitals_Busch_Gardens,CZ1,4706.46547269821
-USF_Hospitals_Busch_Gardens,CZ2,1738.82199620595
-USF_Hospitals_Busch_Gardens,CZ3,657.007764458656
-USF_Hospitals_Busch_Gardens,CZ4,3405.53690780327
-USF_Hospitals_Busch_Gardens,Citrus_Park,780.916039408418
-USF_Hospitals_Busch_Gardens,Downtown,8594.50492725894
-USF_Hospitals_Busch_Gardens,East_Town,4744.62086001434
-USF_Hospitals_Busch_Gardens,Harney_Corridor_Tampa_Ex_Airpor,7863.84072971344
-USF_Hospitals_Busch_Gardens,Hernando_Citrus,4743.72607634589
-USF_Hospitals_Busch_Gardens,Hidden_River_Telecom_Park,3934.14682912827
-USF_Hospitals_Busch_Gardens,MacDill_AFB_Port_Tampa,276.036899328232
-USF_Hospitals_Busch_Gardens,Manatee_Spur,0
-USF_Hospitals_Busch_Gardens,Northeast_Hillsborough,24141.688698675
-USF_Hospitals_Busch_Gardens,Northwest_Hillsborough,32250.9781921385
-USF_Hospitals_Busch_Gardens,Pasco,13682.3565048389
-USF_Hospitals_Busch_Gardens,Pinellas,35812.7966723617
-USF_Hospitals_Busch_Gardens,Plant_City_Area,383.048742771149
-USF_Hospitals_Busch_Gardens,Port_of_Tampa_50th_St_Corridor,502.680577754974
-USF_Hospitals_Busch_Gardens,Southeast_Hillsborough,11201.0279103033
-USF_Hospitals_Busch_Gardens,Southwest_Hillsborough,5585.73556843028
-USF_Hospitals_Busch_Gardens,Tampa_Central,210188.291869966
-USF_Hospitals_Busch_Gardens,Tampa_Intl_Airport_Anderson_Rd,3837.98235666752
-USF_Hospitals_Busch_Gardens,USF_Hospitals_Busch_Gardens,285714.550440788
-USF_Hospitals_Busch_Gardens,West_Brandon_S_Falkenburg_Corrido,3607.8127207756
-USF_Hospitals_Busch_Gardens,Westshore_Rocky_Point,4077.41809606552
-West_Brandon_S_Falkenburg_Corrido,,0
-West_Brandon_S_Falkenburg_Corrido,CZ1,20396.8110296726
-West_Brandon_S_Falkenburg_Corrido,CZ2,9217.80489873886
-West_Brandon_S_Falkenburg_Corrido,CZ3,4252.10187149048
-West_Brandon_S_Falkenburg_Corrido,CZ4,15716.0400535688
-West_Brandon_S_Falkenburg_Corrido,Citrus_Park,175.294110655785
-West_Brandon_S_Falkenburg_Corrido,Downtown,10875.4999643229
-West_Brandon_S_Falkenburg_Corrido,East_Town,24980.0177172091
-West_Brandon_S_Falkenburg_Corrido,Harney_Corridor_Tampa_Ex_Airpor,5211.95680999756
-West_Brandon_S_Falkenburg_Corrido,Hernando_Citrus,5341.66214437224
-West_Brandon_S_Falkenburg_Corrido,Hidden_River_Telecom_Park,731.521614074707
-West_Brandon_S_Falkenburg_Corrido,MacDill_AFB_Port_Tampa,941.902607917786
-West_Brandon_S_Falkenburg_Corrido,Manatee_Spur,0
-West_Brandon_S_Falkenburg_Corrido,Northeast_Hillsborough,49721.8950819539
-West_Brandon_S_Falkenburg_Corrido,Northwest_Hillsborough,9482.82708349172
-West_Brandon_S_Falkenburg_Corrido,Pasco,4455.88707503676
-West_Brandon_S_Falkenburg_Corrido,Pinellas,16458.292515779
-West_Brandon_S_Falkenburg_Corrido,Plant_City_Area,783.822883605957
-West_Brandon_S_Falkenburg_Corrido,Port_of_Tampa_50th_St_Corridor,7234.78935909271
-West_Brandon_S_Falkenburg_Corrido,Southeast_Hillsborough,132154.436881705
-West_Brandon_S_Falkenburg_Corrido,Southwest_Hillsborough,7247.09276784118
-West_Brandon_S_Falkenburg_Corrido,Tampa_Central,40203.3673398371
-West_Brandon_S_Falkenburg_Corrido,Tampa_Intl_Airport_Anderson_Rd,4192.69784439728
-West_Brandon_S_Falkenburg_Corrido,USF_Hospitals_Busch_Gardens,3291.68556523323
-West_Brandon_S_Falkenburg_Corrido,West_Brandon_S_Falkenburg_Corrido,144613.624473572
-West_Brandon_S_Falkenburg_Corrido,Westshore_Rocky_Point,3876.71465211967
-Westshore_Rocky_Point,,0
-Westshore_Rocky_Point,CZ1,3776.85539730731
-Westshore_Rocky_Point,CZ2,1378.58909988403
-Westshore_Rocky_Point,CZ3,715.72550714016
-Westshore_Rocky_Point,CZ4,2624.41089892387
-Westshore_Rocky_Point,Citrus_Park,1119.33877468109
-Westshore_Rocky_Point,Downtown,20133.0230825422
-Westshore_Rocky_Point,East_Town,4826.22887620423
-Westshore_Rocky_Point,Harney_Corridor_Tampa_Ex_Airpor,2591.27579259872
-Westshore_Rocky_Point,Hernando_Citrus,4100.52159906458
-Westshore_Rocky_Point,Hidden_River_Telecom_Park,631.332142829895
-Westshore_Rocky_Point,MacDill_AFB_Port_Tampa,2329.01163262734
-Westshore_Rocky_Point,Manatee_Spur,0
-Westshore_Rocky_Point,Northeast_Hillsborough,9897.60304869898
-Westshore_Rocky_Point,Northwest_Hillsborough,66706.858150569
-Westshore_Rocky_Point,Pasco,6930.85687519051
-Westshore_Rocky_Point,Pinellas,56259.2084072148
-Westshore_Rocky_Point,Plant_City_Area,369.735404014587
-Westshore_Rocky_Point,Port_of_Tampa_50th_St_Corridor,919.149875164032
-Westshore_Rocky_Point,Southeast_Hillsborough,10967.6857052876
-Westshore_Rocky_Point,Southwest_Hillsborough,44460.6286851324
-Westshore_Rocky_Point,Tampa_Central,92171.6488089479
-Westshore_Rocky_Point,Tampa_Intl_Airport_Anderson_Rd,25291.2854175568
-Westshore_Rocky_Point,USF_Hospitals_Busch_Gardens,4045.7423164543
-Westshore_Rocky_Point,West_Brandon_S_Falkenburg_Corrido,4184.8925511837
-Westshore_Rocky_Point,Westshore_Rocky_Point,133666.697730111
+Pinellas,Plant City Area,2548.92998004705
+Pinellas,Port of Tampa  50th St Corridor,3452.39749654615
+Pinellas,SE Hillsborough,31777.2057623016
+Pinellas,SW Hillsborough,52518.2466051427
+Pinellas,TPA  Anderson Rd,58133.584252002
+Pinellas,Tampa Central,161268.004895938
+Pinellas,USF  Hosp  Busch,33170.7894931897
+Pinellas,West Brandon,16160.948731071
+Pinellas,Westshore  Rocky Point,55172.0046448636
+Plant City Area,,0
+Plant City Area,Apollo Beach  Ruskin,147.082977294922
+Plant City Area,CZ2,628.757738113403
+Plant City Area,CZ4,732.794319868088
+Plant City Area,Citrus Park,8.18890762329102
+Plant City Area,Downtown,480.131638955325
+Plant City Area,East Town,1338.36839771271
+Plant City Area,Gibsonton,434.858984470367
+Plant City Area,Harney Canal,851.136549472809
+Plant City Area,Hernando  Citrus,7653.59462709539
+Plant City Area,MacDill AFB,16.3907051086426
+Plant City Area,Manatee Spur,0
+Plant City Area,NE Hilsborough,85026.4345960617
+Plant City Area,NW Hilsborough,884.311005592346
+Plant City Area,New Tampa,95.3150992393494
+Plant City Area,Pasco,2197.21742510796
+Plant City Area,Pinellas,2396.07280260325
+Plant City Area,Plant City Area,66956.1007099152
+Plant City Area,Port of Tampa  50th St Corridor,100.061190128326
+Plant City Area,SE Hillsborough,7759.44726085663
+Plant City Area,SW Hillsborough,666.056529998779
+Plant City Area,TPA  Anderson Rd,466.747425079346
+Plant City Area,Tampa Central,3425.68409872055
+Plant City Area,USF  Hosp  Busch,372.139758586884
+Plant City Area,West Brandon,675.20662817359
+Plant City Area,Westshore  Rocky Point,242.855418205261
+Port of Tampa  50th St Corridor,,0
+Port of Tampa  50th St Corridor,Apollo Beach  Ruskin,1103.06564426422
+Port of Tampa  50th St Corridor,CZ2,1598.02921819687
+Port of Tampa  50th St Corridor,CZ4,2059.65580415726
+Port of Tampa  50th St Corridor,Citrus Park,75.1150312423706
+Port of Tampa  50th St Corridor,Downtown,6987.32928615809
+Port of Tampa  50th St Corridor,East Town,5326.66229194682
+Port of Tampa  50th St Corridor,Gibsonton,3902.11158704758
+Port of Tampa  50th St Corridor,Harney Canal,1633.66732311249
+Port of Tampa  50th St Corridor,Hernando  Citrus,1159.46466013417
+Port of Tampa  50th St Corridor,MacDill AFB,153.61782169342
+Port of Tampa  50th St Corridor,Manatee Spur,0
+Port of Tampa  50th St Corridor,NE Hilsborough,4503.1354360655
+Port of Tampa  50th St Corridor,NW Hilsborough,3641.85404993221
+Port of Tampa  50th St Corridor,New Tampa,152.459769248962
+Port of Tampa  50th St Corridor,Pasco,1232.16761498153
+Port of Tampa  50th St Corridor,Pinellas,3970.23373683775
+Port of Tampa  50th St Corridor,Plant City Area,127.771624565125
+Port of Tampa  50th St Corridor,Port of Tampa  50th St Corridor,22391.3253974915
+Port of Tampa  50th St Corridor,SE Hillsborough,18833.0780091286
+Port of Tampa  50th St Corridor,SW Hillsborough,4034.12217998505
+Port of Tampa  50th St Corridor,TPA  Anderson Rd,877.307691574097
+Port of Tampa  50th St Corridor,Tampa Central,13326.5196964155
+Port of Tampa  50th St Corridor,USF  Hosp  Busch,465.727356910706
+Port of Tampa  50th St Corridor,West Brandon,6574.08809185028
+Port of Tampa  50th St Corridor,Westshore  Rocky Point,942.780569076538
+SE Hillsborough,,0
+SE Hillsborough,Apollo Beach  Ruskin,11635.5976192951
+SE Hillsborough,CZ2,54152.4699218869
+SE Hillsborough,CZ4,62664.8646440007
+SE Hillsborough,Citrus Park,173.964334487915
+SE Hillsborough,Downtown,26039.7226782641
+SE Hillsborough,East Town,44887.7413724009
+SE Hillsborough,Gibsonton,58974.7787843943
+SE Hillsborough,Harney Canal,12934.6369282482
+SE Hillsborough,Hernando  Citrus,16342.5182942417
+SE Hillsborough,MacDill AFB,3080.65635489346
+SE Hillsborough,Manatee Spur,0
+SE Hillsborough,NE Hilsborough,174037.32539255
+SE Hillsborough,NW Hilsborough,17686.7112164903
+SE Hillsborough,New Tampa,1883.05348682404
+SE Hillsborough,Pasco,6726.85199899972
+SE Hillsborough,Pinellas,30643.0041772954
+SE Hillsborough,Plant City Area,8193.34866976738
+SE Hillsborough,Port of Tampa  50th St Corridor,18731.8522570769
+SE Hillsborough,SE Hillsborough,862554.306423503
+SE Hillsborough,SW Hillsborough,15446.6049876725
+SE Hillsborough,TPA  Anderson Rd,9328.89818324801
+SE Hillsborough,Tampa Central,72149.9276386901
+SE Hillsborough,USF  Hosp  Busch,9791.14762713015
+SE Hillsborough,West Brandon,131227.260823053
+SE Hillsborough,Westshore  Rocky Point,10073.4677816574
+SW Hillsborough,,0
+SW Hillsborough,Apollo Beach  Ruskin,1008.76086091995
+SW Hillsborough,CZ2,2141.84707117081
+SW Hillsborough,CZ4,3450.75860486366
+SW Hillsborough,Citrus Park,878.681389331818
+SW Hillsborough,Downtown,65785.115252096
+SW Hillsborough,East Town,8089.02874935814
+SW Hillsborough,Gibsonton,4980.08085317025
+SW Hillsborough,Harney Canal,3740.4522819519
+SW Hillsborough,Hernando  Citrus,3579.18653992191
+SW Hillsborough,MacDill AFB,21730.5090312958
+SW Hillsborough,Manatee Spur,0
+SW Hillsborough,NE Hilsborough,12561.4436242688
+SW Hillsborough,NW Hilsborough,41172.6838164495
+SW Hillsborough,New Tampa,1239.25989341736
+SW Hillsborough,Pasco,5029.8886793328
+SW Hillsborough,Pinellas,53413.9119098533
+SW Hillsborough,Plant City Area,655.277127742767
+SW Hillsborough,Port of Tampa  50th St Corridor,4033.29226589203
+SW Hillsborough,SE Hillsborough,17164.4539565675
+SW Hillsborough,SW Hillsborough,488129.791908259
+SW Hillsborough,TPA  Anderson Rd,14978.7013090407
+SW Hillsborough,Tampa Central,93072.1654462636
+SW Hillsborough,USF  Hosp  Busch,5240.57546877861
+SW Hillsborough,West Brandon,6903.96876803041
+SW Hillsborough,Westshore  Rocky Point,43725.8506168269
+TPA  Anderson Rd,,0
+TPA  Anderson Rd,Apollo Beach  Ruskin,417.289988040924
+TPA  Anderson Rd,CZ2,1677.94919840503
+TPA  Anderson Rd,CZ4,3864.77385830879
+TPA  Anderson Rd,Citrus Park,2783.82015954866
+TPA  Anderson Rd,Downtown,7534.75947141647
+TPA  Anderson Rd,East Town,5208.35265111923
+TPA  Anderson Rd,Gibsonton,3063.52318091923
+TPA  Anderson Rd,Harney Canal,2883.70698451996
+TPA  Anderson Rd,Hernando  Citrus,4184.17258673115
+TPA  Anderson Rd,MacDill AFB,669.580977076432
+TPA  Anderson Rd,Manatee Spur,0
+TPA  Anderson Rd,NE Hilsborough,12221.7746269089
+TPA  Anderson Rd,NW Hilsborough,161344.081360577
+TPA  Anderson Rd,New Tampa,610.369344234467
+TPA  Anderson Rd,Pasco,11581.2071774397
+TPA  Anderson Rd,Pinellas,57216.3713400483
+TPA  Anderson Rd,Plant City Area,548.423632621765
+TPA  Anderson Rd,Port of Tampa  50th St Corridor,772.524987220764
+TPA  Anderson Rd,SE Hillsborough,9836.61257576768
+TPA  Anderson Rd,SW Hillsborough,14987.3847999345
+TPA  Anderson Rd,TPA  Anderson Rd,140126.808351254
+TPA  Anderson Rd,Tampa Central,97055.6895167546
+TPA  Anderson Rd,USF  Hosp  Busch,4069.1264062972
+TPA  Anderson Rd,West Brandon,4503.83457146725
+TPA  Anderson Rd,Westshore  Rocky Point,23347.1536234355
+Tampa Central,,0
+Tampa Central,Apollo Beach  Ruskin,4157.85188977979
+Tampa Central,CZ2,7618.47457645612
+Tampa Central,CZ4,17486.3852527374
+Tampa Central,Citrus Park,7229.80561971664
+Tampa Central,Downtown,140265.177847681
+Tampa Central,East Town,85045.1624232095
+Tampa Central,Gibsonton,21340.2264156977
+Tampa Central,Harney Canal,99151.6785224939
+Tampa Central,Hernando  Citrus,17215.2643445726
+Tampa Central,MacDill AFB,3455.28526425362
+Tampa Central,Manatee Spur,0
+Tampa Central,NE Hilsborough,128352.14504687
+Tampa Central,NW Hilsborough,334635.711368877
+Tampa Central,New Tampa,16254.6398262745
+Tampa Central,Pasco,40733.254605571
+Tampa Central,Pinellas,160997.083452856
+Tampa Central,Plant City Area,3434.8205781877
+Tampa Central,Port of Tampa  50th St Corridor,13090.6355105583
+Tampa Central,SE Hillsborough,71867.0910947929
+Tampa Central,SW Hillsborough,89859.3708772253
+Tampa Central,TPA  Anderson Rd,91126.7272381248
+Tampa Central,Tampa Central,2445636.13956663
+Tampa Central,USF  Hosp  Busch,203936.077800507
+Tampa Central,West Brandon,40610.420580923
+Tampa Central,Westshore  Rocky Point,88800.290292965
+USF  Hosp  Busch,,0
+USF  Hosp  Busch,Apollo Beach  Ruskin,657.007764458656
+USF  Hosp  Busch,CZ2,1738.82199620595
+USF  Hosp  Busch,CZ4,3405.53690780327
+USF  Hosp  Busch,Citrus Park,780.916039408418
+USF  Hosp  Busch,Downtown,8594.50492725894
+USF  Hosp  Busch,East Town,4744.62086001434
+USF  Hosp  Busch,Gibsonton,4706.46547269821
+USF  Hosp  Busch,Harney Canal,7863.84072971344
+USF  Hosp  Busch,Hernando  Citrus,4743.72607634589
+USF  Hosp  Busch,MacDill AFB,276.036899328232
+USF  Hosp  Busch,Manatee Spur,0
+USF  Hosp  Busch,NE Hilsborough,24141.688698675
+USF  Hosp  Busch,NW Hilsborough,32250.9781921385
+USF  Hosp  Busch,New Tampa,3934.14682912827
+USF  Hosp  Busch,Pasco,13682.3565048389
+USF  Hosp  Busch,Pinellas,35812.7966723617
+USF  Hosp  Busch,Plant City Area,383.048742771149
+USF  Hosp  Busch,Port of Tampa  50th St Corridor,502.680577754974
+USF  Hosp  Busch,SE Hillsborough,11201.0279103033
+USF  Hosp  Busch,SW Hillsborough,5585.73556843028
+USF  Hosp  Busch,TPA  Anderson Rd,3837.98235666752
+USF  Hosp  Busch,Tampa Central,210188.291869966
+USF  Hosp  Busch,USF  Hosp  Busch,285714.550440788
+USF  Hosp  Busch,West Brandon,3607.8127207756
+USF  Hosp  Busch,Westshore  Rocky Point,4077.41809606552
+West Brandon,,0
+West Brandon,Apollo Beach  Ruskin,4252.10187149048
+West Brandon,CZ2,9217.80489873886
+West Brandon,CZ4,15716.0400535688
+West Brandon,Citrus Park,175.294110655785
+West Brandon,Downtown,10875.4999643229
+West Brandon,East Town,24980.0177172091
+West Brandon,Gibsonton,20396.8110296726
+West Brandon,Harney Canal,5211.95680999756
+West Brandon,Hernando  Citrus,5341.66214437224
+West Brandon,MacDill AFB,941.902607917786
+West Brandon,Manatee Spur,0
+West Brandon,NE Hilsborough,49721.8950819539
+West Brandon,NW Hilsborough,9482.82708349172
+West Brandon,New Tampa,731.521614074707
+West Brandon,Pasco,4455.88707503676
+West Brandon,Pinellas,16458.292515779
+West Brandon,Plant City Area,783.822883605957
+West Brandon,Port of Tampa  50th St Corridor,7234.78935909271
+West Brandon,SE Hillsborough,132154.436881705
+West Brandon,SW Hillsborough,7247.09276784118
+West Brandon,TPA  Anderson Rd,4192.69784439728
+West Brandon,Tampa Central,40203.3673398371
+West Brandon,USF  Hosp  Busch,3291.68556523323
+West Brandon,West Brandon,144613.624473572
+West Brandon,Westshore  Rocky Point,3876.71465211967
+Westshore  Rocky Point,,0
+Westshore  Rocky Point,Apollo Beach  Ruskin,715.72550714016
+Westshore  Rocky Point,CZ2,1378.58909988403
+Westshore  Rocky Point,CZ4,2624.41089892387
+Westshore  Rocky Point,Citrus Park,1119.33877468109
+Westshore  Rocky Point,Downtown,20133.0230825422
+Westshore  Rocky Point,East Town,4826.22887620423
+Westshore  Rocky Point,Gibsonton,3776.85539730731
+Westshore  Rocky Point,Harney Canal,2591.27579259872
+Westshore  Rocky Point,Hernando  Citrus,4100.52159906458
+Westshore  Rocky Point,MacDill AFB,2329.01163262734
+Westshore  Rocky Point,Manatee Spur,0
+Westshore  Rocky Point,NE Hilsborough,9897.60304869898
+Westshore  Rocky Point,NW Hilsborough,66706.858150569
+Westshore  Rocky Point,New Tampa,631.332142829895
+Westshore  Rocky Point,Pasco,6930.85687519051
+Westshore  Rocky Point,Pinellas,56259.2084072148
+Westshore  Rocky Point,Plant City Area,369.735404014587
+Westshore  Rocky Point,Port of Tampa  50th St Corridor,919.149875164032
+Westshore  Rocky Point,SE Hillsborough,10967.6857052876
+Westshore  Rocky Point,SW Hillsborough,44460.6286851324
+Westshore  Rocky Point,TPA  Anderson Rd,25291.2854175568
+Westshore  Rocky Point,Tampa Central,92171.6488089479
+Westshore  Rocky Point,USF  Hosp  Busch,4045.7423164543
+Westshore  Rocky Point,West Brandon,4184.8925511837
+Westshore  Rocky Point,Westshore  Rocky Point,133666.697730111
