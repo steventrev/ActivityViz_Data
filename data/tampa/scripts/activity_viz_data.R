@@ -97,13 +97,15 @@ taz_sf = geojson_sf(taz_file)
 taz_dt = data.table(taz_sf)
 agg_dt = fread(agg_file)
 agg_dt[,HILLSBOROUGH_LBL_3:=gsub("\\&|\\/","",HILLSBOROUGH_LBL_3)]
-agg_dt[,HILLSBOROUGH_LBL_3:=gsub("\\s+","_",HILLSBOROUGH_LBL_3)]
+# agg_dt[,HILLSBOROUGH_LBL_3:=gsub("\\s+","_",HILLSBOROUGH_LBL_3)]
 agg_dt[,PINELLAS_LBL:=gsub("\\&|\\/","",PINELLAS_LBL)]
-agg_dt[,PINELLAS_LBL:=gsub("\\s+","_",PINELLAS_LBL)]
+# agg_dt[,PINELLAS_LBL:=gsub("\\s+","_",PINELLAS_LBL)]
 agg_dt[,PASCO_LBL:=gsub("\\&|\\/","",PASCO_LBL)]
-agg_dt[,PASCO_LBL:=gsub("\\s+","_",PASCO_LBL)]
+# agg_dt[,PASCO_LBL:=gsub("\\s+","_",PASCO_LBL)]
 agg_dt[,HERNANDO_CITRUS_LBL_2:=gsub("\\&|\\/","",HERNANDO_CITRUS_LBL_2)]
-agg_dt[,HERNANDO_CITRUS_LBL_2:=gsub("\\s+","_",HERNANDO_CITRUS_LBL_2)]
+# agg_dt[,HERNANDO_CITRUS_LBL_2:=gsub("\\s+","_",HERNANDO_CITRUS_LBL_2)]
+agg_dt[,D7_ALL_LBL:=gsub("\\&|\\/","",D7_ALL_LBL)]
+# agg_dt[,D7_ALL_LBL:=gsub("\\s+","_",D7_ALL_LBL)]
 agg_sf = st_as_sf(merge(as.data.frame(agg_dt), taz_sf, by.x="TAZ", by.y="id",all.x = TRUE))
 
 
@@ -267,10 +269,10 @@ telecommute_freq_dt = person_dt[!telework_freq %in% c(995) &
                                 by = .(AGE_GROUP = age_group,
                                        FREQUENCY = telework_labels)]
 
-telecommute_total = person_dt[!telework_freq %in% c(995) &
-                                age > 4,.(AGE_GROUP = "Total",
-                                          PERSON = sum(weight_household)),
-                              by = .(FREQUENCY = telework_labels)]
+telecommute_total = data.table() #person_dt[!telework_freq %in% c(995) &
+                              #   age > 4,.(AGE_GROUP = "Total",
+                              #             PERSON = sum(weight_household)),
+                              # by = .(FREQUENCY = telework_labels)]
 telecommute_freq_dt = rbindlist(list(telecommute_freq_dt, telecommute_total), use.names = TRUE)
 
 setorder(telecommute_freq_dt, AGE_GROUP, -PERSON)
@@ -305,10 +307,10 @@ bike_freq_dt = person_dt[!bike_freq %in% c(995, -9998) &
                                 by = .(AGE_GROUP = age_group,
                                        FREQUENCY = bike_labels)]
 
-bike_total = person_dt[!bike_freq %in% c(995, -9998) &
-                                age > 4,.(AGE_GROUP = "Total",
-                                          PERSON = sum(weight_household)),
-                              by = .(FREQUENCY = bike_labels)]
+bike_total = data.table() #person_dt[!bike_freq %in% c(995, -9998) &
+                              #   age > 4,.(AGE_GROUP = "Total",
+                              #             PERSON = sum(weight_household)),
+                              # by = .(FREQUENCY = bike_labels)]
 bike_freq_dt = rbindlist(list(bike_freq_dt, bike_total), use.names = TRUE)
 
 setorder(bike_freq_dt, AGE_GROUP, -PERSON)
@@ -454,12 +456,29 @@ modes = c("Missing"         = -9998,
           "Bike_Share"      = 11, 
           "Long_Dist_Pass"  = 13
 )
+
+# modes_order = c("Car",
+#                 "Walk",
+#                 "Bike",
+#                 "Taxi_Not_TNC",
+#                 "Transit",
+#                 "School_Bus",
+#                 "Other",
+#                 "Shuttle_VanPool",
+#                 "TNC",
+#                 "Car_Share",
+#                 "Bike_Share",
+#                 "Long_Dist_Pass",
+#                 "Missing"
+# )
+# modes_order = str_to_upper(modes_order)
 trip_dt[, mode := names(modes)[match(mode_type,modes)]]
 trip_dt[, mode := str_to_upper(mode)]
+trip_dt[mode=="CAR", mode:="AUTO"]
 setkey(trip_dt, d_taz_2020, mode)
 trips_mode = trip_dt[
   !(is.na(d_taz_2020) | is.na(mode))
-  ][CJ(d_taz_2020,
+  ][CJ(taz_dt$id,
        mode,
        unique = TRUE)][, .(TRIPS = sum(trip_weight_household)),
                        by = .(ZONE = d_taz_2020,
@@ -469,8 +488,10 @@ setkey(taz_dt, id)
 trips_mode[,COUNTY:=taz_dt[.(ZONE),Cnty_Nm]]
 setcolorder(trips_mode, c("ZONE", "COUNTY"))
 
-trip_total = trips_mode[,.(TRIPS=sum(TRIPS), MODE = "ALL_MODES"),.(ZONE, COUNTY)]
+trip_total = data.table() #trips_mode[,.(TRIPS=sum(TRIPS), MODE = "ALL_MODES"),.(ZONE, COUNTY)]
 trips_mode = rbindlist(list(trips_mode, trip_total), use.names = TRUE)
+trips_mode = trips_mode[order(ZONE, COUNTY, MODE)]
+trips_mode = trips_mode[TRIPS!=0]
 
 # Trip mode by zone
 trip_zone = trip_dt[
@@ -481,6 +502,8 @@ trip_zone = trip_dt[
                        by = .(ZONE = d_taz_2020,
                               MODE = mode)][order(ZONE, MODE)]
 trip_zone[is.na(TRIPS), TRIPS:=0]
+trip_zone = trip_zone[order(ZONE, MODE)]
+trip_zone = trip_zone[TRIPS!=0]
 
 
 # Seasonal household
@@ -489,7 +512,7 @@ trip_dt[household_dt[seasonal_household==1,.(hh_id)],is_seasonal:=1L,on=.(hh_id)
 
 seasonal_trips_mode = trip_dt[
   !(is.na(d_taz_2020) | is.na(mode)) & is_seasonal==1
-  ][CJ(d_taz_2020,
+  ][CJ(taz_dt$id,
        mode,
        unique = TRUE)][, .(TRIPS = sum(trip_weight_household)),
                        by = .(ZONE = d_taz_2020,
@@ -498,8 +521,10 @@ seasonal_trips_mode[is.na(TRIPS), TRIPS:=0]
 seasonal_trips_mode[,COUNTY:=taz_dt[.(ZONE),Cnty_Nm]]
 setcolorder(seasonal_trips_mode, c("ZONE", "COUNTY"))
 
-trip_total = seasonal_trips_mode[,.(TRIPS=sum(TRIPS), MODE = "ALL_MODES"),.(ZONE, COUNTY)]
+trip_total = data.table() #seasonal_trips_mode[,.(TRIPS=sum(TRIPS), MODE = "ALL_MODES"),.(ZONE, COUNTY)]
 seasonal_trips_mode = rbindlist(list(seasonal_trips_mode, trip_total), use.names = TRUE)
+seasonal_trips_mode = seasonal_trips_mode[order(ZONE, COUNTY, MODE)]
+seasonal_trips_mode = seasonal_trips_mode[TRIPS!=0]
 
 # University student
 trip_dt[,uni_student:=0L]
@@ -507,7 +532,7 @@ trip_dt[person_dt[university_student==1,.(personid)],uni_student:=1L,on=.(person
 
 uni_trips_mode = trip_dt[
   !(is.na(d_taz_2020) | is.na(mode)) & uni_student==1
-  ][CJ(d_taz_2020,
+  ][CJ(taz_dt$id,
        mode,
        unique = TRUE)][, .(TRIPS = sum(trip_weight_household)),
                        by = .(ZONE = d_taz_2020,
@@ -516,8 +541,10 @@ uni_trips_mode[is.na(TRIPS), TRIPS:=0]
 uni_trips_mode[,COUNTY:=taz_dt[.(ZONE),Cnty_Nm]]
 setcolorder(uni_trips_mode, c("ZONE", "COUNTY"))
 
-trip_total = uni_trips_mode[,.(TRIPS=sum(TRIPS), MODE = "ALL_MODES"),.(ZONE, COUNTY)]
+trip_total = data.table() #uni_trips_mode[,.(TRIPS=sum(TRIPS), MODE = "ALL_MODES"),.(ZONE, COUNTY)]
 uni_trips_mode = rbindlist(list(uni_trips_mode, trip_total), use.names = TRUE)
+uni_trips_mode = uni_trips_mode[order(ZONE, COUNTY, MODE)]
+uni_trips_mode = uni_trips_mode[TRIPS!=0]
 
 # Day Pattern
 day_pattern_dt = household_dt[,.(hh_id, seasonal_household, hh_recruitment)][
@@ -561,8 +588,8 @@ day_pattern_dt[trip_dt[,.(trip_type=ifelse(any(d_purpose_category_imputed %in% c
                                            2L,
                                            ifelse(any(d_purpose_category_imputed %in% c(5,6,7,8,9,10)), 3L, 4L))),by=.(personid, day_num)],
                day_pattern:=ifelse(is.na(day_pattern),
-                                   ifelse(i.trip_type==2, "Work and/or School Travel",
-                                          ifelse(i.trip_type==3, "Other Travel", "Missing/Non-Response")),
+                                   ifelse(i.trip_type==3, "Other Travel",
+                                          ifelse(i.trip_type==2, "Work and/or School Travel", "Missing/Non-Response")),
                                    day_pattern),
                on=.(personid, day_num)]
 
@@ -585,10 +612,10 @@ day_pattern_dt = day_pattern_dt[CJ(person_group,
                                    day_pattern, 
                                    unique = TRUE)][!(is.na(day_pattern) 
                                                      | (day_pattern=="Missing/Non-Response")),
-                                                   .(`COUNT`= sum(day_weight_person),
+                                                   .(`PERSON DAYS`= sum(day_weight_person),
                   CHART = "Day Pattern"),
                by = .(`PERSON GROUP`=person_group,
-                      `DAY PATTERN` =day_pattern)]
+                      `DAY ACTIVITY` =day_pattern)]
 
 # Time Use
 
