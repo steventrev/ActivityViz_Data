@@ -378,6 +378,22 @@
               "For the left graph: The color of connections between Districts depicts net travel (e.g., there were more trips from Tampa to Hillsborough-Other than there were in the opposite direction)."]
             }]
           }]},
+		  {"name":"Expanded ODs","config":"County","file":"county_expanded.csv","info":"Daily trips OD", "explanation":[{
+            "header": "Summary",
+            "body":[{
+              "type": "unorderedList",
+              "content": ["County Origins and Destinations from expanded passive data."]
+            }]
+          },
+          {
+            "header": "Instructions",
+            "body":[{
+              "type": "unorderedList",
+              "content": ["Hover mouse over graph to see detail and to display District flows on the map.",
+              "Select \"Show Data\" to see tabulation.",
+              "For the left graph: The color of connections between Districts depicts net travel."]
+            }]
+          }]},
             {"name":"Hillsborough OD Flows","config":"Hillsborough","file":"trip_daily_pod_hillsborough.csv","info":"Daily trips OD", "explanation":[{
             "header": "Summary",
             "body":[{
@@ -580,6 +596,12 @@
   "Chord": {
     "Overall": {
       "ZoneFile":"overall.json",
+      "LabelSize": "14",
+      "LegendText": "TRIPS",
+      "DesireLinesOn": true    
+    },
+	"County": {
+      "ZoneFile":"counties.json",
       "LabelSize": "14",
       "LegendText": "TRIPS",
       "DesireLinesOn": true    
